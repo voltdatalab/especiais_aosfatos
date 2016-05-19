@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700,300,400' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Rubik:400,300,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  
+  <title>Apoio a Cunha na Câmara</title>
+  
+  <meta name='keywords' content='política, cunha, eduardo cunha, PMDB, impeachment, cassação, política nacional, Brasília, aos fatos, jornalismo de dados,
+  volt data lab'>
+            <meta name='subject' content='jornalismo de dados'>
+            <meta name='copyright' content='Volt Data Lab - www.voltdata.info'>
+            <meta name='language' content='PT'>
+            <meta name='robots' content='index,follow'>
+            <meta name='revised' content='Dezembro de 2015'>
+            <meta name='author' content='Aos Fatos | Volt Data Lab'>
+            <meta name='designer' content='@ProjetoStock'>
+            <meta name='reply-to' content='info@voltdata.info'>
+            <meta name='owner' content='Volt Data Lab'>
+            <meta name='url' content='http://aosfatos.org'>
+            <meta name='identifier-URL' content=''>
+            <meta name='pagename' content='União Civil no Brasil'>
+            <meta name='coverage' content='Brasil'>
+            <meta name='distribution' content='Global'>
+            <meta name='rating' content='General'>
+            <meta name='target' content='all'>
+            <meta name='HandheldFriendly' content='True'>
+            <meta name='MobileOptimized' content='320'>    
+            <meta property="og:image" content="http://agenciabrasil.ebc.com.br/sites/_agenciabrasil2013/files/styles/interna_grande/public/fotos/951217-12032015-dsc_9375.jpg?itok=ovWbz7Vq" />
+            <meta property="og:url" content="http://aosfatos.org/volt/graficos/erosaocunha.html">
+            <meta property="og:title" content="Erosão do apoio a Eduardo Cunha na Câmara">
+            <meta property="og:description" content="Apuração revela inclinação (contra ou a favor da posição de Cunha) em votações na Câmara em seis tópicos* desde fevereiro">  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71324943-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<style>
+body {
+  font: 10px sans-serif;
+  font-family: 'Rubik';
+  background-color: #ededed;
+}
+
+#logop {
+  padding-top: 0px;
+  position: absolute;
+  
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+a {
+  color: #a7002c;
+}
+
+a:hover{
+  color: #cbcbcb;
+}
+
+h1 {
+  font-family: 'Oswald'; 
+  font-size: 30px;
+  border-bottom: 1px #cbcbcb solid;
+}
+
+h2 {
+  font-family: 'Rubik';
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+h3 {
+  font-size: 16px;
+  font-family: 'Oswald'; 
+}
+
+h4 {
+  font-size: 11px;
+  border-top: 1px #cbcbcb solid;
+  padding-top: 5px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 11px;
+}
+
+span {
+  font-family: 'Oswald';
+  font-size: 12px;
+}
+
+.redes {
+  font-size: 16px;
+  font-family: 'Oswald';
+  font-weight: 300;
+  float: ;
+  padding: 10px 20px 0 0px;
+}
+
+ul {
+  margin: 0 0 0 -40px;
+}
+
+li {
+  font-size: 16px;
+  list-style-type: none;
+  display: inline-block;
+  margin: 3px;
+  padding: 10px;
+  width: 100px;
+  text-align:center;
+  color: #fff;
+  mix-blend-mode: ;
+}
+
+.conteudo{
+  margin: 0 5%;
+}
+
+/*Gráfico */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #cbcbcb;
+  shape-rendering: ;
+  display: none;
+  
+}
+
+
+#figure {
+  margin: 30px 0 30px;
+  font-size: 12px;
+  max-width: 700px;
+}
+
+.ano {
+  background-color: black;
+}
+
+/*Botão para hide/show explicação */
+
+article {
+    margin: -40px 10% 100px 0;
+    position: relative;
+}
+
+article:before, article:after {
+    content: "";
+    display: table;
+}
+
+article:after { 
+    clear: both;
+}
+
+
+article section:last-of-type {
+    display: none;
+    visibility: hidden;
+    padding-left: 20px;
+}
+
+section {
+    -webkit-transition: .125s linear;
+    -moz-transition: .125s linear;
+    -ms-transition: .125s linear;
+    -o-transition: .125s linear;
+    transition: .125s linear;
+    background-color: rgba(0,0,0,.2);
+    padding: 10px;
+    margin-top: 40px;
+     color: #fff;
+}
+
+input[type=checkbox] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    
+}
+
+[for="read_more"] {
+    position: absolute;
+    bottom: -4rem;
+    left: 0;
+    width: 170px;
+    text-align: left;
+    padding: .3rem;
+    background-color:;
+   
+
+}
+
+[for="read_more"]:hover {
+    background: rgba(0,0,0,.1);
+    color: rgba(255,255,255);
+}
+
+[for="read_more"] span:last-of-type {
+    display: none;
+    visibility: hidden;
+}
+
+input[type=checkbox]:checked ~ section {
+    display: block;
+    visibility: visible;
+    max-width: 500px;
+}
+
+input[type=checkbox]:checked ~ figure { max-width: 500px; }
+
+input[type=checkbox]:checked ~ [for="read_more"] span:first-of-type {
+    display: none;
+    visibility: hidden;
+}
+
+input[type=checkbox]:checked ~ [for="read_more"] span:last-of-type {
+    display: block;
+    visibility: visible;
+}
+
+/* Table */
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:'Rubik', sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal; text-align:center;}
+.tg th{font-family:'Rubik', sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal; background-color:#cbcbcb}
+.tg .tg-yw4l{vertical-align:top; }
+
+.tg {
+  margin-bottom:40px;
+}
+
+.linha {
+  border-bottom: 1px #cbcbcb solid;
+  margin-bottom: 30px;
+}
+
+[for="tabela"] {
+    position: absolute;
+    bottom: -4rem;
+    left: 0;
+    width: 170px;
+    text-align: left;
+    padding: .3rem;
+    background-color:;
+   
+
+}
+
+[for="tabela"]:hover {
+    background: rgba(0,0,0,.1);
+    color: rgba(255,255,255);
+}
+
+[for="tabela"] span:last-of-type {
+    display: none;
+    visibility: hidden;
+}
+
+input[type=checkbox]:checked ~ [for="tabela"] span:first-of-type {
+    display: none;
+    visibility: hidden;
+}
+
+input[type=checkbox]:checked ~ [for="tabela"] span:last-of-type {
+    display: block;
+    visibility: visible;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<link href='https://fonts.googleapis.com/css?family=Oswald:700,300,400' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Rubik:400,300,500' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<script src="//d3js.org/d3.v3.min.js"></script>
+  
+  <div class="conteudo">
+  <h1> <a href="http://aosfatos.org/" target="_blank"><img src="http://aosfatos.org/static/images/logo/aosfatos_cores-06.5e00a0b1e24e.svg" alt="logo Aos Fatos" id="logoaf"></a> &nbsp;&nbsp;Erosão do apoio a Eduardo Cunha na Câmara</h1>
+    
+    <h2>Apuração do <strong>Aos Fatos</strong> revela inclinação (contra ou a favor da posição de Cunha) em votações na Câmara em seis tópicos* desde fevereiro. Acesse o levantamento <a href="https://docs.google.com/spreadsheets/d/1xfe-_LKX0paMgP-SvYJDpvQpAX0ieSeiz7i8QKgDxq4/edit?usp=sharing" target="_blank">neste link</a>.</h2> 
+    <h3> Compartilhe &nbsp;&nbsp; <span class="redes"><a href="http://twitter.com/share?text=As barragens de mineração no Brasil @voltmediabr&url=http://aosfatos.org/volt/graficos/erosaocunha.html" target="_blank"><i class="fa fa-twitter" style="color:#000;"></i></a></span>
+        <span class="redes"><a href="https://www.facebook.com/sharer/sharer.php?u=http://aosfatos.org/volt/graficos/erosaocunha.html" target="_blank"><i class="fa fa-facebook" style="color:#000;"></a></i></a></span> </h3>
+  <div class="linha"> </div>
+  
+    <table class="tg">
+  <tr>
+    <th class="tg-yw4l">Tópico</th>
+    <th class="tg-yw4l">Contra</th>
+    <th class="tg-yw4l">Não votou</th>
+    <th class="tg-yw4l">A favor</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Conselho de Ética - 15.dez</td>
+    <td class="tg-yw4l">11</td>
+    <td class="tg-yw4l">1</td>
+    <td class="tg-yw4l">9</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Fim do financiamento privado de campanha - 9.set</td>
+    <td class="tg-yw4l">8</td>
+    <td class="tg-yw4l">4</td>
+    <td class="tg-yw4l">9</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Redução da maioridade penal - 19.ago</td>
+    <td class="tg-yw4l">6</td>
+    <td class="tg-yw4l">1</td>
+    <td class="tg-yw4l">14</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">PEC da Bengala - 5.mai</td>
+    <td class="tg-yw4l">5</td>
+    <td class="tg-yw4l">1</td>
+    <td class="tg-yw4l">15</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Terceirização de atividades-fim - 22.mar</td>
+    <td class="tg-yw4l">7</td>
+    <td class="tg-yw4l">2</td>
+    <td class="tg-yw4l">12</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Orçamento impositivo - 10.fev</td>
+    <td class="tg-yw4l">1</td>
+    <td class="tg-yw4l">2</td>
+    <td class="tg-yw4l">18</td>
+  </tr>
+</table>
+  
+      <article>
+    <input type="checkbox" id="read_more" role="button">
+    <label for="read_more" onclick=""><span>Clique aqui para entender o gráfico</span><span>Esconder explicação</span></label>     
+
+    <section>
+      <h3> Entenda o gráfico</h3>
+     <p>Cada barra horizontal representa a soma de todos os 21 deputados que compõe o Conselho de Ética.
+       <p>A barra laranja representa orientação contrária à de Eduardo Cunha, enquanto a barra preta representa os votos favoráveis ao deputado.
+       <p>Quando Cunha ganhou, a barra está orientada mais à direta do gráfico. Quando ele perdeu (apenas em 15/12), a barra se orienta mais à esquerda. 
+       <p>A barra branca indica o montante que não votou em certo tópico. 
+</section>
+
+</article>
+   
+    <div id="figure"></div>
+       
+    
+    
+
+    
+    <h4>Fonte: <a href="https://docs.google.com/spreadsheets/d/1xfe-_LKX0paMgP-SvYJDpvQpAX0ieSeiz7i8QKgDxq4/edit?usp=sharing" target="_blank">Levantamento do Aos Fatos </a> | Gráfico por Volt Data Lab&nbsp; <a href="http://voltdata.info" target="_blank"> <img src="http://static1.squarespace.com/static/551da417e4b05f67005d6abe/t/552dc57ee4b0c02076dba9a7/1429222648123/icone_volt_alta_transparente_crop_square.png?format=750w" alt="logo Volt" id="logop" width="13px;"></a></h4>
+  </div>
+
+<script>
+var margin = {top: 50, right: 20, bottom: 10, left: 65},
+    width = 800 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var y = d3.scale.ordinal()
+    .rangeRoundBands([0, height], .3);
+
+var x = d3.scale.linear()
+    .rangeRound([0, width]);
+
+var color = d3.scale.ordinal()
+    .range(["#faa61a", "#fff", "#000"]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("top");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+
+var svg = d3.select("#figure").append("svg")
+     .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 800 500")
+    .attr("id", "d3-plot")
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  color.domain(["Contra", "Não votou", "A favor"]);
+
+  d3.csv("https://raw.githubusercontent.com/voltdatalab/graficos/gh-pages/dados/conselhoeticacunha.csv", function(error, data) {
+
+  data.forEach(function(d) {
+    // calc percentages
+    d["Contra"] = +d["contra"]*100/d.N;
+    //d["Disagree"] = +d[2]*100/d.N;
+    d["Não votou"] = +d["abstencao"]*100/d.N;
+    //d["Agree"] = +d[4]*100/d.N;
+    d["A favor"] = +d["favor"]*100/d.N;
+    var x0 = -1*(d["Não votou"]/2+d["Contra"]);
+    var idx = 0;
+    d.boxes = color.domain().map(function(name) { return {name: name, x0: x0, x1: x0 += +d[name], N: +d.N, n: +d[idx += 1]}; });
+  });
+
+  var min_val = d3.min(data, function(d) {
+          return d.boxes["0"].x0;
+          });
+
+  var max_val = d3.max(data, function(d) {
+          return d.boxes["2"].x1;
+          });
+
+  x.domain([min_val, max_val]).nice();
+  y.domain(data.map(function(d) { return d.data; }));
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .style("display", "none")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+
+  var vakken = svg.selectAll(".data")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "bar")
+      .attr("transform", function(d) { return "translate(0," + y(d.data) + ")"; });
+
+  var bars = vakken.selectAll("rect")
+      .data(function(d) { return d.boxes; })
+    .enter().append("g").attr("class", "subbar");
+
+  bars.append("rect")
+      .attr("height", y.rangeBand())
+      .attr("x", function(d) { return x(d.x0); })
+      .attr("width", function(d) { return x(d.x1) - x(d.x0); })
+      .style("fill", function(d) { return color(d.name); });
+
+  vakken.insert("rect",":first-child")
+      .attr("height", y.rangeBand())
+      .attr("x", "1")
+      .attr("width", width)
+      .attr("fill-opacity", "0.5")
+      .style("fill", "#ededed")
+      .attr("class", function(d,index) { return index%2==0 ? "even" : "uneven"; });
+
+  svg.append("g")
+      .attr("class", "y axis")
+  .append("line")
+      .attr("x1", x(0))
+      .attr("x2", x(0))
+      .attr("y2", height);
+
+  var startp = svg.append("g").attr("class", "legendbox").attr("id", "mylegendbox");
+  // this is not nice, we should calculate the bounding box and use that
+  var legend_tabs = [-120, -30, 85];
+  var legend = startp.selectAll(".legend")
+      .data(color.domain().slice())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(" + legend_tabs[i] + ",-45)"; });
+
+  legend.append("rect")
+      .attr("x", 0)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", 22)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "begin")
+      .style("font" ,"16px Rubik, sans-serif")
+      .text(function(d) { return d; });
+
+  d3.selectAll(".axis path")
+      .style("fill", "none")
+      .style("stroke", "#000")
+      .style("shape-rendering", "crispEdges")
+
+  d3.selectAll(".axis line")
+      .style("fill", "none")
+      .style("stroke", "#000")
+      .style("shape-rendering", "crispEdges")
+
+  var movesize = width/2 - startp.node().getBBox().width/2;
+  d3.selectAll(".legendbox").attr("transform", "translate(" + movesize  + ",0)");
+
+
+});
+</script>
+
+
+</body>
+</html>

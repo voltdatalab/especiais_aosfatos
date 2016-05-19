@@ -1,0 +1,60 @@
+body {
+  font-family: 'Rubik', sans-serif;
+        background-color: #ededed;
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%
+}
+h1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+h3 {
+  font-size: 14px;
+  font-weight: 300;
+}
+h4 {
+  font-size: 12px;
+  font-weight: 300;
+}
+#principal{
+  margin: 20px 5%;
+}
+.conteudo{
+  margin: 0 auto;
+}
+.linha {
+  border-bottom: 3px #cbcbcb solid;
+  margin: 10px 0;
+}
+a {
+  color: #a7002c;
+}
+a:hover {
+  color: #cbcbcb;
+}
+a:visited {
+  color: #a7002c;
+}
+#header {
+  
+}
+ul {
+  list-style-type: none;
+  margin-left: -40px;
+}
+li {
+  display: inline-block;
+}
+.redes{
+   margin-left: 30px;
+  float:right;
+}
+#logo {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  width: 70px; 
+}

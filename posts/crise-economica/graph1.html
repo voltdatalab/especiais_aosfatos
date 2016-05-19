@@ -1,0 +1,191 @@
+<!DOCTYPE>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+  <title>Aos Fatos | Brasil, fora da curva? Sobre desemprego</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="css/graficos.css" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71324943-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<meta name='keywords' content='política, Brasil, política brasileira, economia, jornalismo de dados, aos fatos, volt data lab, impeachment'>
+<meta name='description' content='Onde o país se encaixa na economia global?'>
+<meta name='subject' content='jornalismo de dados'>
+<meta name='copyright' content='Aos Fatos'>
+<meta name='language' content='PT'>
+<meta name='robots' content='index,follow'>
+<meta name='revised' content='Abril de 2016'>
+<meta name='author' content='Sérgio Spagnuolo'>
+<meta name='designer' content='@ProjetoStock'>
+<meta name='reply-to' content='info@voltdata.info'>
+<meta name='owner' content='Aos Fatos'>
+<meta name='url' content='http://aosfatos.org/crise-economica/'>
+<meta name='identifier-URL' content=''>
+<meta name='coverage' content='Brasil'>
+<meta name='distribution' content='Global'>
+<meta name='rating' content='General'>
+<meta name='subtitle' content='Onde o país se encaixa na economia global?'>
+<meta name='target' content='all'>
+<meta name='HandheldFriendly' content='True'>
+<meta name='MobileOptimized' content='320'>
+<meta property="og:image" content="https://raw.githubusercontent.com/voltdatalab/graficos/gh-pages/posts/crise-economica/images/congresso.jpg" />
+<meta property="og:url" content="http://aosfatos.org/crise-economica/">
+<meta property="og:title" content="Brasil, fora da curva?">
+<meta property="og:description" content="Onde o país se encaixa na economia global?">
+
+</head>
+
+<body>
+  <div class="paragrafs">
+    <br />
+    <h1>Desemprego</h1>
+
+  <p>Taxa de desemprego em mais de 180 países de todas as regiões.
+  </p>
+  <p>
+    (Cada cor representa países do mesmo continente, e o Brasil é o ponto <strong>preto</strong>.
+    O ponto azul escuro representa a <strong>mediana</strong>. Dados compilados em maio de 2016.)
+  </p>
+  <ul class="legenda">
+    <li id="Comparativo" class="legendas"> Brasil  </li>
+    <li id="Americas" class="legendas"> Américas  </li>
+    <li id="Europa" class="legendas"> Europa  </li>
+    <li id="Asia" class="legendas"> Ásia  </li>
+    <li id="Oceania" class="legendas"> Oceania  </li>
+    <li id="Africa" class="legendas"> África  </li>
+  </ul>
+
+  <svg viewBox="0 0 575 250" ></svg>
+  <script src="https://d3js.org/d3.v4.0.0-alpha.33.min.js"></script>
+
+  <h4>Fonte: <a href="http://www.tradingeconomics.com/country-list/unemployment-rate" target="_blank">Trending Economics</a></h4>
+  </div>
+
+
+  <style>
+    .legend {
+      font-size: 12px;
+    }
+    rect {
+      stroke-width: 2;
+    }
+  </style>
+
+
+<script>
+var svg = d3.select("svg"),
+    margin = {top: 0, right: 40, bottom: 40, left: 10},
+    width = 500,
+    height = 250 - margin.top - margin.bottom;
+
+var formatValue = d3.format(",d");
+
+var x = d3.scaleLinear()
+    .rangeRound([0, width]);
+
+var g = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("https://raw.githubusercontent.com/voltdatalab/graficos/gh-pages/dados/desempregomundo.csv", type, function(error, data) {
+  if (error) throw error;
+
+  x.domain(d3.extent(data, function(d) { return d.value; }));
+
+  var simulation = d3.forceSimulation(data)
+      .force("x", d3.forceX(function(d) { return x(d.value); }).strength(1))
+      .force("y", d3.forceY(height / 2))
+      .force("collide", d3.forceCollide(5))
+      .stop();
+
+  for (var i = 0; i < 120; ++i) simulation.tick();
+
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x).ticks(5, ".0f"));
+
+  svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", 118)
+    .attr("y", 229)
+    .style("font-size", "10px")
+    .text("%");
+
+  svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", 160)
+    .attr("y", 30)
+    .style("font-size", "10px")
+    .text("Mediana = 7,7%");
+
+    svg.append("text")
+        .attr("class", "x label")
+        .attr("text-anchor", "end")
+        .attr("x", 220)
+        .attr("y", 135)
+        .style("font-size", "10px")
+        .text("Brasil = 10,9%");
+
+  svg.append("rect")
+    .attr("x", 81.5)
+    .attr("y", 10)
+    .attr("width", 1)
+    .style("fill", "#ababab")
+    .attr("height", 200);
+
+  var cell = g.append("g")
+      .attr("class", "cells")
+    .selectAll("g").data(d3.voronoi()
+        .extent([[-margin.left, -margin.top], [width + margin.right, height + margin.top]])
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; })
+      .polygons(data)).enter().append("g");
+
+  cell.append("circle")
+      .attr("class", function(d) { return d.data.region; })
+      .attr("r", 4)
+      .attr("cx", function(d) { return d.data.x; })
+      .attr("cy", function(d) { return d.data.y; })
+  .attr("fill",function(d) { if(d.data.id === "Brasil")return "#000"; if(d.data.region === "Africa")return "rgba(255, 224, 102, 0.4)"; if(d.data.region === "Americas")return "rgba(112, 193, 179, 0.4)"; if(d.data.region === "Europa")return "rgba(36, 123, 160, 0.4)";
+  if(d.data.region === "Asia")return "rgba(250, 166, 26, .4)";if(d.data.region === "Oceania")return "rgba(141, 153, 174, 0.4)"})
+  ;
+
+  d3.selectAll(".legendas")
+    .on("mouseover", function (d) {
+    var thisContinent = this.id;
+    console.log(thisContinent)
+    d3.selectAll("circle").attr("opacity", 0);
+    d3.selectAll("." + thisContinent).attr("opacity", 1);
+  }).on("mouseout", function(){
+    d3.selectAll("circle").attr("opacity", 1);
+  })
+
+  cell.append("path")
+      .attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+
+  cell.append("title")
+      .text(function(d) { return d.data.id + "\n" + d.data.value + "%"; });
+});
+
+function type(d) {
+  if (!d.value) return;
+  d.value = +d.value;
+  return d;
+}
+
+
+</script>
+
+</body>
+</html>

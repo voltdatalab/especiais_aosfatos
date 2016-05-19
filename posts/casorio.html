@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+  <link type="text/css" href="graficos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+
+  <title>Volt Data Lab | Gráfico interativo sobre união civil no Brasil </title>
+
+  <meta name='keywords' content='sociedade, volt data lab, jornalismo de dados, jornalismo, ddj, d3js, casamento, divórcio, divorcio, estatisticas
+  IBGE, instituto brasileiro de geografia e estatística, registro civil no Brasil, cenem'>
+            <meta name='subject' content='jornalismo de dados'>
+            <meta name='copyright' content='Volt Data Lab - www.voltdata.info'>
+            <meta name='language' content='PT'>
+            <meta name='robots' content='index,follow'>
+            <meta name='revised' content='Dezembro de 2015'>
+            <meta name='author' content='Volt Data Lab'>
+            <meta name='designer' content='@ProjetoStock'>
+            <meta name='reply-to' content='info@voltdata.info'>
+            <meta name='owner' content='Volt Data Lab'>
+            <meta name='url' content='http://graficos.voltdata.info'>
+            <meta name='identifier-URL' content=''>
+            <meta name='pagename' content='União Civil no Brasil'>
+            <meta name='coverage' content='Brasil'>
+            <meta name='distribution' content='Global'>
+            <meta name='rating' content='General'>
+            <meta name='target' content='all'>
+            <meta name='HandheldFriendly' content='True'>
+            <meta name='MobileOptimized' content='320'>
+            <meta property="og:image" content="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTpLck3cAj1JaAfZOovVADboyTHyMzxmT5GKrpiKC-fpsAKUFTziw" />
+            <meta property="og:url" content="http://graficos.voltdata.info/casorio">
+            <meta property="og:title" content="Gráfico interativo sobre união civil no Brasil">
+            <meta property="og:description" content="Correlação de casamentos entre faixas etárias tanto para homens quanto para mulheres no Brasil, segundo dados de 2014 do IBGE">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71324943-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<style>
+
+/* grafico */
+#chord {
+  max-width: 500px;
+  margin: -60px 0 25px 0;
+  width: 100%;
+}
+
+.chord path {
+  fill-opacity: 1;
+  stroke: #fff;
+  stroke-width: .3px;
+}
+
+/*Botão para hide/show explicação */
+
+article {
+  margin-bottom: 10%;
+  position: relative;
+  *zoom: 1;
+}
+
+
+article section:last-of-type {
+  display: none;
+  visibility: hidden;
+  padding-left: 20px;
+}
+
+section {
+  -webkit-transition: .125s linear;
+  -moz-transition: .125s linear;
+  -ms-transition: .125s linear;
+  -o-transition: .125s linear;
+  transition: .125s linear;
+  background-color: rgba(0,0,0,.2);
+  color: #fff;
+  padding: 10px;
+}
+
+input[type=checkbox] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+[for="read_more"] {
+  position: absolute;
+  bottom: -4rem;
+  left: 0;
+  width: 100px;
+  text-align: left;
+  padding: .3rem;
+  background-color: ;
+}
+
+[for="read_more"]:hover {
+  background: rgba(0, 0, 0, .1);
+  color: rgb(255, 255, 255);
+}
+
+[for="read_more"] span:last-of-type {
+  display: none;
+  visibility: hidden;
+}
+
+input[type=checkbox]:checked ~ section {
+  display: block;
+  visibility: visible;
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+input[type=checkbox]:checked ~ figure {
+  max-width: 600px;
+}
+
+input[type=checkbox]:checked ~ [for="read_more"] span:first-of-type {
+  display: none;
+  visibility: hidden;
+}
+
+input[type=checkbox]:checked ~ [for="read_more"] span:last-of-type {
+  display: block;
+  visibility: visible;
+}
+</style>
+
+<body>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+
+  <div class="conteudo">
+    <h1>Casamentos entre faixas de idade no Brasil</h1>
+    <h2>Correlação de casamentos entre faixas etárias tanto para homens quanto para mulheres no Brasil, segundo dados de 2014 do IBGE </h2>
+
+
+      <ul class="legenda">
+        <li id="um" style="background-color:#EDDEA4" class="legenda"> Até 19 anos* </li>
+        <li id="dois" style="background-color:#534768" class="legenda"> 20 a 29 </li>
+        <li id="tres" style="background-color:#6C8351" class="legenda"> 30-39 </li>
+        <li id="quatro" style="background-color:#C5876A" class="legenda">40-49 </li>
+        <li id="cinco" style="background-color:#B9314F" class="legenda">50 ou mais </li>
+      </ul>
+      <article>
+        <input type="checkbox" id="read_more" role="button">
+        <label for="read_more" onclick=""><span>Clique aqui para entender o gráfico</span><span>Esconder explicação</span></label>
+
+        <section>
+          <h3> Entenda o gráfico</h3>
+          <p>Cada barra é um grupo etário identificado na legenda abaixo. As "cordas" que ligam os grupos relacionam casamentos entre faixas etárias. A largura da corda sobre cada barra representa os casamentos de cada grupo sobre o total.
+            <p>Quando uma "corda" é da mesma cor de sua barra, significa que mais pessoas daquele grupo se casaram com pessoas do outro grupo conectado. Por exemplo, mais pessoas de <strong style="color:#6C8351">30 a 39 anos (verde)</strong> se casaram com
+              pessoas de <strong style="color:#534768">20 a 29 anos (roxo)</strong> do que o inverso - por isso a barra é verde.
+              <p>Mas menos pessoas de <strong style="color:#6C8351">30 a 39 anos </strong>se casaram com pessoas de <strong style="color:#C5876A">40 a 49 anos</strong> do que o inverso, por isso a barra nesse caso é laranja. Quando a corda começa e termina
+                na mesma barra, significa casamento entre pessoas da mesma faixa etária.</p>
+
+        </section>
+
+      </article>
+
+
+      <div id="chord"> </div>
+
+      <h5>* Inclui menores de 15 anos </h5>
+
+      <footer>
+
+        <ul id="ref">
+
+          <li><a href="http://voltdata.info" target="_blank">
+          <img src="http://static1.squarespace.com/static/551da417e4b05f67005d6abe/t/552dc57ee4b0c02076dba9a7/1429222648123/icone_volt_alta_transparente_crop_square.png?format=750w" alt="logo Volt" id="logop">
+        <span id="volt"> VOLT DATA LAB </span></a> </li>
+          <li id="fonte">Fonte: IBGE, Estatísticas de Registro Civil</li>
+
+        </ul>
+
+      </footer>
+    </div>
+
+  <script>
+  var matrix = [
+[21621,	94559, 10683,	1056,	255],
+[10355,	330080,	154178,	18147,	4037],
+[750,	56902,	159571,	57805,	16661],
+[96,	4683,	22786,	45187,	34753],
+[21,	491,	2637,	9597,	44198]
+];
+
+var chord = d3.layout.chord()
+    .padding(.03)
+    .sortSubgroups(d3.descending)
+    .matrix(matrix);
+
+var width = 600,
+    height = 600,
+    innerRadius = Math.min(width, height) * .41,
+    outerRadius = innerRadius * 1.1;
+
+var fill = d3.scale.ordinal()
+    .domain(d3.range(5))
+    .range(["#EDDEA4", "#534768", "#6C8351", "#C5876A", "#B9314F"]);
+
+var idade = [];
+
+var svg = d3.select("#chord").append("svg")
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 600 600")
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+d3.selectAll(".legenda")
+    .on("mouseover", fade(0))
+    .on("mouseout", fade(1));
+
+svg.append("g").selectAll("path")
+    .data(chord.groups)
+  .enter().append("path")
+    .style("fill", function(d) { return fill(d.index); })
+    .style("stroke", function(d) { return fill(d.index); })
+    .attr("d", d3.svg.arc().innerRadius(innerRadius).outerRadius(outerRadius))
+    .on("mouseover", fade(0))
+    .on("mouseout", fade(1));
+
+var ticks = svg.append("g").selectAll("g")
+    .data(chord.groups)
+  .enter().append("g").selectAll("g")
+    .data(groupTicks)
+  .enter().append("g")
+    .attr("transform", function(d) {
+      return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+          + "translate(" + outerRadius + ",0)";
+    });
+
+ticks.append("line")
+    .attr("x1", 1)
+    .attr("y1", 0)
+    .attr("x2", 1)
+    .attr("y2", 0)
+    .style("stroke", "#ededed");
+
+ticks.append("text")
+    .attr("x", 80)
+    .attr("dy", ".35em")
+    .attr("transform", function(d) { return d.angle > Math.PI ? "rotate(180)translate(-16)" : null; })
+    .style("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+    .text(function(d) { return idade; });
+
+svg.append("g")
+    .attr("class", "chord")
+  .selectAll("path")
+    .data(chord.chords)
+  .enter().append("path")
+    .attr("d", d3.svg.chord().radius(innerRadius))
+    .style("fill", function(d) { return fill(d.target.index); })
+    .style("opacity", 1);
+
+// Returns an array of tick angles and labels, given a group.
+function groupTicks(d) {
+  var k = (d.endAngle - d.startAngle) / d.value;
+  return d3.range(0, d.value, 1000).map(function(v, i) {
+    return {
+      angle: v * k + d.startAngle,
+      label: ""
+    };
+  });
+}
+
+// Returns an event handler for fading a given chord group.
+function fade(opacity) {
+  return function(g, i) {
+    svg.selectAll(".chord path")
+        .filter(function(d) { return d.source.index != i && d.target.index != i; })
+      .transition()
+        .style("opacity", opacity);
+  };
+}
+  </script>
+
+</body>

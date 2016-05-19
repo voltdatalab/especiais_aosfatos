@@ -1,0 +1,432 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Rubik', sans-serif;
+  background-color: #fff;
+  font-size: 1em;
+  background: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#banner {
+  background-image: url(janot_cunha_agbrasil.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  margin-top: -110px;
+}
+
+#overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 98vh;
+  z-index: 100;
+  position: absolute;
+  top:0;
+  padding-top: 15%;
+  width: 100%;
+}
+
+h1, h2, h3{
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1.5em;
+  padding: 2rem;
+  padding-bottom: 0;
+  font-family: 'Inconsolata';
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+a {
+  border-bottom: 1px solid #faa61a;
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
+}
+
+#cred {
+  color: #faa61a;
+}
+
+h1{
+  font-size: 2.4em;
+  color: #fff;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding-top: 0rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+h3 {
+  font-size: 1em;
+  padding-top: 1rem;
+  font-family: 'Rubik';
+  font-weight: 300;
+}
+
+h4 {
+  top: 30px;
+  margin-bottom: 5px;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+h5 {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  padding: 0rem;
+  font-weight: 700;
+}
+
+h6 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  padding: 0rem;
+  font-weight: 400;
+  color: #faa61a;
+}
+
+h7{
+  font-size: .7em;
+  padding: 5px;
+  float: right;
+}
+
+.epoca {
+  background-color: #cbcbcb;
+  color: #000;
+  padding: 10px;
+}
+
+img {
+  width: 400px;
+  overflow: hidden;
+}
+
+.linha {
+  border-bottom: 1px solid #000;
+  width: 50px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+ul {
+  padding-right: 25px;
+}
+
+li {
+  line-height: 1.5em;
+  list-style-type: none;
+  text-align: distribute;
+}
+
+span{
+  font-weight: 700;
+  font-family: 'Inconsolata';
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.chapeu {
+  border-bottom: 0;
+}
+
+.datas{
+  font-size: 1.5em;
+  float: right;
+  margin-bottom: 2px;
+  border-bottom: 0;
+}
+
+body .noticias, html .noticias {
+  position: relative;
+  padding: 6em 5%;
+  margin: 2%;
+  overflow: hidden;
+}
+body .fatos, html .fatos {
+  padding-top: 2.5em;
+  margin: auto;
+  max-width: 100%;
+}
+
+strong{
+  font-weight: 700;
+}
+
+.presidente {
+  font-weight: 700;
+}
+
+/* HEADER */
+
+.header li{
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 5%;
+  padding-top: 20px;
+}
+
+.header a{
+    border-bottom: 0px;
+}
+
+.redes{
+   position:fixed;
+   float: right;
+}
+
+/* logos */
+
+#logo {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  width: 70px;
+  border-bottom: 0;
+}
+
+#logoaf {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  width: 40px;
+  border: 0px;
+}
+
+/* Ordem dos cards */
+
+#proxy{
+  margin-top: -20px;
+}
+
+.primeiro {
+  position: absolute;
+  width: 0.250em;
+  top: 1.563em;
+  bottom: 1.563em;
+  left: 50%;
+  margin-left: -0.125em;
+  background: #faa61a;
+  -webkit-transition: 0.65s cubic-bezier(0.58, -0.57, 0.17, 1.21);
+  transition: 0.65s cubic-bezier(0.58, -0.57, 0.17, 1.21);
+}
+.primeiro:before {
+  content: " ";
+  width: 3.125em;
+  height: 3.125em;
+  position: absolute;
+  background: #faa61a;
+  border-radius: 50%;
+  left: -1.438em;
+  top: 0px;
+  box-shadow: -1px 1px 1px 1px #faa61a;
+}
+.primeiro:after {
+  content: " ";
+  width: 3.125em;
+  height: 3.125em;
+  position: absolute;
+  background: #faa61a;
+  border-radius: 50%;
+  bottom: 0px;
+  left: -1.438em;
+  box-shadow: -1px 1px 1px 1px #faa61a;
+}
+
+.segundo {
+  border: 1px solid #cbcbcb;
+  border-radius: 2px;
+  box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.45);
+  clear: both;
+  padding: 1.5em ;
+  width: 50%;
+  margin: 10% -1.875em 2.500em;
+  position: relative;
+  -webkit-transition: 0.85s cubic-bezier(0.58, -0.57, 0.17, 1.21);
+  transition: 0.85s cubic-bezier(0.58, -0.57, 0.17, 1.21);
+}
+.segundo:first-child {
+  margin-top: 0;
+}
+.segundo:before {
+  content: " ";
+  position: absolute;
+  top: 0.688em;
+  left: -2.875em;
+  background: #000;
+  height: 1.250em;
+  width: 1.250em;
+  border-radius: 50%;
+  border: 6px solid #faa61a;
+  box-shadow: inset 0 -1px 5px #faa61a;
+}
+.segundo:after {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.469em 0.938em 0.469em 0;
+  border-color: transparent #000 transparent transparent;
+  position: absolute;
+  top: 1.250em;
+  left: -0.938em;
+}
+
+.segundo.right {
+  float: right;
+  margin-bottom: 70px;
+}
+
+.segundo.left {
+  float: left;
+  margin-bottom: 70px;
+}
+.segundo.left:before {
+  left: auto;
+  right: -2.875em;
+}
+.segundo.left:after {
+  left: auto;
+  right: -0.938em;
+  border-width: 0.469em 0 0.469em 0.938em;
+  border-color: transparent transparent transparent #000;
+}
+
+.ano {
+  position: absolute;
+  top: -5.5em;
+  width: 100%;
+}
+
+.segundo.right .ano {
+  text-align: left;
+  right: 0;
+}
+
+.segundo.left .ano {
+  text-align: right;
+  left: 0;
+}
+
+.ano h4 {
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.designation {
+  font-weight: 200;
+  line-height: 1;
+  font-size: 1.6rem;
+}
+
+.about {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+@media screen and (min-width: 75em) {
+  .segundo {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 51.875em) {
+  .primeiro {
+    left: 5%;
+  }
+
+  .segundo {
+    margin: 1.5em 0 1.5em 1.9em;
+    width: 95%;
+    -webkit-transition: 0.75s cubic-bezier(0.43, -0.57, 0.17, 1.11);
+    transition: 0.75s cubic-bezier(0.43, -0.57, 0.17, 1.11);
+  }
+
+  .segundo.left,
+  .segundo.right {
+    float: left;
+    background-color: ;
+  }
+
+  .segundo.left .ano {
+    text-align: left;
+    left: 0;
+  }
+
+  .segundo.left:before {
+    right: auto;
+    left: -2.938em;
+  }
+
+  .segundo.left:after {
+    right: auto;
+    left: -0.938em;
+    border-width: 0.469em 0.938em 0.469em 0;
+    border-color: transparent #000 transparent transparent;
+  }
+
+  .segundo.right:before {
+    left: -2.938em;
+  }
+}
+
+/* REFERENCIAS - PANORAMA */
+
+#voltlytics{
+    visibility: hidden;
+}
+
+.panorama {
+  padding: 50px 5%;
+  margin: 0;
+  width: 100%;
+}
+
+#panorama {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5em;
+}
+
+.listpan li{
+  list-style-type: square;
+  margin-bottom: 5px;
+  padding: 0;
+  line-height: 1.5em;
+}
+
+.referencias{
+  background-color: #ededed;
+  padding: 50px 5%;
+  margin: 0;
+}
+
+#referencias{
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5em;
+  border-bottom: 1px solid black;
+}
+
+.footer{
+  margin: 0;
+  padding: 50px 0;
+  text-align: center;
+  width: 100%;
+  background-color: #ededed;
+}

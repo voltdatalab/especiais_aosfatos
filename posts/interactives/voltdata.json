@@ -1,0 +1,16 @@
+[
+{"name":"Reportagens","size":3938,"imports":["Inteligência", "Histórias",	"Sob demanda","Exclusividade"]},
+{"name":"Investigações","size":16540,"imports":["Inteligência",	"Histórias",	"Sob demanda",	"Exclusividade", "Relatórios"]}
+{"name":"Relatórios","size":3938,"imports":["Inteligência", "Serviços",	"Sob demanda","Exclusividade"]},
+{"name":"Cursos","size":3938,"imports":["Inteligência", "Serviços",	"Educação","Conhecimento"]},
+{"name":"Treinamentos","size":3938,"imports":["Inteligência", "Serviços",	"Educação","Conhecimento"]},
+{"name":"Consultoria","size":3938,"imports":["Inteligência", "Serviços",	"Expertise","Novas idéias"]},
+{"name":"Textos","size":3938,"imports":["Recursos", "Histórias",	"Newswire", "Concisão"]},
+{"name":"Bancos de Dados","size":3938,"imports":["Recursos", "Formatos",	"Sob demanda", "Método"]},
+{"name":"Curadoria","size":3938,"imports":["Recursos", "Serviços",	"Sob demanda", "Método"]},
+{"name":"Levantamentos","size":3938,"imports":["Recursos", "Formatos",	"Sob demanda", "Método"]},
+{"name":"Mapas","size":3938,"imports":["Recursos", "Formatos",	"Newswire", "Visual"]},
+{"name":"Gráficos","size":3938,"imports":["Recursos", "Formatos",	"Newswire", "Visual"]},
+{"name":"Interativos","size":3938,"imports":["Recursos", "Formatos",	"Newswire", "Visual"]},
+{"name":"Timelines","size":3938,"imports":["Recursos", "Formatos",	"Newswire", "Visual"]},
+]

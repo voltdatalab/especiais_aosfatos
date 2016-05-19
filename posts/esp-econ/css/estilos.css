@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
+
+body {
+  font-family: 'Inconsolata';
+  margin: 0 5%;
+  font-weight: 400;
+  -webkit-font-smoothing:antialiased;
+  text-transform: uppercase;
+  line-height: 1.3em
+}
+
+.paragrafs{
+  width: 100%;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+/* Texto */
+
+p {
+  font-size: 1em;
+}
+
+a {
+  color: #000;
+}
+
+em {
+  font-weight: 700;
+}
+
+span {
+  float: right;
+}
+
+/* HEADER */
+
+.header {
+  margin-left: -50px;
+}
+
+.header li{
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 10px;
+  padding-top: 20px;
+}
+
+.header a{
+    border-bottom: 0px;
+}
+
+.redes{
+    float: right;
+}
+
+#logoaf {
+  width: 40px;
+}
+
+#logo {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+/* Graficos */
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font: 14px 'Inconsolata';
+}
+
+.cells path {
+  fill: none;
+  pointer-events: all;
+}
+
+.cells{
+  fill:#faa61a;
+}
+
+.cells :hover circle {
+  fill: #000;
+}

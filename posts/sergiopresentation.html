@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>Sergio's presentation - CUNY </title>
+  <meta charset="UTF-8">
+  
+  <style>
+  body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #ededed;
+  margin-top: 10px;
+  max-width:960px;
+}
+
+i {
+  margin-right: 10px;
+}
+
+#logop {
+  padding-top: 0px;
+  position: absolute;
+  
+}
+
+.logoaf{
+  width:20px;
+  vertical-align: middle;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+a {
+  color: #a7002c;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #cbcbcb;
+}
+
+h1 {
+  font-family: 'Oswald'; 
+  font-size: 30px;
+  border-bottom: 1px #cbcbcb solid;
+}
+
+destaque{
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 2em;
+  color: #a7002c;
+}
+
+h2 {
+  font-family: 'Rubik';
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+h3 {
+  font-size: 16px;
+  font-family: 'Oswald'; 
+  border-left: 2px #a7002c solid;
+  padding-left: 10px;
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 11px;
+  border-bottom: 1px #cbcbcb solid;
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 11px;
+}
+
+span {
+  font-family: 'Oswald';
+  font-size: 12px;
+}
+
+.redes {
+  font-size: 16px;
+  font-family: 'Oswald';
+  font-weight: 300;
+  float: ;
+  padding: 10px 20px 0 0px;
+}
+
+
+ul {
+    color: #fff;
+  margin: 0 -40px;
+}
+
+#social {
+  width: 20px;
+}
+
+li {
+  display: inline-block;
+  width: 50px;
+  padding-right: 20px;
+  text-align:center;
+}
+
+.conteudo{
+  margin: 0 5%;
+}
+
+/* Graph */
+
+#main {
+  float: left;
+  width: 750px;
+  margin: 0;
+}
+
+#sidebar {
+  float: right;
+  width: 100px;
+}
+
+#sequence {
+  width: 600px;
+  height: 70px;
+}
+
+#legend {
+  padding: 10px 0 0 3px;
+}
+
+#sequence text, #legend text {
+  font-weight: 400;
+  font-family: "Oswald";
+  fill: #fff;
+}
+
+#chart {
+  position: relative;
+}
+
+#chart path {
+  stroke: #fff;
+}
+
+#explanation {
+  position: absolute;
+  top: 175px;
+  left: 145px;
+  width: 140px;
+  text-align: center;
+  color: #666;
+  z-index: -1;
+  font-family: 'Oswald';
+}
+
+#percentage {
+  font-size: 2.5em;
+  font-family: 'Oswald';
+}
+
+.linha {
+  border-bottom: 1px #cbcbcb solid;
+}
+
+/* tabs */
+
+main {
+  min-width: 320px;
+  max-width: 800px;
+  padding-top: 30px;
+  margin: 0 auto;
+  background: #;
+}
+
+section {
+  display: none;
+  padding: 0px 0 0;
+  border-top: 0px solid #ddd;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+  border: 0px solid transparent;
+}
+
+label:before {
+  font-family: 'Rukik';
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label[for*='1']:before { content: ''; }
+label[for*='2']:before { content: ''; }
+
+label:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #555;
+  border: 0px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 0px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+  </style>
+  
+  </head>
+
+<body>
+<link href='https://fonts.googleapis.com/css?family=Oswald:700,300,400' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Rubik:400,300,500' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<script src="//d3js.org/d3.v3.min.js"></script>
+  
+  <div class="conteudo">
+  <h1> Sérgio Spagnuolo, 31 - Sao Paulo/Brazil </h1>
+    
+    <ul>
+    <li id="social"><a href="mailto:sergio@voltdta.info" target="blank"><i class="fa fa-envelope-o fa-2x"></i>
+      </a> </li>
+      <li id="social"><a href="https://twitter.com/@ProjetoStock" target="blank"> <i class="fa fa-twitter-square fa-2x"></i>
+ </a> </li>
+       <li id="social"><a href="https://br.linkedin.com/pub/s%C3%A9rgio-spagnuolo/27/619/82a" target="blank"> <i class="fa fa-linkedin-square fa-2x"></i>
+         </a> </li>
+       <li id="social"><a href="https://medium.com/volt-data-lab" target="blank"> <i class="fa fa-medium fa-2x"></i>
+ </a> </li>
+       <li id="social"><a href="https://www.facebook.com/sergio.assf" target="blank"> <i class="fa fa-facebook-square fa-2x"></i>
+ </a> </li> 
+      <li id="social"><a href="https://github.com/voltdatalab" target="blank"> <i class="fa fa-github-square fa-2x"></i>
+ </a> </li> 
+    </ul>
+  
+    <img src="https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/1376360_10202231902222730_134462442_n.jpg?oh=e7fd591f7d3c3237008bf060af6dfac4&oe=573D13AF" width="250px" style="float:right; margin: 20px 0px 10px 20px;box-shadow: 3px 3px 3px 3px #cbcbcb;">
+    <h2>
+      Sergio is the founder and managing editor of <strong>Volt Data Lab</strong>, also working as freelancer for a range of publications in Brazil. </h2>
+      
+      <h2> He is a multi-task journalist with a weak spot for <strong>human rights</strong> stories and <strong>data-driven </strong> projects. He has been working for news agencies, newspapers, magazines and online media over the past <strong>10 years</strong>, covering topics from the World Cup and presidential elections in Brazil to technology, financial markets and politics. </h2>
+    
+    <h2> In 2014, Sergio decided to create Volt Data Lab and turn this project into the <strong>first data-driven news agency in Brazil</strong>. He is still figuring out how to do this. 
+</h2>
+    <h3> 
+  
+      
+      
+      <a href="http://voltdata.info" target="_blank"> Volt Data Lab </a> is the first data-driven news agency in Brazil, reporting mostly on human rights, social development, economic issues and technology.
+     
+    </h3>
+    <img src="http://static1.squarespace.com/static/551da417e4b05f67005d6abe/t/551dadd4e4b095e92c168eba/1451490213031/?format=1500w" width="70px" style="margin-bottom:15px;">
+
+<div class="linha"></div>
+    
+    <main>
+  
+  <input id="tab1" type="radio" name="tabs" checked>
+  <label for="tab1">Profissional</label>
+    
+  <input id="tab2" type="radio" name="tabs">
+  <label for="tab2">Personal</label>
+    
+  <section id="content1">
+    <iframe src="http://graficos.voltdata.info/posts/sergiodataprofessional" seamless frameborder="no" height="600px"width="100%" scrolling="no"> </iframe>
+
+  </section>
+    
+  <section id="content2">
+          <iframe src="http://graficos.voltdata.info/posts/sergiodatapersonal" seamless frameborder="no" height="600px"width="100%" scrolling="no"> </iframe>	
+  </section>
+    
+</main>
+    
+  
+  </div>
+</body>
+
+
+
+</html>

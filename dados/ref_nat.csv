@@ -1,0 +1,12 @@
+id,order,score,weight,color,label
+SEN,1.5,3670,13.77,#dde0e3,Senegal
+BAN,2,2888,10.84,#cdd0d5,Bangladesh
+SIR,3,2431,9.12,#bcc1c7,Síria
+NIG,4,2416,9.07,#acb1ba,Nigéria
+GAN,5,1638,6.15,#8a929e,Gana
+RDC,6,1229,4.61,#7a8390,Republica Democrática do Congo
+COL,7,1143,4.29,#596475,Colômbia
+LIB,8,1106,4.15,#47505d,Líbano
+PAQ,9,841,3.16,#353c46,Paquistão
+GBI,10,817,3.07,#23282e,Guiné-Bissau
+OUT,1,8466,31.77,#ededed,Outros

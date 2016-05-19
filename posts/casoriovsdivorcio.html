@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+  <link type="text/css" href="graficos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+
+  <title>Volt Data Lab | Gráfico sobre divórcios e casamentos no Brasil </title>
+
+  <meta name='keywords' content='sociedade, volt data lab, jornalismo de dados, jornalismo, ddj, d3js, casamento, divórcio, divorcio, estatisticas
+  IBGE, instituto brasileiro de geografia e estatística, registro civil no Brasil, cenem'>
+            <meta name='subject' content='jornalismo de dados'>
+            <meta name='copyright' content='Volt Data Lab - www.voltdata.info'>
+            <meta name='language' content='PT'>
+            <meta name='robots' content='index,follow'>
+            <meta name='revised' content='Dezembro de 2015'>
+            <meta name='author' content='Volt Data Lab'>
+            <meta name='designer' content='@ProjetoStock'>
+            <meta name='reply-to' content='info@voltdata.info'>
+            <meta name='owner' content='Volt Data Lab'>
+            <meta name='url' content='http://graficos.voltdata.info'>
+            <meta name='identifier-URL' content=''>
+            <meta name='pagename' content='União Civil no Brasil'>
+            <meta name='coverage' content='Brasil'>
+            <meta name='distribution' content='Global'>
+            <meta name='rating' content='General'>
+            <meta name='target' content='all'>
+            <meta name='HandheldFriendly' content='True'>
+            <meta name='MobileOptimized' content='320'>
+            <meta property="og:image" content="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTpLck3cAj1JaAfZOovVADboyTHyMzxmT5GKrpiKC-fpsAKUFTziw" />
+            <meta property="og:url" content="http://graficos.voltdata.info/casorio">
+            <meta property="og:title" content="Gráfico sobre divórcios e casamentos no Brasil">
+            <meta property="og:description" content="Correlação de casamentos e crescimento dos divórcios no Brasil">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71324943-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<style>
+
+/*Gráfico */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#figure {
+  margin: 30px 0 30px;
+  font-size: 12px;
+  max-width: 700px;
+}
+
+.ano {
+  background-color: black;
+}
+
+/*Botão para hide/show explicação */
+
+article {
+    margin: -40px 0 10% 0;
+    position: relative;
+    *zoom: 1;
+}
+
+article:before, article:after {
+    content: "";
+    display: table;
+}
+
+article:after {
+    clear: both;
+}
+
+
+article section:last-of-type {
+    display: none;
+    visibility: hidden;
+    padding-left: 20px;
+}
+
+section {
+    -webkit-transition: .125s linear;
+    -moz-transition: .125s linear;
+    -ms-transition: .125s linear;
+    -o-transition: .125s linear;
+    transition: .125s linear;
+    background-color: rgba(0,0,0,.2);
+    padding: 10px;
+    margin-top: 40px;
+     color: #fff;
+}
+
+input[type=checkbox] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+
+}
+
+[for="read_more"] {
+    position: absolute;
+    bottom: -4rem;
+    left: 0;
+    width: 170px;
+    text-align: left;
+    padding: .3rem;
+    background-color:;
+
+
+}
+
+[for="read_more"]:hover {
+    background: rgba(0,0,0,.1);
+    color: rgba(255,255,255);
+}
+
+[for="read_more"] span:last-of-type {
+    display: none;
+    visibility: hidden;
+}
+
+input[type=checkbox]:checked ~ section {
+    display: block;
+    visibility: visible;
+    max-width: 500px;
+}
+
+input[type=checkbox]:checked ~ figure { max-width: 500px; }
+
+input[type=checkbox]:checked ~ [for="read_more"] span:first-of-type {
+    display: none;
+    visibility: hidden;
+}
+
+input[type=checkbox]:checked ~ [for="read_more"] span:last-of-type {
+    display: block;
+    visibility: visible;
+}
+
+</style>
+</head>
+
+<body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+  <div class="conteudo">
+  <h1>Crescimento do divórcio no Brasil </h1>
+  <h2>Legalizado oficialmente <a href="http://bit.ly/1I10cZd" target="_blank"> em 1977</a>, o divórcio no Brasil ganhou espaço em relação ao total de casamentos, mas não tanto assim. </h2>
+      <article>
+    <input type="checkbox" id="read_more" role="button">
+    <label for="read_more" onclick=""><span>Clique aqui para entender o gráfico</span><span>Esconder explicação</span></label>
+
+    <section>
+      <h3> Entenda o gráfico</h3>
+     <p>Cada barra horizontal representa a soma de todos os casamentos e divórcios nos períodos indicados.
+       <p>A partir de 1977, com a legalização do divórcio, começou-se a registrar oficialmente esses dados - não apenas casamentos.
+       <p> A proporção de divórcios <strong style="color:#534768">(parte roxa)</strong>, então, passou a crescer em relação ao total de casamentos <strong style="color:#6C8351">(parte verde)</strong>.
+       <p>Essa comparação mostra que, em um dado ano a partir da década de 1980, os divórcios passaram a ter maior representatividade nas estatísticas de estado civil no Brasil.
+        <p>Do lado direito do gráfico, é possível ver que o tamanho da barra dos divórcios é o pedaço que falta (em cinza) no final da barra de casamentos
+</section>
+
+</article>
+
+    <div id="figure"></div>
+
+    <footer>
+
+      <ul id="ref">
+
+        <li><a href="http://voltdata.info" target="_blank">
+        <img src="http://static1.squarespace.com/static/551da417e4b05f67005d6abe/t/552dc57ee4b0c02076dba9a7/1429222648123/icone_volt_alta_transparente_crop_square.png?format=750w" alt="logo Volt" id="logop">
+      </a>  <span id="volt"> VOLT DATA LAB </span></li>
+        <li id="fonte">Fonte: IBGE, Estatísticas de Registro Civil</li>
+
+      </ul>
+
+    </footer>
+  </div>
+
+  <script>
+    var margin = {top: 50, right: 20, bottom: 10, left: 65},
+    width = 800 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var y = d3.scale.ordinal()
+    .rangeRoundBands([0, height], .2);
+
+var x = d3.scale.linear()
+    .rangeRound([0, width]);
+
+var color = d3.scale.ordinal()
+    .range(["#534768", "#6C8351"]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("top");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+
+var svg = d3.select("#figure").append("svg")
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 800 500")
+    .attr("id", "d3-plot")
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  color.domain(["Divórcios", "Casamentos"]);
+
+d3.csv("https://raw.githubusercontent.com/voltdatalab/graficos/gh-pages/dados/casorioxdivorciofinal.csv", function(error, data) {
+
+  data.forEach(function(d) {
+    // calc percentages
+    d["Divórcios"] = +d["divorcios"]*100/d.N;
+    d["Casamentos"] = +d["casamentos"]*100/d.N;
+    var x0 = -1*(0+d["Divórcios"]);
+    var idx = 0;
+    d.boxes = color.domain().map(function(name) { return {name: name, x0: x0, x1: x0 += +d[name], N: +d.N, n: +d[idx += 1]}; });
+  });
+
+  var min_val = d3.min(data, function(d) {
+          return d.boxes["0"].x0;
+          });
+
+  var max_val = d3.max(data, function(d) {
+          return d.boxes["1"].x1;
+          });
+
+  x.domain([min_val, max_val]).nice();
+  y.domain(data.map(function(d) { return d.ano; }));
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+
+  var vakken = svg.selectAll(".ano")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "bar")
+      .attr("transform", function(d) { return "translate(0," + y(d.ano) + ")"; });
+
+  var bars = vakken.selectAll("rect")
+      .data(function(d) { return d.boxes; })
+    .enter().append("g").attr("class", "subbar");
+
+  bars.append("rect")
+      .attr("height", y.rangeBand())
+      .attr("x", function(d) { return x(d.x0); })
+      .attr("width", function(d) { return x(d.x1) - x(d.x0); })
+      .style("fill", function(d) { return color(d.name); });
+
+  vakken.insert("rect",":first-child")
+      .attr("height", y.rangeBand())
+      .attr("x", "1")
+      .attr("width", width)
+      .attr("fill-opacity", "0.5")
+      .style("fill", "#cbcbcb")
+      .attr("class", function(d,index) { return index%2==0 ? "even" : "uneven"; });
+
+  svg.append("g")
+      .attr("class", "y axis")
+  .append("line")
+      .attr("x1", x(0))
+      .attr("x2", x(0))
+      .attr("y2", height);
+
+  var startp = svg.append("g").attr("class", "legendbox").attr("id", "mylegendbox");
+  // this is not nice, we should calculate the bounding box and use that
+  var legend_tabs = [0, 120, 200, 375, 450];
+  var legend = startp.selectAll(".legend")
+      .data(color.domain().slice())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(" + legend_tabs[i] + ",-45)"; });
+
+  legend.append("rect")
+      .attr("x", 0)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", 22)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "begin")
+      .style("font" ,"13px 'Inconsolata'")
+      .text(function(d) { return d; });
+
+  d3.selectAll(".axis path")
+      .style("fill", "none")
+      .style("stroke", "#000")
+      .style("shape-rendering", "crispEdges")
+
+  d3.selectAll(".axis line")
+      .style("fill", "none")
+      .style("stroke", "#000")
+      .style("shape-rendering", "crispEdges")
+
+  var movesize = width/2 - startp.node().getBBox().width/2;
+  d3.selectAll(".legendbox").attr("transform", "translate(" + movesize  + ",0)");
+
+
+});
+
+
+
+  </script>
+
+
+</body>

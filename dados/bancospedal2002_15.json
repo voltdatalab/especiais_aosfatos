@@ -1,0 +1,1692 @@
+[
+  {
+    "ano": 2015,
+    "periodo": "Jan.2015",
+    "data": "2015-01",
+    "mes": "Jan",
+    "BB": 13843,
+    "FINAME": 18177,
+    "CAIXA": 2117,
+    "FGTS": 19629
+  },
+  {
+    "ano": 2015,
+    "periodo": "Fev.2015",
+    "data": "2015-02",
+    "mes": "Fev",
+    "BB": 14251,
+    "FINAME": 18755,
+    "CAIXA": 2195,
+    "FGTS": 19711
+  },
+  {
+    "ano": 2015,
+    "periodo": "Mar.2015",
+    "data": "2015-03",
+    "mes": "Mar",
+    "BB": 14890,
+    "FINAME": 19419,
+    "CAIXA": 2445,
+    "FGTS": 19803
+  },
+  {
+    "ano": 2015,
+    "periodo": "Abr.2015",
+    "data": "2015-04",
+    "mes": "Abr",
+    "BB": 14665,
+    "FINAME": 19031,
+    "CAIXA": 2655,
+    "FGTS": 19889
+  },
+  {
+    "ano": 2015,
+    "periodo": "Mai.2015",
+    "data": "2015-05",
+    "mes": "Mai",
+    "BB": 15111,
+    "FINAME": 19756,
+    "CAIXA": 2648,
+    "FGTS": 19953
+  },
+  {
+    "ano": 2015,
+    "periodo": "Jun.2015",
+    "data": "2015-06",
+    "mes": "Jun",
+    "BB": 15592,
+    "FINAME": 19096,
+    "CAIXA": 2746,
+    "FGTS": 20035
+  },
+  {
+    "ano": 2015,
+    "periodo": "Jul.2015",
+    "data": "2015-07",
+    "mes": "Jul",
+    "BB": 13084,
+    "FINAME": 18251,
+    "CAIXA": 2825,
+    "FGTS": 19962
+  },
+  {
+    "ano": 2015,
+    "periodo": "Ago.2015",
+    "data": "2015-08",
+    "mes": "Ago",
+    "BB": 13448,
+    "FINAME": 19031,
+    "CAIXA": 2941,
+    "FGTS": 19900
+  },
+  {
+    "ano": 2015,
+    "periodo": "Set.2015",
+    "data": "2015-09",
+    "mes": "Set",
+    "BB": 13581,
+    "FINAME": 19753,
+    "CAIXA": 2887,
+    "FGTS": 20162
+  },
+  {
+    "ano": 2015,
+    "periodo": "Out.2015",
+    "data": "2015-10",
+    "mes": "Out",
+    "BB": 13672,
+    "FINAME": 20559,
+    "CAIXA": 2514,
+    "FGTS": 20176
+  },
+  {
+    "ano": 2015,
+    "periodo": "Nov.2015",
+    "data": "2015-11",
+    "mes": "Nov",
+    "BB": 14359,
+    "FINAME": 21336,
+    "CAIXA": 2554,
+    "FGTS": 20436
+  },
+  {
+    "ano": 2015,
+    "periodo": "Dez*.2015",
+    "data": "2015-12",
+    "mes": "Dez*",
+    "BB": 4407,
+    "FINAME": 4291,
+    "CAIXA": 1911,
+    "FGTS": 703
+  },
+  {
+    "ano": 2014,
+    "periodo": "Jan.2014",
+    "data": "2014-01",
+    "mes": "Jan",
+    "BB": 8146,
+    "FINAME": 11501,
+    "CAIXA": 1508,
+    "FGTS": 13462
+  },
+  {
+    "ano": 2014,
+    "periodo": "Fev.2014",
+    "data": "2014-02",
+    "mes": "Fev",
+    "BB": 8547,
+    "FINAME": 11965,
+    "CAIXA": 3699,
+    "FGTS": 14056
+  },
+  {
+    "ano": 2014,
+    "periodo": "Mar.2014",
+    "data": "2014-03",
+    "mes": "Mar",
+    "BB": 9212,
+    "FINAME": 12480,
+    "CAIXA": 3219,
+    "FGTS": 14577
+  },
+  {
+    "ano": 2014,
+    "periodo": "Abr.2014",
+    "data": "2014-04",
+    "mes": "Abr",
+    "BB": 8771,
+    "FINAME": 12999,
+    "CAIXA": 3406,
+    "FGTS": 15170
+  },
+  {
+    "ano": 2014,
+    "periodo": "Mai.2014",
+    "data": "2014-05",
+    "mes": "Mai",
+    "BB": 9267,
+    "FINAME": 13537,
+    "CAIXA": 5175,
+    "FGTS": 15661
+  },
+  {
+    "ano": 2014,
+    "periodo": "Jun.2014",
+    "data": "2014-06",
+    "mes": "Jun",
+    "BB": 9740,
+    "FINAME": 14112,
+    "CAIXA": 5354,
+    "FGTS": 16165
+  },
+  {
+    "ano": 2014,
+    "periodo": "Jul.2014",
+    "data": "2014-07",
+    "mes": "Jul",
+    "BB": 10247,
+    "FINAME": 14646,
+    "CAIXA": 7368,
+    "FGTS": 16673
+  },
+  {
+    "ano": 2014,
+    "periodo": "Ago.2014",
+    "data": "2014-08",
+    "mes": "Ago",
+    "BB": 10782,
+    "FINAME": 15188,
+    "CAIXA": 1806,
+    "FGTS": 17164
+  },
+  {
+    "ano": 2014,
+    "periodo": "Set.2014",
+    "data": "2014-09",
+    "mes": "Set",
+    "BB": 11337,
+    "FINAME": 15719,
+    "CAIXA": 1912,
+    "FGTS": 17724
+  },
+  {
+    "ano": 2014,
+    "periodo": "Out.2014",
+    "data": "2014-10",
+    "mes": "Out",
+    "BB": 11866,
+    "FINAME": 16277,
+    "CAIXA": 1959,
+    "FGTS": 18278
+  },
+  {
+    "ano": 2014,
+    "periodo": "Nov.2014",
+    "data": "2014-11",
+    "mes": "Nov",
+    "BB": 12444,
+    "FINAME": 16822,
+    "CAIXA": 2037,
+    "FGTS": 18753
+  },
+  {
+    "ano": 2014,
+    "periodo": "Dez.2014",
+    "data": "2014-12",
+    "mes": "Dez",
+    "BB": 13180,
+    "FINAME": 17521,
+    "CAIXA": 2116,
+    "FGTS": 19418
+  },
+  {
+    "ano": 2013,
+    "periodo": "Jan.2013",
+    "data": "2013-01",
+    "mes": "Jan",
+    "BB": 4636,
+    "FINAME": 6751,
+    "CAIXA": 1133,
+    "FGTS": 7604
+  },
+  {
+    "ano": 2013,
+    "periodo": "Fev.2013",
+    "data": "2013-02",
+    "mes": "Fev",
+    "BB": 4942,
+    "FINAME": 6989,
+    "CAIXA": 1181,
+    "FGTS": 8059
+  },
+  {
+    "ano": 2013,
+    "periodo": "Mar.2013",
+    "data": "2013-03",
+    "mes": "Mar",
+    "BB": 4786,
+    "FINAME": 7310,
+    "CAIXA": 1209,
+    "FGTS": 8489
+  },
+  {
+    "ano": 2013,
+    "periodo": "Abr.2013",
+    "data": "2013-04",
+    "mes": "Abr",
+    "BB": 4550,
+    "FINAME": 7614,
+    "CAIXA": 1214,
+    "FGTS": 8424
+  },
+  {
+    "ano": 2013,
+    "periodo": "Mai.2013",
+    "data": "2013-05",
+    "mes": "Mai",
+    "BB": 4896,
+    "FINAME": 7959,
+    "CAIXA": 1245,
+    "FGTS": 8916
+  },
+  {
+    "ano": 2013,
+    "periodo": "Jun.2013",
+    "data": "2013-06",
+    "mes": "Jun",
+    "BB": 5202,
+    "FINAME": 8320,
+    "CAIXA": 1207,
+    "FGTS": 9104
+  },
+  {
+    "ano": 2013,
+    "periodo": "Jul.2013",
+    "data": "2013-07",
+    "mes": "Jul",
+    "BB": 5566,
+    "FINAME": 8673,
+    "CAIXA": 1477,
+    "FGTS": 9594
+  },
+  {
+    "ano": 2013,
+    "periodo": "Ago.2013",
+    "data": "2013-08",
+    "mes": "Ago",
+    "BB": 5892,
+    "FINAME": 8815,
+    "CAIXA": 3380,
+    "FGTS": 10081
+  },
+  {
+    "ano": 2013,
+    "periodo": "Set.2013",
+    "data": "2013-09",
+    "mes": "Set",
+    "BB": 6314,
+    "FINAME": 9270,
+    "CAIXA": 2912,
+    "FGTS": 10542
+  },
+  {
+    "ano": 2013,
+    "periodo": "Out.2013",
+    "data": "2013-10",
+    "mes": "Out",
+    "BB": 6727,
+    "FINAME": 9967,
+    "CAIXA": 4115,
+    "FGTS": 11050
+  },
+  {
+    "ano": 2013,
+    "periodo": "Nov.2013",
+    "data": "2013-11",
+    "mes": "Nov",
+    "BB": 7204,
+    "FINAME": 10423,
+    "CAIXA": 2545,
+    "FGTS": 11556
+  },
+  {
+    "ano": 2013,
+    "periodo": "Dez.2013",
+    "data": "2013-12",
+    "mes": "Dez",
+    "BB": 7707,
+    "FINAME": 11010,
+    "CAIXA": 4403,
+    "FGTS": 12951
+  },
+  {
+    "ano": 2012,
+    "periodo": "Jan.2012",
+    "data": "2012-01",
+    "mes": "Jan",
+    "BB": 2719,
+    "FINAME": 4450,
+    "CAIXA": 1079,
+    "FGTS": 3288
+  },
+  {
+    "ano": 2012,
+    "periodo": "Fev.2012",
+    "data": "2012-02",
+    "mes": "Fev",
+    "BB": 2962,
+    "FINAME": 4666,
+    "CAIXA": 1199,
+    "FGTS": 3525
+  },
+  {
+    "ano": 2012,
+    "periodo": "Mar.2012",
+    "data": "2012-03",
+    "mes": "Mar",
+    "BB": 3089,
+    "FINAME": 4894,
+    "CAIXA": 1155,
+    "FGTS": 3687
+  },
+  {
+    "ano": 2012,
+    "periodo": "Abr.2012",
+    "data": "2012-04",
+    "mes": "Abr",
+    "BB": 2383,
+    "FINAME": 4942,
+    "CAIXA": 1133,
+    "FGTS": 4107
+  },
+  {
+    "ano": 2012,
+    "periodo": "Mai.2012",
+    "data": "2012-05",
+    "mes": "Mai",
+    "BB": 2475,
+    "FINAME": 4938,
+    "CAIXA": 1189,
+    "FGTS": 4472
+  },
+  {
+    "ano": 2012,
+    "periodo": "Jun.2012",
+    "data": "2012-06",
+    "mes": "Jun",
+    "BB": 2750,
+    "FINAME": 5128,
+    "CAIXA": 1109,
+    "FGTS": 4839
+  },
+  {
+    "ano": 2012,
+    "periodo": "Jul.2012",
+    "data": "2012-07",
+    "mes": "Jul",
+    "BB": 2842,
+    "FINAME": 5330,
+    "CAIXA": 1337,
+    "FGTS": 5189
+  },
+  {
+    "ano": 2012,
+    "periodo": "Ago.2012",
+    "data": "2012-08",
+    "mes": "Ago",
+    "BB": 3128,
+    "FINAME": 5541,
+    "CAIXA": 1171,
+    "FGTS": 5640
+  },
+  {
+    "ano": 2012,
+    "periodo": "Set.2012",
+    "data": "2012-09",
+    "mes": "Set",
+    "BB": 3401,
+    "FINAME": 5754,
+    "CAIXA": 1387,
+    "FGTS": 6016
+  },
+  {
+    "ano": 2012,
+    "periodo": "Out.2012",
+    "data": "2012-10",
+    "mes": "Out",
+    "BB": 3586,
+    "FINAME": 5978,
+    "CAIXA": 1231,
+    "FGTS": 6446
+  },
+  {
+    "ano": 2012,
+    "periodo": "Nov.2012",
+    "data": "2012-11",
+    "mes": "Nov",
+    "BB": 3895,
+    "FINAME": 6191,
+    "CAIXA": 1583,
+    "FGTS": 6764
+  },
+  {
+    "ano": 2012,
+    "periodo": "Dez.2012",
+    "data": "2012-12",
+    "mes": "Dez",
+    "BB": 4378,
+    "FINAME": 6500,
+    "CAIXA": 1642,
+    "FGTS": 7217
+  },
+  {
+    "ano": 2011,
+    "periodo": "Jan.2011",
+    "data": "2011-01",
+    "mes": "Jan",
+    "BB": 4039,
+    "FINAME": 1958,
+    "CAIXA": 701,
+    "FGTS": 1139
+  },
+  {
+    "ano": 2011,
+    "periodo": "Fev.2011",
+    "data": "2011-02",
+    "mes": "Fev",
+    "BB": 4210,
+    "FINAME": 2142,
+    "CAIXA": 723,
+    "FGTS": 1247
+  },
+  {
+    "ano": 2011,
+    "periodo": "Mar.2011",
+    "data": "2011-03",
+    "mes": "Mar",
+    "BB": 4250,
+    "FINAME": 2354,
+    "CAIXA": 802,
+    "FGTS": 1401
+  },
+  {
+    "ano": 2011,
+    "periodo": "Abr.2011",
+    "data": "2011-04",
+    "mes": "Abr",
+    "BB": 4282,
+    "FINAME": 2580,
+    "CAIXA": 828,
+    "FGTS": 1529
+  },
+  {
+    "ano": 2011,
+    "periodo": "Mai.2011",
+    "data": "2011-05",
+    "mes": "Mai",
+    "BB": 4363,
+    "FINAME": 2812,
+    "CAIXA": 849,
+    "FGTS": 1717
+  },
+  {
+    "ano": 2011,
+    "periodo": "Jun.2011",
+    "data": "2011-06",
+    "mes": "Jun",
+    "BB": 4195,
+    "FINAME": 2968,
+    "CAIXA": 876,
+    "FGTS": 1901
+  },
+  {
+    "ano": 2011,
+    "periodo": "Jul.2011",
+    "data": "2011-07",
+    "mes": "Jul",
+    "BB": 3828,
+    "FINAME": 3062,
+    "CAIXA": 917,
+    "FGTS": 2089
+  },
+  {
+    "ano": 2011,
+    "periodo": "Ago.2011",
+    "data": "2011-08",
+    "mes": "Ago",
+    "BB": 4073,
+    "FINAME": 3300,
+    "CAIXA": 947,
+    "FGTS": 2274
+  },
+  {
+    "ano": 2011,
+    "periodo": "Set.2011",
+    "data": "2011-09",
+    "mes": "Set",
+    "BB": 4285,
+    "FINAME": 3520,
+    "CAIXA": 1080,
+    "FGTS": 2436
+  },
+  {
+    "ano": 2011,
+    "periodo": "Out.2011",
+    "data": "2011-10",
+    "mes": "Out",
+    "BB": 3970,
+    "FINAME": 3754,
+    "CAIXA": 1101,
+    "FGTS": 2545
+  },
+  {
+    "ano": 2011,
+    "periodo": "Nov.2011",
+    "data": "2011-11",
+    "mes": "Nov",
+    "BB": 4210,
+    "FINAME": 3983,
+    "CAIXA": 1661,
+    "FGTS": 2650
+  },
+  {
+    "ano": 2011,
+    "periodo": "Dez.2011",
+    "data": "2011-12",
+    "mes": "Dez",
+    "BB": 4567,
+    "FINAME": 4223,
+    "CAIXA": 1145,
+    "FGTS": 3050
+  },
+  {
+    "ano": 2010,
+    "periodo": "Jan.2010",
+    "data": "2010-01",
+    "mes": "Jan",
+    "BB": 2723,
+    "FINAME": 413,
+    "CAIXA": 519,
+    "FGTS": 467
+  },
+  {
+    "ano": 2010,
+    "periodo": "Fev.2010",
+    "data": "2010-02",
+    "mes": "Fev",
+    "BB": 2894,
+    "FINAME": 460,
+    "CAIXA": 514,
+    "FGTS": 469
+  },
+  {
+    "ano": 2010,
+    "periodo": "Mar.2010",
+    "data": "2010-03",
+    "mes": "Mar",
+    "BB": 2978,
+    "FINAME": 511,
+    "CAIXA": 564,
+    "FGTS": 514
+  },
+  {
+    "ano": 2010,
+    "periodo": "Abr.2010",
+    "data": "2010-04",
+    "mes": "Abr",
+    "BB": 3206,
+    "FINAME": 560,
+    "CAIXA": 563,
+    "FGTS": 592
+  },
+  {
+    "ano": 2010,
+    "periodo": "Mai.2010",
+    "data": "2010-05",
+    "mes": "Mai",
+    "BB": 3429,
+    "FINAME": 614,
+    "CAIXA": 573,
+    "FGTS": 671
+  },
+  {
+    "ano": 2010,
+    "periodo": "Jun.2010",
+    "data": "2010-06",
+    "mes": "Jun",
+    "BB": 3629,
+    "FINAME": 669,
+    "CAIXA": 595,
+    "FGTS": 764
+  },
+  {
+    "ano": 2010,
+    "periodo": "Jul.2010",
+    "data": "2010-07",
+    "mes": "Jul",
+    "BB": 3882,
+    "FINAME": 960,
+    "CAIXA": 650,
+    "FGTS": 869
+  },
+  {
+    "ano": 2010,
+    "periodo": "Ago.2010",
+    "data": "2010-08",
+    "mes": "Ago",
+    "BB": 4175,
+    "FINAME": 1102,
+    "CAIXA": 684,
+    "FGTS": 981
+  },
+  {
+    "ano": 2010,
+    "periodo": "Set.2010",
+    "data": "2010-09",
+    "mes": "Set",
+    "BB": 4436,
+    "FINAME": 1252,
+    "CAIXA": 680,
+    "FGTS": 1099
+  },
+  {
+    "ano": 2010,
+    "periodo": "Out.2010",
+    "data": "2010-10",
+    "mes": "Out",
+    "BB": 4172,
+    "FINAME": 1411,
+    "CAIXA": 683,
+    "FGTS": 830
+  },
+  {
+    "ano": 2010,
+    "periodo": "Nov.2010",
+    "data": "2010-11",
+    "mes": "Nov",
+    "BB": 4391,
+    "FINAME": 1590,
+    "CAIXA": 705,
+    "FGTS": 959
+  },
+  {
+    "ano": 2010,
+    "periodo": "Dez.2010",
+    "data": "2010-12",
+    "mes": "Dez",
+    "BB": 4799,
+    "FINAME": 1763,
+    "CAIXA": 794,
+    "FGTS": 1079
+  },
+  {
+    "ano": 2009,
+    "periodo": "Jan.2009",
+    "data": "2009-01",
+    "mes": "Jan",
+    "BB": 1049,
+    "FINAME": 319,
+    "CAIXA": 386,
+    "FGTS": 437
+  },
+  {
+    "ano": 2009,
+    "periodo": "Fev.2009",
+    "data": "2009-02",
+    "mes": "Fev",
+    "BB": 1117,
+    "FINAME": 321,
+    "CAIXA": 395,
+    "FGTS": 439
+  },
+  {
+    "ano": 2009,
+    "periodo": "Mar.2009",
+    "data": "2009-03",
+    "mes": "Mar",
+    "BB": 1274,
+    "FINAME": 323,
+    "CAIXA": 397,
+    "FGTS": 442
+  },
+  {
+    "ano": 2009,
+    "periodo": "Abr.2009",
+    "data": "2009-04",
+    "mes": "Abr",
+    "BB": 1439,
+    "FINAME": 325,
+    "CAIXA": 404,
+    "FGTS": 445
+  },
+  {
+    "ano": 2009,
+    "periodo": "Mai.2009",
+    "data": "2009-05",
+    "mes": "Mai",
+    "BB": 1607,
+    "FINAME": 291,
+    "CAIXA": 400,
+    "FGTS": 447
+  },
+  {
+    "ano": 2009,
+    "periodo": "Jun.2009",
+    "data": "2009-06",
+    "mes": "Jun",
+    "BB": 1744,
+    "FINAME": 294,
+    "CAIXA": 419,
+    "FGTS": 460
+  },
+  {
+    "ano": 2009,
+    "periodo": "Jul.2009",
+    "data": "2009-07",
+    "mes": "Jul",
+    "BB": 1897,
+    "FINAME": 296,
+    "CAIXA": 476,
+    "FGTS": 487
+  },
+  {
+    "ano": 2009,
+    "periodo": "Ago.2009",
+    "data": "2009-08",
+    "mes": "Ago",
+    "BB": 2061,
+    "FINAME": 298,
+    "CAIXA": 490,
+    "FGTS": 524
+  },
+  {
+    "ano": 2009,
+    "periodo": "Set.2009",
+    "data": "2009-09",
+    "mes": "Set",
+    "BB": 1836,
+    "FINAME": 300,
+    "CAIXA": 528,
+    "FGTS": 581
+  },
+  {
+    "ano": 2009,
+    "periodo": "Out.2009",
+    "data": "2009-10",
+    "mes": "Out",
+    "BB": 1994,
+    "FINAME": 318,
+    "CAIXA": 512,
+    "FGTS": 597
+  },
+  {
+    "ano": 2009,
+    "periodo": "Nov.2009",
+    "data": "2009-11",
+    "mes": "Nov",
+    "BB": 2186,
+    "FINAME": 307,
+    "CAIXA": 599,
+    "FGTS": 684
+  },
+  {
+    "ano": 2009,
+    "periodo": "Dez.2009",
+    "data": "2009-12",
+    "mes": "Dez",
+    "BB": 2610,
+    "FINAME": 376,
+    "CAIXA": 545,
+    "FGTS": 511
+  },
+  {
+    "ano": 2008,
+    "periodo": "Jan.2008",
+    "data": "2008-01",
+    "mes": "Jan",
+    "BB": 406,
+    "FINAME": 30,
+    "CAIXA": 419,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Fev.2008",
+    "data": "2008-02",
+    "mes": "Fev",
+    "BB": 436,
+    "FINAME": 30,
+    "CAIXA": 431,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Mar.2008",
+    "data": "2008-03",
+    "mes": "Mar",
+    "BB": 487,
+    "FINAME": 33,
+    "CAIXA": 395,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Abr.2008",
+    "data": "2008-04",
+    "mes": "Abr",
+    "BB": 504,
+    "FINAME": 34,
+    "CAIXA": 400,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Mai.2008",
+    "data": "2008-05",
+    "mes": "Mai",
+    "BB": 611,
+    "FINAME": 36,
+    "CAIXA": 365,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Jun.2008",
+    "data": "2008-06",
+    "mes": "Jun",
+    "BB": 708,
+    "FINAME": 38,
+    "CAIXA": 388,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Jul.2008",
+    "data": "2008-07",
+    "mes": "Jul",
+    "BB": 708,
+    "FINAME": 39,
+    "CAIXA": 439,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Ago.2008",
+    "data": "2008-08",
+    "mes": "Ago",
+    "BB": 825,
+    "FINAME": 43,
+    "CAIXA": 417,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Set.2008",
+    "data": "2008-09",
+    "mes": "Set",
+    "BB": 957,
+    "FINAME": 296,
+    "CAIXA": 428,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Out.2008",
+    "data": "2008-10",
+    "mes": "Out",
+    "BB": 972,
+    "FINAME": 297,
+    "CAIXA": 448,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Nov.2008",
+    "data": "2008-11",
+    "mes": "Nov",
+    "BB": 995,
+    "FINAME": 300,
+    "CAIXA": 435,
+    "FGTS": 0
+  },
+  {
+    "ano": 2008,
+    "periodo": "Dez.2008",
+    "data": "2008-12",
+    "mes": "Dez",
+    "BB": 1177,
+    "FINAME": 317,
+    "CAIXA": 383,
+    "FGTS": 434
+  },
+  {
+    "ano": 2007,
+    "periodo": "Jan.2007",
+    "data": "2007-01",
+    "mes": "Jan",
+    "BB": 438,
+    "FINAME": 9,
+    "CAIXA": 479,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Fev.2007",
+    "data": "2007-02",
+    "mes": "Fev",
+    "BB": 419,
+    "FINAME": 9,
+    "CAIXA": 481,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Mar.2007",
+    "data": "2007-03",
+    "mes": "Mar",
+    "BB": 458,
+    "FINAME": 9,
+    "CAIXA": 514,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Abr.2007",
+    "data": "2007-04",
+    "mes": "Abr",
+    "BB": 488,
+    "FINAME": 9,
+    "CAIXA": 440,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Mai.2007",
+    "data": "2007-05",
+    "mes": "Mai",
+    "BB": 529,
+    "FINAME": 9,
+    "CAIXA": 459,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Jun.2007",
+    "data": "2007-06",
+    "mes": "Jun",
+    "BB": 552,
+    "FINAME": 9,
+    "CAIXA": 476,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Jul.2007",
+    "data": "2007-07",
+    "mes": "Jul",
+    "BB": 705,
+    "FINAME": 9,
+    "CAIXA": 519,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Ago.2007",
+    "data": "2007-08",
+    "mes": "Ago",
+    "BB": 459,
+    "FINAME": 9,
+    "CAIXA": 540,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Set.2007",
+    "data": "2007-09",
+    "mes": "Set",
+    "BB": 474,
+    "FINAME": 9,
+    "CAIXA": 555,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Out.2007",
+    "data": "2007-10",
+    "mes": "Out",
+    "BB": 514,
+    "FINAME": 9,
+    "CAIXA": 554,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Nov.2007",
+    "data": "2007-11",
+    "mes": "Nov",
+    "BB": 546,
+    "FINAME": 9,
+    "CAIXA": 556,
+    "FGTS": 0
+  },
+  {
+    "ano": 2007,
+    "periodo": "Dez.2007",
+    "data": "2007-12",
+    "mes": "Dez",
+    "BB": 567,
+    "FINAME": 29,
+    "CAIXA": 400,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Jan.2006",
+    "data": "2006-01",
+    "mes": "Jan",
+    "BB": 413,
+    "FINAME": 67,
+    "CAIXA": 603,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Fev.2006",
+    "data": "2006-02",
+    "mes": "Fev",
+    "BB": 401,
+    "FINAME": 11,
+    "CAIXA": 625,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Mar.2006",
+    "data": "2006-03",
+    "mes": "Mar",
+    "BB": 472,
+    "FINAME": 16,
+    "CAIXA": 622,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Abr.2006",
+    "data": "2006-04",
+    "mes": "Abr",
+    "BB": 446,
+    "FINAME": 17,
+    "CAIXA": 637,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Mai.2006",
+    "data": "2006-05",
+    "mes": "Mai",
+    "BB": 472,
+    "FINAME": 17,
+    "CAIXA": 655,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Jun.2006",
+    "data": "2006-06",
+    "mes": "Jun",
+    "BB": 482,
+    "FINAME": 20,
+    "CAIXA": 666,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Jul.2006",
+    "data": "2006-07",
+    "mes": "Jul",
+    "BB": 411,
+    "FINAME": 17,
+    "CAIXA": 730,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Ago.2006",
+    "data": "2006-08",
+    "mes": "Ago",
+    "BB": 481,
+    "FINAME": 20,
+    "CAIXA": 720,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Set.2006",
+    "data": "2006-09",
+    "mes": "Set",
+    "BB": 547,
+    "FINAME": 24,
+    "CAIXA": 751,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Out.2006",
+    "data": "2006-10",
+    "mes": "Out",
+    "BB": 519,
+    "FINAME": 26,
+    "CAIXA": 760,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Nov.2006",
+    "data": "2006-11",
+    "mes": "Nov",
+    "BB": 664,
+    "FINAME": 28,
+    "CAIXA": 901,
+    "FGTS": 0
+  },
+  {
+    "ano": 2006,
+    "periodo": "Dez.2006",
+    "data": "2006-12",
+    "mes": "Dez",
+    "BB": 332,
+    "FINAME": 21,
+    "CAIXA": 446,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Jan.2005",
+    "data": "2005-01",
+    "mes": "Jan",
+    "BB": 482,
+    "FINAME": 72,
+    "CAIXA": 518,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Fev.2005",
+    "data": "2005-02",
+    "mes": "Fev",
+    "BB": 435,
+    "FINAME": 97,
+    "CAIXA": 565,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Mar.2005",
+    "data": "2005-03",
+    "mes": "Mar",
+    "BB": 479,
+    "FINAME": 112,
+    "CAIXA": 567,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Abr.2005",
+    "data": "2005-04",
+    "mes": "Abr",
+    "BB": 526,
+    "FINAME": 126,
+    "CAIXA": 607,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Mai.2005",
+    "data": "2005-05",
+    "mes": "Mai",
+    "BB": 593,
+    "FINAME": 140,
+    "CAIXA": 606,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Jun.2005",
+    "data": "2005-06",
+    "mes": "Jun",
+    "BB": 617,
+    "FINAME": 154,
+    "CAIXA": 561,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Jul.2005",
+    "data": "2005-07",
+    "mes": "Jul",
+    "BB": 560,
+    "FINAME": 166,
+    "CAIXA": 612,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Ago.2005",
+    "data": "2005-08",
+    "mes": "Ago",
+    "BB": 623,
+    "FINAME": 42,
+    "CAIXA": 640,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Set.2005",
+    "data": "2005-09",
+    "mes": "Set",
+    "BB": 482,
+    "FINAME": 51,
+    "CAIXA": 672,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Out.2005",
+    "data": "2005-10",
+    "mes": "Out",
+    "BB": 540,
+    "FINAME": 58,
+    "CAIXA": 622,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Nov.2005",
+    "data": "2005-11",
+    "mes": "Nov",
+    "BB": 554,
+    "FINAME": 69,
+    "CAIXA": 661,
+    "FGTS": 0
+  },
+  {
+    "ano": 2005,
+    "periodo": "Dez.2005",
+    "data": "2005-12",
+    "mes": "Dez",
+    "BB": 387,
+    "FINAME": 85,
+    "CAIXA": 591,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Jan.2004",
+    "data": "2004-01",
+    "mes": "Jan",
+    "BB": 293,
+    "FINAME": 112,
+    "CAIXA": 817,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Fev.2004",
+    "data": "2004-02",
+    "mes": "Fev",
+    "BB": 300,
+    "FINAME": 0,
+    "CAIXA": 781,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Mar.2004",
+    "data": "2004-03",
+    "mes": "Mar",
+    "BB": 321,
+    "FINAME": 41,
+    "CAIXA": 798,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Abr.2004",
+    "data": "2004-04",
+    "mes": "Abr",
+    "BB": 336,
+    "FINAME": 41,
+    "CAIXA": 829,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Mai.2004",
+    "data": "2004-05",
+    "mes": "Mai",
+    "BB": 358,
+    "FINAME": 41,
+    "CAIXA": 893,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Jun.2004",
+    "data": "2004-06",
+    "mes": "Jun",
+    "BB": 386,
+    "FINAME": 79,
+    "CAIXA": 912,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Jul.2004",
+    "data": "2004-07",
+    "mes": "Jul",
+    "BB": 385,
+    "FINAME": 79,
+    "CAIXA": 909,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Ago.2004",
+    "data": "2004-08",
+    "mes": "Ago",
+    "BB": 511,
+    "FINAME": 80,
+    "CAIXA": 1223,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Set.2004",
+    "data": "2004-09",
+    "mes": "Set",
+    "BB": 562,
+    "FINAME": 35,
+    "CAIXA": 997,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Out.2004",
+    "data": "2004-10",
+    "mes": "Out",
+    "BB": 606,
+    "FINAME": 48,
+    "CAIXA": 1101,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Nov.2004",
+    "data": "2004-11",
+    "mes": "Nov",
+    "BB": 654,
+    "FINAME": 59,
+    "CAIXA": 1334,
+    "FGTS": 0
+  },
+  {
+    "ano": 2004,
+    "periodo": "Dez.2004",
+    "data": "2004-12",
+    "mes": "Dez",
+    "BB": 501,
+    "FINAME": 71,
+    "CAIXA": 499,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Jan.2003",
+    "data": "2003-01",
+    "mes": "Jan",
+    "BB": 422,
+    "FINAME": 0,
+    "CAIXA": 504,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Fev.2003",
+    "data": "2003-02",
+    "mes": "Fev",
+    "BB": 421,
+    "FINAME": 0,
+    "CAIXA": 543,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Mar.2003",
+    "data": "2003-03",
+    "mes": "Mar",
+    "BB": 429,
+    "FINAME": 0,
+    "CAIXA": 558,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Abr.2003",
+    "data": "2003-04",
+    "mes": "Abr",
+    "BB": 436,
+    "FINAME": 0,
+    "CAIXA": 594,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Mai.2003",
+    "data": "2003-05",
+    "mes": "Mai",
+    "BB": 450,
+    "FINAME": 0,
+    "CAIXA": 646,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Jun.2003",
+    "data": "2003-06",
+    "mes": "Jun",
+    "BB": 462,
+    "FINAME": 0,
+    "CAIXA": 679,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Jul.2003",
+    "data": "2003-07",
+    "mes": "Jul",
+    "BB": 486,
+    "FINAME": 0,
+    "CAIXA": 700,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Ago.2003",
+    "data": "2003-08",
+    "mes": "Ago",
+    "BB": 460,
+    "FINAME": 107,
+    "CAIXA": 727,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Set.2003",
+    "data": "2003-09",
+    "mes": "Set",
+    "BB": 527,
+    "FINAME": 163,
+    "CAIXA": 1161,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Out.2003",
+    "data": "2003-10",
+    "mes": "Out",
+    "BB": 523,
+    "FINAME": 69,
+    "CAIXA": 816,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Nov.2003",
+    "data": "2003-11",
+    "mes": "Nov",
+    "BB": 476,
+    "FINAME": 56,
+    "CAIXA": 926,
+    "FGTS": 0
+  },
+  {
+    "ano": 2003,
+    "periodo": "Dez.2003",
+    "data": "2003-12",
+    "mes": "Dez",
+    "BB": 335,
+    "FINAME": 111,
+    "CAIXA": 794,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Jan.2002",
+    "data": "2002-01",
+    "mes": "Jan",
+    "BB": 237,
+    "FINAME": 0,
+    "CAIXA": 485,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Fev.2002",
+    "data": "2002-02",
+    "mes": "Fev",
+    "BB": 239,
+    "FINAME": 0,
+    "CAIXA": 396,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Mar.2002",
+    "data": "2002-03",
+    "mes": "Mar",
+    "BB": 378,
+    "FINAME": 0,
+    "CAIXA": 419,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Abr.2002",
+    "data": "2002-04",
+    "mes": "Abr",
+    "BB": 393,
+    "FINAME": 0,
+    "CAIXA": 626,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Mai.2002",
+    "data": "2002-05",
+    "mes": "Mai",
+    "BB": 405,
+    "FINAME": 0,
+    "CAIXA": 461,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Jun.2002",
+    "data": "2002-06",
+    "mes": "Jun",
+    "BB": 416,
+    "FINAME": 0,
+    "CAIXA": 729,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Jul.2002",
+    "data": "2002-07",
+    "mes": "Jul",
+    "BB": 449,
+    "FINAME": 0,
+    "CAIXA": 443,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Ago.2002",
+    "data": "2002-08",
+    "mes": "Ago",
+    "BB": 470,
+    "FINAME": 0,
+    "CAIXA": 488,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Set.2002",
+    "data": "2002-09",
+    "mes": "Set",
+    "BB": 527,
+    "FINAME": 0,
+    "CAIXA": 502,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Out.2002",
+    "data": "2002-10",
+    "mes": "Out",
+    "BB": 447,
+    "FINAME": 0,
+    "CAIXA": 522,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Nov.2002",
+    "data": "2002-11",
+    "mes": "Nov",
+    "BB": 475,
+    "FINAME": 0,
+    "CAIXA": 363,
+    "FGTS": 0
+  },
+  {
+    "ano": 2002,
+    "periodo": "Dez.2002",
+    "data": "2002-12",
+    "mes": "Dez",
+    "BB": 437,
+    "FINAME": 40,
+    "CAIXA": 471,
+    "FGTS": 0
+  },
+  {
+    "ano": 2001,
+    "periodo": "Dez.2001",
+    "data": "2001-12",
+    "mes": "Dez",
+    "BB": 630,
+    "FINAME": 0,
+    "CAIXA": 385,
+    "FGTS": 0
+  }
+]

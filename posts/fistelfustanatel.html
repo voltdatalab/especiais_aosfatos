@@ -1,0 +1,124 @@
+<!doctype html>
+<style>
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+#conteudo {
+  margin: 30px;
+  margin-right: 80px;
+}
+
+h1, h2,h3,h4, h5 {
+  margin-bottom: 0px;
+}
+
+
+h3 {
+  font-weight: 300;
+    margin-top:0px;
+}
+
+h4, h5 {
+  font-weight: 300;  
+}
+
+
+li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+ul {
+  float: right;
+}
+
+#fust {
+  background-color: #000;
+  padding: 5px 15px;
+  color:white;
+}
+
+#fistel {
+  background-color: #faa61a;
+  padding: 5px 15px;
+  color:white;
+}
+
+.conteudo {
+  margin: 0 20px 20px;
+}
+</style>
+
+<body>
+  <script src="https://cdnjs.com/libraries/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Oswald:700,300,400' rel='stylesheet' type='text/css'>
+
+<meta charset="utf-8">
+  <div class="conteudo">
+    <h1>Captação de Fistel e Fust - 2001-2015</h1>
+    <ul>
+      <li id="fistel"> Fistel </li>
+      <li id="fust"> Fust </li>
+    </ul>
+    <h4 style="float:left;">Em milhões de R$ </h4>
+    
+  
+  <canvas id="grafico"></canvas>
+    <h4>Fonte: Anatel - <a href="http://www.anatel.gov.br/Portal/verificaDocumentos/documento.asp?numeroPublicacao=338799&assuntoPublicacao=null&caminhoRel=null&filtro=1&documentoPath=338799.pdf" target="_blank">1</a> e <a href="http://www.anatel.gov.br/Portal/verificaDocumentos/documento.asp?numeroPublicacao=338742&assuntoPublicacao=null&caminhoRel=null&filtro=1&documentoPath=338742.pdf" target="_blank">2</a>  </h4>
+ 
+ <script> 
+ var lineChartData = {
+    labels: ["2001", "2002", "2003", "2004", "2004", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"],
+    datasets: [
+        {
+            label: "Fistel",
+            fillColor: "rgba(250, 166, 26, 0.6)",
+            strokeColor: "rgba(250, 166, 26, 1)",
+            pointColor: "#ababab",
+            pointStrokeColor: "#000",
+            pointHighlightFill: "",
+            pointHighlightStroke: "",
+            data: [4430,	2694,	1288,	1978,	2055,	2019,	3084,	6417,	4910,	3431,	7268,	4919,	4914,	8772,	5401]
+        },
+        {
+            label: "Fust",
+            fillColor: "rgba(0, 0, 0, 0.2)",
+            strokeColor: "rgba(0, 0, 0, 1)",
+            pointColor: "#ededed",
+            pointStrokeColor: "",
+            pointHighlightFill: "",
+            pointHighlightStroke: "",
+            data: [1045,	1099,	530,	715,	582,	629,	1166,	1444,	1436,	987,	2718,	1925,	1713,	1757,	1780]
+        }        
+    ],
+};
+
+var linha = new Chart(document.getElementById("grafico").getContext("2d")).Line(lineChartData, {
+  responsive:true,
+  maintainAspectRatio: true,
+  animationSteps: 100,
+  animationEasing: "easeInExpo",
+  animateScale: true,
+  scaleShowGridLines : true,
+  scaleShowHorizontalLines: true,
+  scaleShowVerticalLines: false,
+  segmentStrokeWidth : 5,
+  pointDotRadius : 3,
+  animationEasing : "southOutBounce",
+  showScale: true,
+  bezierCurveTension : 0.3,
+  scaleLineWidth: 1,
+  scaleBeginAtZero: true,
+  scaleFontFamily: "'Oswald', sans-serif",
+  scaleFontSize: 12,
+  tooltipFontFamily: "'Oswald', sans-serif",
+      tooltipTitleFontFamily: "'Oswald', sans-serif",
+  tooltipFillColor: "rgba(0,0,0,0.8)"
+				});
+
+ </script>
+ 
+  </div>
+</body>

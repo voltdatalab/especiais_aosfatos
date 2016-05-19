@@ -1,0 +1,516 @@
+<!DOCTYPE>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+  <title>Aos Fatos | Brasil, fora da curva? Sobre o crescimento do PIB</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="css/graficos.css" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71324943-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<meta name='keywords' content='política, Brasil, política brasileira, economia, jornalismo de dados, aos fatos, volt data lab, impeachment'>
+<meta name='description' content='Onde o país se encaixa na economia global?'>
+<meta name='subject' content='jornalismo de dados'>
+<meta name='copyright' content='Aos Fatos'>
+<meta name='language' content='PT'>
+<meta name='robots' content='index,follow'>
+<meta name='revised' content='Abril de 2016'>
+<meta name='author' content='Sérgio Spagnuolo'>
+<meta name='designer' content='@ProjetoStock'>
+<meta name='reply-to' content='info@voltdata.info'>
+<meta name='owner' content='Aos Fatos'>
+<meta name='url' content='http://aosfatos.org/crise-economica/'>
+<meta name='identifier-URL' content=''>
+<meta name='coverage' content='Brasil'>
+<meta name='distribution' content='Global'>
+<meta name='rating' content='General'>
+<meta name='subtitle' content='Onde o país se encaixa na economia global?'>
+<meta name='target' content='all'>
+<meta name='HandheldFriendly' content='True'>
+<meta name='MobileOptimized' content='320'>
+<meta property="og:image" content="https://raw.githubusercontent.com/voltdatalab/graficos/gh-pages/posts/crise-economica/images/congresso.jpg" />
+<meta property="og:url" content="http://aosfatos.org/crise-economica/">
+<meta property="og:title" content="Brasil, fora da curva?">
+<meta property="og:description" content="Onde o país se encaixa na economia global?">
+
+</head>
+
+<body>
+
+  <div class="paragrafs">
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+<h1>Vagaroso</h1>
+
+<p> Crescimento econômico do <span><strong>BRASIL</strong></span> e do <span style="color: #faa61a;">MUNDO</span>
+  desde 1980, e previsões do FMI até 2021</p>
+
+<div id="pais" style="height: 80vh;"></div>
+
+<h4>Fonte: <a href="http://www.imf.org/external/datamapper/index.php" target="_blank">
+  FMI</a> </h4>
+      </div>
+
+      <script>
+      new Morris.Line({
+  element: 'pais',
+  xkey: 'data',
+  ykeys: ['Brasil', 'Mundo'],
+  labels: ['inflacao'],
+  xLabels: ['data'],
+  lineColors: ['#000', '#faa61a'],
+  postUnits: [' %'],
+  hoverCallback: function (index, options, content, row) {
+  return row.ano;
+},
+  lineWidth: ['3'],
+  smooth: 'false',
+  goals: [0],
+  goalStrokeWidth: ['2'],
+  gridTextFamily: ['Rubik'],
+  pointSize: ['0'],
+  gridTextSize: ['12px'],
+  gridTextColor: ['#000'],
+  hideHover: ['auto'],
+  resize: ['true'],
+  data: [
+  {
+    "data": "1980-12",
+    "ano": 1980,
+    "Brasil": 9.2,
+    "China": 7.9,
+    "Índia": 5.3,
+    "Rússia": 0,
+    "EUA": -0.2,
+    "Mundo": 2.1
+  },
+  {
+    "data": "1981-12",
+    "ano": 1981,
+    "Brasil": -4.4,
+    "China": 5.1,
+    "Índia": 6,
+    "Rússia": 0,
+    "EUA": 2.6,
+    "Mundo": 1.9
+  },
+  {
+    "data": "1982-12",
+    "ano": 1982,
+    "Brasil": 0.6,
+    "China": 9,
+    "Índia": 3.5,
+    "Rússia": 0,
+    "EUA": -1.9,
+    "Mundo": 0.7
+  },
+  {
+    "data": "1983-12",
+    "ano": 1983,
+    "Brasil": -3.4,
+    "China": 10.8,
+    "Índia": 7.3,
+    "Rússia": 0,
+    "EUA": 4.6,
+    "Mundo": 2.7
+  },
+  {
+    "data": "1984-12",
+    "ano": 1984,
+    "Brasil": 5.3,
+    "China": 15.2,
+    "Índia": 3.8,
+    "Rússia": 0,
+    "EUA": 7.3,
+    "Mundo": 4.7
+  },
+  {
+    "data": "1985-12",
+    "ano": 1985,
+    "Brasil": 7.9,
+    "China": 13.5,
+    "Índia": 5.3,
+    "Rússia": 0,
+    "EUA": 4.2,
+    "Mundo": 3.8
+  },
+  {
+    "data": "1986-12",
+    "ano": 1986,
+    "Brasil": 7.5,
+    "China": 8.9,
+    "Índia": 4.8,
+    "Rússia": 0,
+    "EUA": 3.5,
+    "Mundo": 3.7
+  },
+  {
+    "data": "1987-12",
+    "ano": 1987,
+    "Brasil": 3.6,
+    "China": 11.7,
+    "Índia": 4,
+    "Rússia": 0,
+    "EUA": 3.5,
+    "Mundo": 3.9
+  },
+  {
+    "data": "1988-12",
+    "ano": 1988,
+    "Brasil": 0.3,
+    "China": 11.3,
+    "Índia": 9.6,
+    "Rússia": 0,
+    "EUA": 4.2,
+    "Mundo": 4.7
+  },
+  {
+    "data": "1989-12",
+    "ano": 1989,
+    "Brasil": 3.2,
+    "China": 4.2,
+    "Índia": 5.9,
+    "Rússia": 0,
+    "EUA": 3.7,
+    "Mundo": 3.8
+  },
+  {
+    "data": "1990-12",
+    "ano": 1990,
+    "Brasil": -4.2,
+    "China": 3.9,
+    "Índia": 5.5,
+    "Rússia": 0,
+    "EUA": 1.9,
+    "Mundo": 3.4
+  },
+  {
+    "data": "1991-12",
+    "ano": 1991,
+    "Brasil": 1,
+    "China": 9.2,
+    "Índia": 1.1,
+    "Rússia": -5,
+    "EUA": -0.1,
+    "Mundo": 2.6
+  },
+  {
+    "data": "1992-12",
+    "ano": 1992,
+    "Brasil": -0.5,
+    "China": 14.3,
+    "Índia": 5.5,
+    "Rússia": -14.5,
+    "EUA": 3.6,
+    "Mundo": 2.3
+  },
+  {
+    "data": "1993-12",
+    "ano": 1993,
+    "Brasil": 4.7,
+    "China": 13.9,
+    "Índia": 4.8,
+    "Rússia": -8.7,
+    "EUA": 2.7,
+    "Mundo": 2.1
+  },
+  {
+    "data": "1994-12",
+    "ano": 1994,
+    "Brasil": 5.3,
+    "China": 13.1,
+    "Índia": 6.7,
+    "Rússia": -12.7,
+    "EUA": 4,
+    "Mundo": 3.3
+  },
+  {
+    "data": "1995-12",
+    "ano": 1995,
+    "Brasil": 4.4,
+    "China": 11,
+    "Índia": 7.6,
+    "Rússia": -4.1,
+    "EUA": 2.7,
+    "Mundo": 3.3
+  },
+  {
+    "data": "1996-12",
+    "ano": 1996,
+    "Brasil": 2.2,
+    "China": 9.9,
+    "Índia": 7.5,
+    "Rússia": -3.6,
+    "EUA": 3.8,
+    "Mundo": 3.9
+  },
+  {
+    "data": "1997-12",
+    "ano": 1997,
+    "Brasil": 3.4,
+    "China": 9.2,
+    "Índia": 4,
+    "Rússia": 1.4,
+    "EUA": 4.5,
+    "Mundo": 4.1
+  },
+  {
+    "data": "1998-12",
+    "ano": 1998,
+    "Brasil": 0.3,
+    "China": 7.8,
+    "Índia": 6.2,
+    "Rússia": -5.3,
+    "EUA": 4.4,
+    "Mundo": 2.5
+  },
+  {
+    "data": "1999-12",
+    "ano": 1999,
+    "Brasil": 0.5,
+    "China": 7.6,
+    "Índia": 8.5,
+    "Rússia": 6.4,
+    "EUA": 4.7,
+    "Mundo": 3.6
+  },
+  {
+    "data": "2000-12",
+    "ano": 2000,
+    "Brasil": 4.4,
+    "China": 8.4,
+    "Índia": 4,
+    "Rússia": 10,
+    "EUA": 4.1,
+    "Mundo": 4.8
+  },
+  {
+    "data": "2001-12",
+    "ano": 2001,
+    "Brasil": 1.4,
+    "China": 8.3,
+    "Índia": 4.9,
+    "Rússia": 5.1,
+    "EUA": 1,
+    "Mundo": 2.5
+  },
+  {
+    "data": "2002-12",
+    "ano": 2002,
+    "Brasil": 3.1,
+    "China": 9.1,
+    "Índia": 3.9,
+    "Rússia": 4.8,
+    "EUA": 1.8,
+    "Mundo": 2.9
+  },
+  {
+    "data": "2003-12",
+    "ano": 2003,
+    "Brasil": 1.1,
+    "China": 10,
+    "Índia": 7.9,
+    "Rússia": 7.3,
+    "EUA": 2.8,
+    "Mundo": 4.3
+  },
+  {
+    "data": "2004-12",
+    "ano": 2004,
+    "Brasil": 5.8,
+    "China": 10.1,
+    "Índia": 7.8,
+    "Rússia": 7.2,
+    "EUA": 3.8,
+    "Mundo": 5.4
+  },
+  {
+    "data": "2005-12",
+    "ano": 2005,
+    "Brasil": 3.2,
+    "China": 11.3,
+    "Índia": 9.3,
+    "Rússia": 6.4,
+    "EUA": 3.3,
+    "Mundo": 4.9
+  },
+  {
+    "data": "2006-12",
+    "ano": 2006,
+    "Brasil": 4,
+    "China": 12.7,
+    "Índia": 9.3,
+    "Rússia": 8.2,
+    "EUA": 2.7,
+    "Mundo": 5.5
+  },
+  {
+    "data": "2007-12",
+    "ano": 2007,
+    "Brasil": 6.1,
+    "China": 14.2,
+    "Índia": 9.8,
+    "Rússia": 8.5,
+    "EUA": 1.8,
+    "Mundo": 5.6
+  },
+  {
+    "data": "2008-12",
+    "ano": 2008,
+    "Brasil": 5.1,
+    "China": 9.6,
+    "Índia": 3.9,
+    "Rússia": 5.2,
+    "EUA": -0.3,
+    "Mundo": 3
+  },
+  {
+    "data": "2009-12",
+    "ano": 2009,
+    "Brasil": -0.1,
+    "China": 9.2,
+    "Índia": 8.5,
+    "Rússia": -7.8,
+    "EUA": -2.8,
+    "Mundo": -0.1
+  },
+  {
+    "data": "2010-12",
+    "ano": 2010,
+    "Brasil": 7.5,
+    "China": 10.6,
+    "Índia": 10.3,
+    "Rússia": 4.5,
+    "EUA": 2.5,
+    "Mundo": 5.4
+  },
+  {
+    "data": "2011-12",
+    "ano": 2011,
+    "Brasil": 3.9,
+    "China": 9.5,
+    "Índia": 6.6,
+    "Rússia": 4.3,
+    "EUA": 1.6,
+    "Mundo": 4.2
+  },
+  {
+    "data": "2012-12",
+    "ano": 2012,
+    "Brasil": 1.9,
+    "China": 7.7,
+    "Índia": 5.6,
+    "Rússia": 3.5,
+    "EUA": 2.2,
+    "Mundo": 3.5
+  },
+  {
+    "data": "2013-12",
+    "ano": 2013,
+    "Brasil": 3,
+    "China": 7.7,
+    "Índia": 6.6,
+    "Rússia": 1.3,
+    "EUA": 1.5,
+    "Mundo": 3.3
+  },
+  {
+    "data": "2014-12",
+    "ano": 2014,
+    "Brasil": 0.1,
+    "China": 7.3,
+    "Índia": 7.2,
+    "Rússia": 0.7,
+    "EUA": 2.4,
+    "Mundo": 3.4
+  },
+  {
+    "data": "2015-12",
+    "ano": 2015,
+    "Brasil": -3.8,
+    "China": 6.9,
+    "Índia": 7.3,
+    "Rússia": -3.7,
+    "EUA": 2.4,
+    "Mundo": 3.1
+  },
+  {
+    "data": "2016-12",
+    "ano": 2016,
+    "Brasil": -3.8,
+    "China": 6.5,
+    "Índia": 7.5,
+    "Rússia": -1.8,
+    "EUA": 2.4,
+    "Mundo": 3.2
+  },
+  {
+    "data": "2017-12",
+    "ano": 2017,
+    "Brasil": 0,
+    "China": 6.2,
+    "Índia": 7.5,
+    "Rússia": 0.8,
+    "EUA": 2.5,
+    "Mundo": 3.5
+  },
+  {
+    "data": "2018-12",
+    "ano": 2018,
+    "Brasil": 1,
+    "China": 6,
+    "Índia": 7.6,
+    "Rússia": 1,
+    "EUA": 2.4,
+    "Mundo": 3.6
+  },
+  {
+    "data": "2019-12",
+    "ano": 2019,
+    "Brasil": 2,
+    "China": 6,
+    "Índia": 7.7,
+    "Rússia": 1.5,
+    "EUA": 2.1,
+    "Mundo": 3.8
+  },
+  {
+    "data": "2020-12",
+    "ano": 2020,
+    "Brasil": 2,
+    "China": 6,
+    "Índia": 7.7,
+    "Rússia": 1.5,
+    "EUA": 2,
+    "Mundo": 3.8
+  },
+  {
+    "data": "2021-12",
+    "ano": 2021,
+    "Brasil": 2,
+    "China": 6,
+    "Índia": 7.8,
+    "Rússia": 1.5,
+    "EUA": 2,
+    "Mundo": 3.9
+  }
+]
+});
+      </script>
+
+    </body>
+</html>

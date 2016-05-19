@@ -1,0 +1,36 @@
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+#conteudo {
+  margin: 30px;
+  margin-right: 80px;
+}
+
+h1, h2,h3,h4, h5 {
+  margin-bottom: 0px;
+}
+
+
+h3 {
+  font-weight: 300;
+    margin-top:0px;
+}
+
+h4, h5 {
+  font-weight: 300;  
+}
+
+
+li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+ul {
+  float: right;
+}
+
+.conteudo {
+  margin: 0 0px 20px 20px;
+}

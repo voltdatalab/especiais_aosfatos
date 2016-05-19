@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  font: 16px 'Oswald';
+}
+
+#graph {
+  margin-top: 40px;
+}
+
+svg {
+  font: 10px 'Oswald';
+}
+
+span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.caption {
+  font-weight: bold;
+}
+
+.key path {
+  display: none;
+}
+
+.key line {
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+ul {
+    color: #fff;
+}
+
+li {
+  display: inline-block;
+  width: 50px;
+  padding: 5px;
+  text-align:center;
+}
+</style>
+
+</head>
+<body>
+<link href='https://fonts.googleapis.com/css?family=Oswald:700,300,400' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Rubik:400,300,500' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="//d3js.org/d3.v3.min.js"></script>
+
+<div id="graph"> </div>
+
+<ul>
+  <li class="legenda" style="background-color:#44633F">Oeste</li>
+<li class="legenda" style="background-color:#611C35">Norte </li> 
+  <li class="legenda" style="background-color:#B2BCAA">Centro </li>
+<li class="legenda" style="background-color:#2C365E">Sul </li>
+<li class="legenda" style="background-color:#FFA630">Leste </li>
+</ul>
+
+<script>
+var width = 960,
+    height = 50,
+    formatPercent = d3.format(".0%"),
+    formatNumber = d3.format(".0f");
+
+var data1 = [.14, .32, .55, .83]
+
+var threshold = d3.scale.threshold()
+    .domain(data1)
+    .range(["#44633F", "#611C35", "#B2BCAA", "#2C365E", "#FFA630"]); 
+
+//order das zonas: OESTE, NORTE, CENTRO, SUL E LESTE
+
+// A position encoding for the key only.
+var x = d3.scale.linear()
+    .domain([0, 1.2])
+    .range([0, 500]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("null")
+    .tickSize(0)
+    //.tickValues(threshold.domain())
+    .tickValues("null")
+    .tickFormat("");
+    //.tickFormat(function(d) { return d === .5 ? formatPercent(d) : formatNumber(100 * d); });
+
+var svg = d3.select("#graph").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var g = svg.append("g")
+    .attr("class", "key")
+    .attr("preserveAspectRatio", "xMaxYMax meet")
+    .attr("viewBox", "0 0 0 0")
+    .attr("transform", "translate(" + 40 + "," + height / 2 + ")");
+
+g.selectAll("rect")
+    .data(threshold.range().map(function(color) {
+      var d = threshold.invertExtent(color);
+      if (d[0] == null) d[0] = x.domain()[0];
+      if (d[1] == null) d[1] = x.domain()[1];
+      return d;
+    }))
+  .enter().append("rect")
+    .attr("height", 20)
+    .attr("x", function(d) { return x(d[0]); })
+    .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+    .style("fill", function(d) { return threshold(d[0]); });
+
+g.call(xAxis).append("text")
+    .attr("class", "caption")
+    .attr("y", -6)
+    .attr("font-size", "20px")
+    .text("Proporção de hotspots do WiFi Livre por zona");
+</script>
+
+</body>
+
+</html>

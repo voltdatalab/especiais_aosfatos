@@ -1,0 +1,2696 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<title>Pedaladas - Soma</title>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71324943-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<style>
+body {
+  padding: 0px 20px 10px 30px;
+  font-family: 'Oswald', sans-serif;
+}
+
+h3, h4 {
+  font-weight: 300;
+}
+
+h4 {
+  border-top: 1px solid #000;
+  display: inline;
+}
+
+li{
+  display: inline-block;
+  padding: 5px 10px;
+  color: #fff;
+}
+.logoaf{
+  width:20px;
+  vertical-align: middle;
+}
+</style>
+
+<body>
+
+  <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+  <h1>Os detalhes das pedaladas na Caixa Econômica Federal</h1>
+  <h5><a href="http://aosfatos.org/" target="_blank"><img src="http://static1.squarespace.com/static/551da417e4b05f67005d6abe/t/552dc57ee4b0c02076dba9a7/1429222648123/icone_volt_alta_transparente_crop_square.png?format=750w" alt="logo Aos Fatos" class="logoaf"></a>&nbsp;&nbsp; <a href="http://aosfatos.org/" target="_blank"><img src="http://aosfatos.org/static/images/logo/aosfatos_cores-06.5e00a0b1e24e.svg" alt="logo Aos Fatos" class="logoaf"></a>&nbsp;&nbsp;&nbsp;&nbspPor Aos Fatos e Volt Data Lab | Abril/2016</h5>
+
+  <h3> Saldo dos repasses do governo federal para a Caixa Econômica Federal de janeiro de 1994 a agosto 2015, no âmbito nos benefícios sociais de Seguro Desemprego, Abono Salarial e Bolsa Família - este último desde outubro de 2003.</h3>
+
+  <div id="pedaladas" style="height: 450px;"></div>
+  <h4>Fonte: Caixa Econômica Federal, com dados repassados pelo TCU. Acesse os dados (.csv) utilizados <a href="https://raw.githubusercontent.com/voltdatalab/graficos/gh-pages/dados/Pedaladas%20fiscais%20na%20Caixa_fonte%20TCU%20com%20dados%20da%20Caixa.csv" target="_blank">aqui</a>, e os documentos originais <a href="http://bit.ly/1UCA6Ra" target="_blank">aqui</a> e <a href="http://bit.ly/1UCAbnJ" target="_blank">aqui</a> </h4>
+
+<script>
+new Morris.Line({
+  element: 'pedaladas',
+  xkey: 'periodo',
+  ykeys: ['soma'],
+  labels: ['soma'],
+  xLabels: ['year'],
+  yLabelFormat: function(y){return y/1000000 + ' mi R$'},
+  xLabelAngle: ['90'],
+  lineColors: ['#faa61a'],
+  postUnits: [' R$'],
+  hoverCallback: function (index, options, content, row) {
+  return row.presidente + " = " + row.reais + "<strong> em </strong> " + row.data;
+},
+  lineWidth: ['2'],
+  goals: [0],
+  goalStrokeWidth: ['2'],
+  events: ['1994-10' , '1996-09', '2002-01', '2002-04', '2002-06', '2003-09', '2003-11', '2006-11', '2011-11', '2012-09', '2012-11', '2012-12', '2013-07', '2013-08', '2013-09', '2013-10', '2013-11', '2013-12', '2014-02', '2014-03', '2014-04', '2014-05', '2014-06', '2014-07', '2014-08', '2014-09', '2015-03'],
+  eventStrokeWidth: ['0'],
+  eventLineColors: ['#cbcbcb', '#457B9D', '#457B9D', '#457B9D', '#457B9D', '#E63946', '#E63946', '#E63946', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56', '#513B56'],
+  gridTextFamily: ['Rubik'],
+  pointSize: [''],
+  gridTextSize: ['14px'],
+  gridTextColor: ['#000'],
+  //axes: ['true'],
+  hideHover: ['auto'],
+  resize: ['true'],
+  data: [
+  {
+    "periodo": "1994-01",
+    "data": "jan.94",
+    "seguro": 13059305.52,
+    "abono": 25872677.25,
+    "bolsa": 0,
+    "soma": 38931982.77,
+    "reais": "R$ 38,931,982.77",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-02",
+    "data": "fev.94",
+    "seguro": -15401683.11,
+    "abono": 16600735.48,
+    "bolsa": 0,
+    "soma": 1199052.37,
+    "reais": "R$ 1,199,052.37",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-03",
+    "data": "mar.94",
+    "seguro": 5548762.15,
+    "abono": 28085120.91,
+    "bolsa": 0,
+    "soma": 33633883.06,
+    "reais": "R$ 33,633,883.06",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-04",
+    "data": "abr.94",
+    "seguro": 12455872.37,
+    "abono": 21465266.54,
+    "bolsa": 0,
+    "soma": 33921138.91,
+    "reais": "R$ 33,921,138.91",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-05",
+    "data": "mai.94",
+    "seguro": 15847627.45,
+    "abono": 21464242.28,
+    "bolsa": 0,
+    "soma": 37311869.73,
+    "reais": "R$ 37,311,869.73",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-06",
+    "data": "jun.94",
+    "seguro": 16150619.12,
+    "abono": 21464090.26,
+    "bolsa": 0,
+    "soma": 37614709.38,
+    "reais": "R$ 37,614,709.38",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-07",
+    "data": "jul.94",
+    "seguro": 33863948.85,
+    "abono": 21464090.25,
+    "bolsa": 0,
+    "soma": 55328039.1,
+    "reais": "R$ 55,328,039.10",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-08",
+    "data": "ago.94",
+    "seguro": 24300470,
+    "abono": 21464090.25,
+    "bolsa": 0,
+    "soma": 45764560.25,
+    "reais": "R$ 45,764,560.25",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-09",
+    "data": "set.94",
+    "seguro": 106695584.89,
+    "abono": 21464090.25,
+    "bolsa": 0,
+    "soma": 128159675.14,
+    "reais": "R$ 128,159,675.14",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-10",
+    "data": "out.94",
+    "seguro": -21477117.87,
+    "abono": 0,
+    "bolsa": 0,
+    "soma": -21477117.87,
+    "reais": "-R$ 21,477,117.87",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-11",
+    "data": "nov.94",
+    "seguro": 51722093.71,
+    "abono": 156122542.44,
+    "bolsa": 0,
+    "soma": 207844636.15,
+    "reais": "R$ 207,844,636.15",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1994-12",
+    "data": "dez.94",
+    "seguro": 148855019.36,
+    "abono": 122019696.62,
+    "bolsa": 0,
+    "soma": 270874715.98,
+    "reais": "R$ 270,874,715.98",
+    "presidente": "Itamar"
+  },
+  {
+    "periodo": "1995-01",
+    "data": "jan.95",
+    "seguro": 12657517.16,
+    "abono": 41174304.54,
+    "bolsa": 0,
+    "soma": 53831821.7,
+    "reais": "R$ 53,831,821.70",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-02",
+    "data": "fev.95",
+    "seguro": 77191874.04,
+    "abono": 129782137.58,
+    "bolsa": 0,
+    "soma": 206974011.62,
+    "reais": "R$ 206,974,011.62",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-03",
+    "data": "mar.95",
+    "seguro": 83312479.49,
+    "abono": 157741205.86,
+    "bolsa": 0,
+    "soma": 241053685.35,
+    "reais": "R$ 241,053,685.35",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-04",
+    "data": "abr.95",
+    "seguro": 118292332.03,
+    "abono": 145495286.3,
+    "bolsa": 0,
+    "soma": 263787618.33,
+    "reais": "R$ 263,787,618.33",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-05",
+    "data": "mai.95",
+    "seguro": 313410828.84,
+    "abono": 132522073.04,
+    "bolsa": 0,
+    "soma": 445932901.88,
+    "reais": "R$ 445,932,901.88",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-06",
+    "data": "jun.95",
+    "seguro": 188307505.14,
+    "abono": 132521420.11,
+    "bolsa": 0,
+    "soma": 320828925.25,
+    "reais": "R$ 320,828,925.25",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-07",
+    "data": "jul.95",
+    "seguro": 174086758.31,
+    "abono": 132521420.11,
+    "bolsa": 0,
+    "soma": 306608178.42,
+    "reais": "R$ 306,608,178.42",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-08",
+    "data": "ago.95",
+    "seguro": 334913306.37,
+    "abono": 132521420.11,
+    "bolsa": 0,
+    "soma": 467434726.48,
+    "reais": "R$ 467,434,726.48",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-09",
+    "data": "set.95",
+    "seguro": 275475491.27,
+    "abono": 132090001.89,
+    "bolsa": 0,
+    "soma": 407565493.16,
+    "reais": "R$ 407,565,493.16",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-10",
+    "data": "out.95",
+    "seguro": 377995666.98,
+    "abono": 0,
+    "bolsa": 0,
+    "soma": 377995666.98,
+    "reais": "R$ 377,995,666.98",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-11",
+    "data": "nov.95",
+    "seguro": 377537573.9,
+    "abono": 250443500,
+    "bolsa": 0,
+    "soma": 627981073.9,
+    "reais": "R$ 627,981,073.90",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1995-12",
+    "data": "dez.95",
+    "seguro": 336771911.3,
+    "abono": 230140955.02,
+    "bolsa": 0,
+    "soma": 566912866.32,
+    "reais": "R$ 566,912,866.32",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-01",
+    "data": "jan.96",
+    "seguro": 45940336.85,
+    "abono": 183810543.39,
+    "bolsa": 0,
+    "soma": 229750880.24,
+    "reais": "R$ 229,750,880.24",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-02",
+    "data": "fev.96",
+    "seguro": 21225028.26,
+    "abono": 140774009.02,
+    "bolsa": 0,
+    "soma": 161999037.28,
+    "reais": "R$ 161,999,037.28",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-03",
+    "data": "mar.96",
+    "seguro": 207503995.43,
+    "abono": 118814999.93,
+    "bolsa": 0,
+    "soma": 326318995.36,
+    "reais": "R$ 326,318,995.36",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-04",
+    "data": "abr.96",
+    "seguro": 83883147.29,
+    "abono": 106769008.12,
+    "bolsa": 0,
+    "soma": 190652155.41,
+    "reais": "R$ 190,652,155.41",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-05",
+    "data": "mai.96",
+    "seguro": 87149156.48,
+    "abono": 114696641,
+    "bolsa": 0,
+    "soma": 201845797.48,
+    "reais": "R$ 201,845,797.48",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-06",
+    "data": "jun.96",
+    "seguro": 66978199.77,
+    "abono": 115910476.99,
+    "bolsa": 0,
+    "soma": 182888676.76,
+    "reais": "R$ 182,888,676.76",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-07",
+    "data": "jul.96",
+    "seguro": 140755354.24,
+    "abono": 116006270.8,
+    "bolsa": 0,
+    "soma": 256761625.04,
+    "reais": "R$ 256,761,625.04",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-08",
+    "data": "ago.96",
+    "seguro": 69454831.01,
+    "abono": 0,
+    "bolsa": 0,
+    "soma": 69454831.01,
+    "reais": "R$ 69,454,831.01",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-09",
+    "data": "set.96",
+    "seguro": -3388269.13,
+    "abono": 0,
+    "bolsa": 0,
+    "soma": -3388269.13,
+    "reais": "-R$ 3,388,269.13",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-10",
+    "data": "out.96",
+    "seguro": 179308728.43,
+    "abono": 166246947.65,
+    "bolsa": 0,
+    "soma": 345555676.08,
+    "reais": "R$ 345,555,676.08",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-11",
+    "data": "nov.96",
+    "seguro": 195087107.83,
+    "abono": 251889999.25,
+    "bolsa": 0,
+    "soma": 446977107.08,
+    "reais": "R$ 446,977,107.08",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1996-12",
+    "data": "dez.96",
+    "seguro": 66862527.27,
+    "abono": 202427136.85,
+    "bolsa": 0,
+    "soma": 269289664.12,
+    "reais": "R$ 269,289,664.12",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-01",
+    "data": "jan.97",
+    "seguro": 196560958.75,
+    "abono": 120971424.47,
+    "bolsa": 0,
+    "soma": 317532383.22,
+    "reais": "R$ 317,532,383.22",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-02",
+    "data": "fev.97",
+    "seguro": 230297039.12,
+    "abono": 40902057.43,
+    "bolsa": 0,
+    "soma": 271199096.55,
+    "reais": "R$ 271,199,096.55",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-03",
+    "data": "mar.97",
+    "seguro": 208887074.81,
+    "abono": 129240669.57,
+    "bolsa": 0,
+    "soma": 338127744.38,
+    "reais": "R$ 338,127,744.38",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-04",
+    "data": "abr.97",
+    "seguro": 183776952.62,
+    "abono": 114227537.83,
+    "bolsa": 0,
+    "soma": 298004490.45,
+    "reais": "R$ 298,004,490.45",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-05",
+    "data": "mai.97",
+    "seguro": 54443025.12,
+    "abono": 179214680.23,
+    "bolsa": 0,
+    "soma": 233657705.35,
+    "reais": "R$ 233,657,705.35",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-06",
+    "data": "jun.97",
+    "seguro": 100386955.52,
+    "abono": 131768627.49,
+    "bolsa": 0,
+    "soma": 232155583.01,
+    "reais": "R$ 232,155,583.01",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-07",
+    "data": "jul.97",
+    "seguro": 108835960.92,
+    "abono": 131768214.67,
+    "bolsa": 0,
+    "soma": 240604175.59,
+    "reais": "R$ 240,604,175.59",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-08",
+    "data": "ago.97",
+    "seguro": 97640499.51,
+    "abono": 131557609.81,
+    "bolsa": 0,
+    "soma": 229198109.32,
+    "reais": "R$ 229,198,109.32",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-09",
+    "data": "set.97",
+    "seguro": 125687530.2,
+    "abono": 197642228.57,
+    "bolsa": 0,
+    "soma": 323329758.77,
+    "reais": "R$ 323,329,758.77",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-10",
+    "data": "out.97",
+    "seguro": 96600555.58,
+    "abono": 190703553.06,
+    "bolsa": 0,
+    "soma": 287304108.64,
+    "reais": "R$ 287,304,108.64",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-11",
+    "data": "nov.97",
+    "seguro": 121872003.93,
+    "abono": 273032606.34,
+    "bolsa": 0,
+    "soma": 394904610.27,
+    "reais": "R$ 394,904,610.27",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1997-12",
+    "data": "dez.97",
+    "seguro": 154523465.53,
+    "abono": 121557674.06,
+    "bolsa": 0,
+    "soma": 276081139.59,
+    "reais": "R$ 276,081,139.59",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-01",
+    "data": "jan.98",
+    "seguro": 198763365.69,
+    "abono": 28169585.34,
+    "bolsa": 0,
+    "soma": 226932951.03,
+    "reais": "R$ 226,932,951.03",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-02",
+    "data": "fev.98",
+    "seguro": 236611366.16,
+    "abono": 71672142.06,
+    "bolsa": 0,
+    "soma": 308283508.22,
+    "reais": "R$ 308,283,508.22",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-03",
+    "data": "mar.98",
+    "seguro": 428731941.36,
+    "abono": 48372852.18,
+    "bolsa": 0,
+    "soma": 477104793.54,
+    "reais": "R$ 477,104,793.54",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-04",
+    "data": "abr.98",
+    "seguro": 317175494.43,
+    "abono": 40748440.08,
+    "bolsa": 0,
+    "soma": 357923934.51,
+    "reais": "R$ 357,923,934.51",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-05",
+    "data": "mai.98",
+    "seguro": 285679848.14,
+    "abono": 25598640.39,
+    "bolsa": 0,
+    "soma": 311278488.53,
+    "reais": "R$ 311,278,488.53",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-06",
+    "data": "jun.98",
+    "seguro": 600858930.42,
+    "abono": 24467058.25,
+    "bolsa": 0,
+    "soma": 625325988.67,
+    "reais": "R$ 625,325,988.67",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-07",
+    "data": "jul.98",
+    "seguro": 118221435.52,
+    "abono": 24467058.25,
+    "bolsa": 0,
+    "soma": 142688493.77,
+    "reais": "R$ 142,688,493.77",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-08",
+    "data": "ago.98",
+    "seguro": 190069204.61,
+    "abono": 134252674.4,
+    "bolsa": 0,
+    "soma": 324321879.01,
+    "reais": "R$ 324,321,879.01",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-09",
+    "data": "set.98",
+    "seguro": 171491930.55,
+    "abono": 123045127.56,
+    "bolsa": 0,
+    "soma": 294537058.11,
+    "reais": "R$ 294,537,058.11",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-10",
+    "data": "out.98",
+    "seguro": 147761805.99,
+    "abono": 182588022.32,
+    "bolsa": 0,
+    "soma": 330349828.31,
+    "reais": "R$ 330,349,828.31",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-11",
+    "data": "nov.98",
+    "seguro": 163011395.18,
+    "abono": 105677295.72,
+    "bolsa": 0,
+    "soma": 268688690.9,
+    "reais": "R$ 268,688,690.90",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1998-12",
+    "data": "dez.98",
+    "seguro": 212401967.82,
+    "abono": 40574650.76,
+    "bolsa": 0,
+    "soma": 252976618.58,
+    "reais": "R$ 252,976,618.58",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-01",
+    "data": "jan.99",
+    "seguro": 124254650.97,
+    "abono": 70282922.22,
+    "bolsa": 0,
+    "soma": 194537573.19,
+    "reais": "R$ 194,537,573.19",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-02",
+    "data": "fev.99",
+    "seguro": 210798483.47,
+    "abono": 24995778.08,
+    "bolsa": 0,
+    "soma": 235794261.55,
+    "reais": "R$ 235,794,261.55",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-03",
+    "data": "mar.99",
+    "seguro": 240854145.99,
+    "abono": 69174756.8,
+    "bolsa": 0,
+    "soma": 310028902.79,
+    "reais": "R$ 310,028,902.79",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-04",
+    "data": "abr.99",
+    "seguro": 248434889.78,
+    "abono": 47960136.68,
+    "bolsa": 0,
+    "soma": 296395026.46,
+    "reais": "R$ 296,395,026.46",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-05",
+    "data": "mai.99",
+    "seguro": 292976366.91,
+    "abono": 47764349.9,
+    "bolsa": 0,
+    "soma": 340740716.81,
+    "reais": "R$ 340,740,716.81",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-06",
+    "data": "jun.99",
+    "seguro": 363619055.14,
+    "abono": 47763068.6,
+    "bolsa": 0,
+    "soma": 411382123.74,
+    "reais": "R$ 411,382,123.74",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-07",
+    "data": "jul.99",
+    "seguro": 164780369.82,
+    "abono": 47740249.91,
+    "bolsa": 0,
+    "soma": 212520619.73,
+    "reais": "R$ 212,520,619.73",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-08",
+    "data": "ago.99",
+    "seguro": 141039369.13,
+    "abono": 115503606.23,
+    "bolsa": 0,
+    "soma": 256542975.36,
+    "reais": "R$ 256,542,975.36",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-09",
+    "data": "set.99",
+    "seguro": 204100367.68,
+    "abono": 155368408.94,
+    "bolsa": 0,
+    "soma": 359468776.62,
+    "reais": "R$ 359,468,776.62",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-10",
+    "data": "out.99",
+    "seguro": 188240232.85,
+    "abono": 59539817.07,
+    "bolsa": 0,
+    "soma": 247780049.92,
+    "reais": "R$ 247,780,049.92",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-11",
+    "data": "nov.99",
+    "seguro": 162437203.66,
+    "abono": 4894059.87,
+    "bolsa": 0,
+    "soma": 167331263.53,
+    "reais": "R$ 167,331,263.53",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "1999-12",
+    "data": "dez.99",
+    "seguro": 174848797.24,
+    "abono": 29871725.04,
+    "bolsa": 0,
+    "soma": 204720522.28,
+    "reais": "R$ 204,720,522.28",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-01",
+    "data": "jan.00",
+    "seguro": 213070593.96,
+    "abono": 37314969.42,
+    "bolsa": 0,
+    "soma": 250385563.38,
+    "reais": "R$ 250,385,563.38",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-02",
+    "data": "fev.00",
+    "seguro": 207779822.29,
+    "abono": 47321163.52,
+    "bolsa": 0,
+    "soma": 255100985.81,
+    "reais": "R$ 255,100,985.81",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-03",
+    "data": "mar.00",
+    "seguro": 258608866.57,
+    "abono": 22724013.78,
+    "bolsa": 0,
+    "soma": 281332880.35,
+    "reais": "R$ 281,332,880.35",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-04",
+    "data": "abr.00",
+    "seguro": 25243472.87,
+    "abono": 71737139.33,
+    "bolsa": 0,
+    "soma": 96980612.2,
+    "reais": "R$ 96,980,612.20",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-05",
+    "data": "mai.00",
+    "seguro": 42070340.06,
+    "abono": 71349020.28,
+    "bolsa": 0,
+    "soma": 113419360.34,
+    "reais": "R$ 113,419,360.34",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-06",
+    "data": "jun.00",
+    "seguro": 104982792.88,
+    "abono": 71342407.35,
+    "bolsa": 0,
+    "soma": 176325200.23,
+    "reais": "R$ 176,325,200.23",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-07",
+    "data": "jul.00",
+    "seguro": 92104158.72,
+    "abono": 121161228.95,
+    "bolsa": 0,
+    "soma": 213265387.67,
+    "reais": "R$ 213,265,387.67",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-08",
+    "data": "ago.00",
+    "seguro": 78951777.71,
+    "abono": 65965516.64,
+    "bolsa": 0,
+    "soma": 144917294.35,
+    "reais": "R$ 144,917,294.35",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-09",
+    "data": "set.00",
+    "seguro": 84504408.41,
+    "abono": 64413603.74,
+    "bolsa": 0,
+    "soma": 148918012.15,
+    "reais": "R$ 148,918,012.15",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-10",
+    "data": "out.00",
+    "seguro": 54996086.58,
+    "abono": 69229517.1,
+    "bolsa": 0,
+    "soma": 124225603.68,
+    "reais": "R$ 124,225,603.68",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-11",
+    "data": "nov.00",
+    "seguro": 52594426.21,
+    "abono": 1707155,
+    "bolsa": 0,
+    "soma": 54301581.21,
+    "reais": "R$ 54,301,581.21",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2000-12",
+    "data": "dez.00",
+    "seguro": 116466474.37,
+    "abono": 11422097.91,
+    "bolsa": 0,
+    "soma": 127888572.28,
+    "reais": "R$ 127,888,572.28",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-01",
+    "data": "jan.01",
+    "seguro": 123245551.54,
+    "abono": 29013091.39,
+    "bolsa": 0,
+    "soma": 152258642.93,
+    "reais": "R$ 152,258,642.93",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-02",
+    "data": "fev.01",
+    "seguro": 15508863.16,
+    "abono": 82380648.65,
+    "bolsa": 0,
+    "soma": 97889511.81,
+    "reais": "R$ 97,889,511.81",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-03",
+    "data": "mar.01",
+    "seguro": 111491328.96,
+    "abono": 45908540.37,
+    "bolsa": 0,
+    "soma": 157399869.33,
+    "reais": "R$ 157,399,869.33",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-04",
+    "data": "abr.01",
+    "seguro": 15517748.61,
+    "abono": 18194798.99,
+    "bolsa": 0,
+    "soma": 33712547.6,
+    "reais": "R$ 33,712,547.60",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-05",
+    "data": "mai.01",
+    "seguro": 177187410.59,
+    "abono": 18189534.79,
+    "bolsa": 0,
+    "soma": 195376945.38,
+    "reais": "R$ 195,376,945.38",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-06",
+    "data": "jun.01",
+    "seguro": 43167047.16,
+    "abono": 18189734.53,
+    "bolsa": 0,
+    "soma": 61356781.69,
+    "reais": "R$ 61,356,781.69",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-07",
+    "data": "jul.01",
+    "seguro": -12582854.2,
+    "abono": 119668726.7,
+    "bolsa": 0,
+    "soma": 107085872.5,
+    "reais": "R$ 107,085,872.50",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-08",
+    "data": "ago.01",
+    "seguro": 79824302.29,
+    "abono": 32936968.27,
+    "bolsa": 0,
+    "soma": 112761270.56,
+    "reais": "R$ 112,761,270.56",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-09",
+    "data": "set.01",
+    "seguro": 106065959.8,
+    "abono": -18569337.48,
+    "bolsa": 0,
+    "soma": 87496622.32,
+    "reais": "R$ 87,496,622.32",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-10",
+    "data": "out.01",
+    "seguro": 44605395.67,
+    "abono": 30290691.52,
+    "bolsa": 0,
+    "soma": 74896087.19,
+    "reais": "R$ 74,896,087.19",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-11",
+    "data": "nov.01",
+    "seguro": 143877783.56,
+    "abono": -24798582.64,
+    "bolsa": 0,
+    "soma": 119079200.92,
+    "reais": "R$ 119,079,200.92",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2001-12",
+    "data": "dez.01",
+    "seguro": 151298962.56,
+    "abono": -22274239.12,
+    "bolsa": 0,
+    "soma": 129024723.44,
+    "reais": "R$ 129,024,723.44",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-01",
+    "data": "jan.02",
+    "seguro": -98832748.25,
+    "abono": 29541219.5,
+    "bolsa": 0,
+    "soma": -69291528.75,
+    "reais": "-R$ 69,291,528.75",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-02",
+    "data": "fev.02",
+    "seguro": 95771546.37,
+    "abono": 16025909.26,
+    "bolsa": 0,
+    "soma": 111797455.63,
+    "reais": "R$ 111,797,455.63",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-03",
+    "data": "mar.02",
+    "seguro": -298703.42,
+    "abono": 67498124.26,
+    "bolsa": 0,
+    "soma": 67199420.84,
+    "reais": "R$ 67,199,420.84",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-04",
+    "data": "abr.02",
+    "seguro": -171492856.74,
+    "abono": 56012592.1,
+    "bolsa": 0,
+    "soma": -115480264.64,
+    "reais": "-R$ 115,480,264.64",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-05",
+    "data": "mai.02",
+    "seguro": 87965466.54,
+    "abono": 52092669.54,
+    "bolsa": 0,
+    "soma": 140058136.08,
+    "reais": "R$ 140,058,136.08",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-06",
+    "data": "jun.02",
+    "seguro": -293879831.83,
+    "abono": 48805084.4,
+    "bolsa": 0,
+    "soma": -245074747.43,
+    "reais": "-R$ 245,074,747.43",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-07",
+    "data": "jul.02",
+    "seguro": 126482193.26,
+    "abono": 166425554.12,
+    "bolsa": 0,
+    "soma": 292907747.38,
+    "reais": "R$ 292,907,747.38",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-08",
+    "data": "ago.02",
+    "seguro": 213400169.58,
+    "abono": 119759345.96,
+    "bolsa": 0,
+    "soma": 333159515.54,
+    "reais": "R$ 333,159,515.54",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-09",
+    "data": "set.02",
+    "seguro": 220558023.42,
+    "abono": 114393191.32,
+    "bolsa": 0,
+    "soma": 334951214.74,
+    "reais": "R$ 334,951,214.74",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-10",
+    "data": "out.02",
+    "seguro": 290587584.44,
+    "abono": 155009079.22,
+    "bolsa": 0,
+    "soma": 445596663.66,
+    "reais": "R$ 445,596,663.66",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-11",
+    "data": "nov.02",
+    "seguro": 242007439.29,
+    "abono": 22932098.88,
+    "bolsa": 0,
+    "soma": 264939538.17,
+    "reais": "R$ 264,939,538.17",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2002-12",
+    "data": "dez.02",
+    "seguro": 261229771.75,
+    "abono": 51102534.26,
+    "bolsa": 0,
+    "soma": 312332306.01,
+    "reais": "R$ 312,332,306.01",
+    "presidente": "FHC"
+  },
+  {
+    "periodo": "2003-01",
+    "data": "jan.03",
+    "seguro": 310621705.75,
+    "abono": 30811189.26,
+    "bolsa": 0,
+    "soma": 341432895.01,
+    "reais": "R$ 341,432,895.01",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-02",
+    "data": "fev.03",
+    "seguro": 208400854.86,
+    "abono": 52828755.49,
+    "bolsa": 0,
+    "soma": 261229610.35,
+    "reais": "R$ 261,229,610.35",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-03",
+    "data": "mar.03",
+    "seguro": 114358739.97,
+    "abono": 34794448.21,
+    "bolsa": 0,
+    "soma": 149153188.18,
+    "reais": "R$ 149,153,188.18",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-04",
+    "data": "abr.03",
+    "seguro": 30974355.85,
+    "abono": 42864289.97,
+    "bolsa": 0,
+    "soma": 73838645.82,
+    "reais": "R$ 73,838,645.82",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-05",
+    "data": "mai.03",
+    "seguro": 267596005.37,
+    "abono": 27648712.53,
+    "bolsa": 0,
+    "soma": 295244717.9,
+    "reais": "R$ 295,244,717.90",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-06",
+    "data": "jun.03",
+    "seguro": 104140287.63,
+    "abono": 4495575.73,
+    "bolsa": 0,
+    "soma": 108635863.36,
+    "reais": "R$ 108,635,863.36",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-07",
+    "data": "jul.03",
+    "seguro": 53885556.85,
+    "abono": 129642185.35,
+    "bolsa": 0,
+    "soma": 183527742.2,
+    "reais": "R$ 183,527,742.20",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-08",
+    "data": "ago.03",
+    "seguro": 179090184.02,
+    "abono": 57677121.38,
+    "bolsa": 0,
+    "soma": 236767305.4,
+    "reais": "R$ 236,767,305.40",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-09",
+    "data": "set.03",
+    "seguro": -236418128.33,
+    "abono": -145108615.8,
+    "bolsa": 0,
+    "soma": -381526744.13,
+    "reais": "-R$ 381,526,744.13",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-10",
+    "data": "out.03",
+    "seguro": 221024280.11,
+    "abono": 11226714.74,
+    "bolsa": -10582143.54,
+    "soma": 221668851.31,
+    "reais": "R$ 221,668,851.31",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-11",
+    "data": "nov.03",
+    "seguro": 95136043.46,
+    "abono": -98593410.35,
+    "bolsa": -13969215.39,
+    "soma": -17426582.28,
+    "reais": "-R$ 17,426,582.28",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2003-12",
+    "data": "dez.03",
+    "seguro": 2481845.07,
+    "abono": 24714830.68,
+    "bolsa": 150933247.63,
+    "soma": 178129923.38,
+    "reais": "R$ 178,129,923.38",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-01",
+    "data": "jan.04",
+    "seguro": 34674315.77,
+    "abono": 10849848.84,
+    "bolsa": 185231548.53,
+    "soma": 230755713.14,
+    "reais": "R$ 230,755,713.14",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-02",
+    "data": "fev.04",
+    "seguro": 36988744.77,
+    "abono": 71202804.28,
+    "bolsa": 259289160.81,
+    "soma": 367480709.86,
+    "reais": "R$ 367,480,709.86",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-03",
+    "data": "mar.04",
+    "seguro": 36225499.82,
+    "abono": 43059724.88,
+    "bolsa": 264747358.05,
+    "soma": 344032582.75,
+    "reais": "R$ 344,032,582.75",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-04",
+    "data": "abr.04",
+    "seguro": 3574640.94,
+    "abono": 30236217.8,
+    "bolsa": 289261445.61,
+    "soma": 323072304.35,
+    "reais": "R$ 323,072,304.35",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-05",
+    "data": "mai.04",
+    "seguro": 57706247.17,
+    "abono": 57064810.62,
+    "bolsa": 321756271.37,
+    "soma": 436527329.16,
+    "reais": "R$ 436,527,329.16",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-06",
+    "data": "jun.04",
+    "seguro": 46793691.73,
+    "abono": 18878241.08,
+    "bolsa": 354624072.97,
+    "soma": 420296005.78,
+    "reais": "R$ 420,296,005.78",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-07",
+    "data": "jul.04",
+    "seguro": 9247265.34,
+    "abono": 179734509.83,
+    "bolsa": 381542870.92,
+    "soma": 570524646.09,
+    "reais": "R$ 570,524,646.09",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-08",
+    "data": "ago.04",
+    "seguro": -160388160.42,
+    "abono": -81424989.76,
+    "bolsa": 393890477.72,
+    "soma": 152077327.54,
+    "reais": "R$ 152,077,327.54",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-09",
+    "data": "set.04",
+    "seguro": -2719388.01,
+    "abono": 32209335.74,
+    "bolsa": 337331123.55,
+    "soma": 366821071.28,
+    "reais": "R$ 366,821,071.28",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-10",
+    "data": "out.04",
+    "seguro": 62970520.63,
+    "abono": -72999963.66,
+    "bolsa": 355829502.15,
+    "soma": 345800059.12,
+    "reais": "R$ 345,800,059.12",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-11",
+    "data": "nov.04",
+    "seguro": 26588414.03,
+    "abono": -264463749.5,
+    "bolsa": 397195318.68,
+    "soma": 159319983.21,
+    "reais": "R$ 159,319,983.21",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2004-12",
+    "data": "dez.04",
+    "seguro": 107041525.98,
+    "abono": 66282007.64,
+    "bolsa": 122611301.22,
+    "soma": 295934834.84,
+    "reais": "R$ 295,934,834.84",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-01",
+    "data": "jan.05",
+    "seguro": 130100204.35,
+    "abono": 48645625.63,
+    "bolsa": 335017669.84,
+    "soma": 513763499.82,
+    "reais": "R$ 513,763,499.82",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-02",
+    "data": "fev.05",
+    "seguro": 15896798.37,
+    "abono": 36447177.25,
+    "bolsa": 408825903.69,
+    "soma": 461169879.31,
+    "reais": "R$ 461,169,879.31",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-03",
+    "data": "mar.05",
+    "seguro": 39065767.5,
+    "abono": 90288861.51,
+    "bolsa": 262384041.04,
+    "soma": 391738670.05,
+    "reais": "R$ 391,738,670.05",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-04",
+    "data": "abr.05",
+    "seguro": -2833443.21,
+    "abono": 77670146.21,
+    "bolsa": -39337998.81,
+    "soma": 35498704.19,
+    "reais": "R$ 35,498,704.19",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-05",
+    "data": "mai.05",
+    "seguro": -10413810.9,
+    "abono": 15661699.01,
+    "bolsa": 313743550.37,
+    "soma": 318991438.48,
+    "reais": "R$ 318,991,438.48",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-06",
+    "data": "jun.05",
+    "seguro": 10568117.62,
+    "abono": 2217343.92,
+    "bolsa": 305258835.6,
+    "soma": 318044297.14,
+    "reais": "R$ 318,044,297.14",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-07",
+    "data": "jul.05",
+    "seguro": 36857421.77,
+    "abono": 7768899.18,
+    "bolsa": 366518378.58,
+    "soma": 411144699.53,
+    "reais": "R$ 411,144,699.53",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-08",
+    "data": "ago.05",
+    "seguro": 77848098.94,
+    "abono": 30582990.81,
+    "bolsa": 280752032.02,
+    "soma": 389183121.77,
+    "reais": "R$ 389,183,121.77",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-09",
+    "data": "set.05",
+    "seguro": 104052067.32,
+    "abono": 23773677.6,
+    "bolsa": 215140833.5,
+    "soma": 342966578.42,
+    "reais": "R$ 342,966,578.42",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-10",
+    "data": "out.05",
+    "seguro": 37643466.68,
+    "abono": -8403686.81,
+    "bolsa": 196212131.53,
+    "soma": 225451911.4,
+    "reais": "R$ 225,451,911.40",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-11",
+    "data": "nov.05",
+    "seguro": 111388563.05,
+    "abono": -11737431.47,
+    "bolsa": 341244201.08,
+    "soma": 440895332.66,
+    "reais": "R$ 440,895,332.66",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2005-12",
+    "data": "dez.05",
+    "seguro": 81704571.97,
+    "abono": -2016667.78,
+    "bolsa": 282198358.55,
+    "soma": 361886262.74,
+    "reais": "R$ 361,886,262.74",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-01",
+    "data": "jan.06",
+    "seguro": 190747034.34,
+    "abono": 7418225.79,
+    "bolsa": 293370859.14,
+    "soma": 491536119.27,
+    "reais": "R$ 491,536,119.27",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-02",
+    "data": "fev.06",
+    "seguro": 38734329.33,
+    "abono": 11514018.73,
+    "bolsa": 267314459.74,
+    "soma": 317562807.8,
+    "reais": "R$ 317,562,807.80",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-03",
+    "data": "mar.06",
+    "seguro": 768842.02,
+    "abono": 11845693.56,
+    "bolsa": 136318630.28,
+    "soma": 148933165.86,
+    "reais": "R$ 148,933,165.86",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-04",
+    "data": "abr.06",
+    "seguro": 14365107.51,
+    "abono": 2841724.02,
+    "bolsa": 122849369.31,
+    "soma": 140056200.84,
+    "reais": "R$ 140,056,200.84",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-05",
+    "data": "mai.06",
+    "seguro": 5231655.67,
+    "abono": 9381989.75,
+    "bolsa": 131879944.92,
+    "soma": 146493590.34,
+    "reais": "R$ 146,493,590.34",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-06",
+    "data": "jun.06",
+    "seguro": 58492854.59,
+    "abono": 6595560.49,
+    "bolsa": 168920864.7,
+    "soma": 234009279.78,
+    "reais": "R$ 234,009,279.78",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-07",
+    "data": "jul.06",
+    "seguro": 11813822.56,
+    "abono": -9381106.27,
+    "bolsa": 165805537.98,
+    "soma": 168238254.27,
+    "reais": "R$ 168,238,254.27",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-08",
+    "data": "ago.06",
+    "seguro": 14848194.6,
+    "abono": 7626309.81,
+    "bolsa": 13427084.22,
+    "soma": 35901588.63,
+    "reais": "R$ 35,901,588.63",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-09",
+    "data": "set.06",
+    "seguro": 9709791.2,
+    "abono": 39376153.89,
+    "bolsa": 23787451.88,
+    "soma": 72873396.97,
+    "reais": "R$ 72,873,396.97",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-10",
+    "data": "out.06",
+    "seguro": 99353879.03,
+    "abono": 108544611.83,
+    "bolsa": 139724300.82,
+    "soma": 347622791.68,
+    "reais": "R$ 347,622,791.68",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-11",
+    "data": "nov.06",
+    "seguro": 33812970.71,
+    "abono": -312002588.01,
+    "bolsa": 177071352.25,
+    "soma": -101118265.05,
+    "reais": "-R$ 101,118,265.05",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2006-12",
+    "data": "dez.06",
+    "seguro": 304634531.87,
+    "abono": 161190034.3,
+    "bolsa": 265754571.11,
+    "soma": 731579137.28,
+    "reais": "R$ 731,579,137.28",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-01",
+    "data": "jan.07",
+    "seguro": 140875989.07,
+    "abono": 87694252.15,
+    "bolsa": 161696730.56,
+    "soma": 390266971.78,
+    "reais": "R$ 390,266,971.78",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-02",
+    "data": "fev.07",
+    "seguro": 15371906.28,
+    "abono": 69346944.31,
+    "bolsa": 85172990.1,
+    "soma": 169891840.69,
+    "reais": "R$ 169,891,840.69",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-03",
+    "data": "mar.07",
+    "seguro": 88989143.1,
+    "abono": 52714410.52,
+    "bolsa": 115483045.38,
+    "soma": 257186599,
+    "reais": "R$ 257,186,599.00",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-04",
+    "data": "abr.07",
+    "seguro": -340160.79,
+    "abono": 35727592.48,
+    "bolsa": 121552406.74,
+    "soma": 156939838.43,
+    "reais": "R$ 156,939,838.43",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-05",
+    "data": "mai.07",
+    "seguro": 9170846.71,
+    "abono": 19034981.02,
+    "bolsa": 181797921.65,
+    "soma": 210003749.38,
+    "reais": "R$ 210,003,749.38",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-06",
+    "data": "jun.07",
+    "seguro": 108702746.24,
+    "abono": 5027902.33,
+    "bolsa": 160137018.74,
+    "soma": 273867667.31,
+    "reais": "R$ 273,867,667.31",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-07",
+    "data": "jul.07",
+    "seguro": 130468099.48,
+    "abono": 4235253.6,
+    "bolsa": 156795058.81,
+    "soma": 291498411.89,
+    "reais": "R$ 291,498,411.89",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-08",
+    "data": "ago.07",
+    "seguro": 45415349.23,
+    "abono": 99608856.52,
+    "bolsa": 64127266.51,
+    "soma": 209151472.26,
+    "reais": "R$ 209,151,472.26",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-09",
+    "data": "set.07",
+    "seguro": 33407289.24,
+    "abono": 38960847.35,
+    "bolsa": 185274280.9,
+    "soma": 257642417.49,
+    "reais": "R$ 257,642,417.49",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-10",
+    "data": "out.07",
+    "seguro": 159212840.83,
+    "abono": 67030627.06,
+    "bolsa": 147322695.85,
+    "soma": 373566163.74,
+    "reais": "R$ 373,566,163.74",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-11",
+    "data": "nov.07",
+    "seguro": 93699691.12,
+    "abono": 146743865.98,
+    "bolsa": 145273769.1,
+    "soma": 385717326.2,
+    "reais": "R$ 385,717,326.20",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2007-12",
+    "data": "dez.07",
+    "seguro": 355903207.95,
+    "abono": 113694154.46,
+    "bolsa": 163642665.57,
+    "soma": 633240027.98,
+    "reais": "R$ 633,240,027.98",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-01",
+    "data": "jan.08",
+    "seguro": 182285896.74,
+    "abono": 12165061.74,
+    "bolsa": 161851494.2,
+    "soma": 356302452.68,
+    "reais": "R$ 356,302,452.68",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-02",
+    "data": "fev.08",
+    "seguro": 224125788.74,
+    "abono": 3842592.85,
+    "bolsa": 170405222.71,
+    "soma": 398373604.3,
+    "reais": "R$ 398,373,604.30",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-03",
+    "data": "mar.08",
+    "seguro": 160068023.92,
+    "abono": 6280110.37,
+    "bolsa": 78587288.25,
+    "soma": 244935422.54,
+    "reais": "R$ 244,935,422.54",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-04",
+    "data": "abr.08",
+    "seguro": 70450813.96,
+    "abono": 4602284.97,
+    "bolsa": 152107830.56,
+    "soma": 227160929.49,
+    "reais": "R$ 227,160,929.49",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-05",
+    "data": "mai.08",
+    "seguro": 202983349.41,
+    "abono": 2713730.07,
+    "bolsa": 152883612.96,
+    "soma": 358580692.44,
+    "reais": "R$ 358,580,692.44",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-06",
+    "data": "jun.08",
+    "seguro": 146699545.18,
+    "abono": 14234538.93,
+    "bolsa": 159793487.23,
+    "soma": 320727571.34,
+    "reais": "R$ 320,727,571.34",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-07",
+    "data": "jul.08",
+    "seguro": 165642877.26,
+    "abono": 8070511.67,
+    "bolsa": 89549031.49,
+    "soma": 263262420.42,
+    "reais": "R$ 263,262,420.42",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-08",
+    "data": "ago.08",
+    "seguro": 43310488.33,
+    "abono": 268797121.6,
+    "bolsa": 201134756.73,
+    "soma": 513242366.66,
+    "reais": "R$ 513,242,366.66",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-09",
+    "data": "set.08",
+    "seguro": 234372735.24,
+    "abono": 49645941.22,
+    "bolsa": 205642440.86,
+    "soma": 489661117.32,
+    "reais": "R$ 489,661,117.32",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-10",
+    "data": "out.08",
+    "seguro": 335648236.03,
+    "abono": 161076374.52,
+    "bolsa": 171365037.51,
+    "soma": 668089648.06,
+    "reais": "R$ 668,089,648.06",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-11",
+    "data": "nov.08",
+    "seguro": 55329967.63,
+    "abono": 80138002.73,
+    "bolsa": 230986166.84,
+    "soma": 366454137.2,
+    "reais": "R$ 366,454,137.20",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2008-12",
+    "data": "dez.08",
+    "seguro": 102459785.49,
+    "abono": 75048541.07,
+    "bolsa": 203926031.8,
+    "soma": 381434358.36,
+    "reais": "R$ 381,434,358.36",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-01",
+    "data": "jan.09",
+    "seguro": 76637728.73,
+    "abono": 3559368.33,
+    "bolsa": 201220010.76,
+    "soma": 281417107.82,
+    "reais": "R$ 281,417,107.82",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-02",
+    "data": "fev.09",
+    "seguro": 85933032.95,
+    "abono": 3702406.08,
+    "bolsa": 164776974.36,
+    "soma": 254412413.39,
+    "reais": "R$ 254,412,413.39",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-03",
+    "data": "mar.09",
+    "seguro": 225082979.14,
+    "abono": 6644273.14,
+    "bolsa": 219370285.07,
+    "soma": 451097537.35,
+    "reais": "R$ 451,097,537.35",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-04",
+    "data": "abr.09",
+    "seguro": 123391609.42,
+    "abono": 682169.93,
+    "bolsa": 196061559.32,
+    "soma": 320135338.67,
+    "reais": "R$ 320,135,338.67",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-05",
+    "data": "mai.09",
+    "seguro": 57824609.77,
+    "abono": 12782968.28,
+    "bolsa": 238850941.02,
+    "soma": 309458519.07,
+    "reais": "R$ 309,458,519.07",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-06",
+    "data": "jun.09",
+    "seguro": 108455822.08,
+    "abono": -1712636.64,
+    "bolsa": 206577686.95,
+    "soma": 313320872.39,
+    "reais": "R$ 313,320,872.39",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-07",
+    "data": "jul.09",
+    "seguro": 36902344.86,
+    "abono": 421088839.35,
+    "bolsa": 189870968.59,
+    "soma": 647862152.8,
+    "reais": "R$ 647,862,152.80",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-08",
+    "data": "ago.09",
+    "seguro": 74429883.41,
+    "abono": 24513026.55,
+    "bolsa": 211108100.13,
+    "soma": 310051010.09,
+    "reais": "R$ 310,051,010.09",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-09",
+    "data": "set.09",
+    "seguro": 34777163.31,
+    "abono": -24370196.95,
+    "bolsa": 263104672.31,
+    "soma": 273511638.67,
+    "reais": "R$ 273,511,638.67",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-10",
+    "data": "out.09",
+    "seguro": 51585759.11,
+    "abono": 13847578,
+    "bolsa": 40530004.31,
+    "soma": 105963341.42,
+    "reais": "R$ 105,963,341.42",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-11",
+    "data": "nov.09",
+    "seguro": -61100372.42,
+    "abono": -11755464.59,
+    "bolsa": 222375718.68,
+    "soma": 149519881.67,
+    "reais": "R$ 149,519,881.67",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2009-12",
+    "data": "dez.09",
+    "seguro": 327101382.57,
+    "abono": 87308220.69,
+    "bolsa": 73635407.88,
+    "soma": 488045011.14,
+    "reais": "R$ 488,045,011.14",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-01",
+    "data": "jan.10",
+    "seguro": 184636207.88,
+    "abono": 3813040.44,
+    "bolsa": 394923033.45,
+    "soma": 583372281.77,
+    "reais": "R$ 583,372,281.77",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-02",
+    "data": "fev.10",
+    "seguro": 235725274.37,
+    "abono": 93157467.3,
+    "bolsa": 418168710.75,
+    "soma": 747051452.42,
+    "reais": "R$ 747,051,452.42",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-03",
+    "data": "mar.10",
+    "seguro": 337087874.35,
+    "abono": 66764085.68,
+    "bolsa": 87704327.72,
+    "soma": 491556287.75,
+    "reais": "R$ 491,556,287.75",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-04",
+    "data": "abr.10",
+    "seguro": 281827789.29,
+    "abono": 65591466.82,
+    "bolsa": 91989202.95,
+    "soma": 439408459.06,
+    "reais": "R$ 439,408,459.06",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-05",
+    "data": "mai.10",
+    "seguro": 164154364.51,
+    "abono": 13226389.14,
+    "bolsa": 245001.72,
+    "soma": 177625755.37,
+    "reais": "R$ 177,625,755.37",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-06",
+    "data": "jun.10",
+    "seguro": 53456634.32,
+    "abono": -8612334.97,
+    "bolsa": 193173423.53,
+    "soma": 238017722.88,
+    "reais": "R$ 238,017,722.88",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-07",
+    "data": "jul.10",
+    "seguro": 123412218.2,
+    "abono": 210031459.31,
+    "bolsa": 104582198.9,
+    "soma": 438025876.41,
+    "reais": "R$ 438,025,876.41",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-08",
+    "data": "ago.10",
+    "seguro": 13437159.13,
+    "abono": 39585087.97,
+    "bolsa": -107319.63,
+    "soma": 52914927.47,
+    "reais": "R$ 52,914,927.47",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-09",
+    "data": "set.10",
+    "seguro": 107452661.27,
+    "abono": -25488514.51,
+    "bolsa": 21821149.37,
+    "soma": 103785296.13,
+    "reais": "R$ 103,785,296.13",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-10",
+    "data": "out.10",
+    "seguro": 155808211.61,
+    "abono": 83527714.15,
+    "bolsa": 71583768.22,
+    "soma": 310919693.98,
+    "reais": "R$ 310,919,693.98",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-11",
+    "data": "nov.10",
+    "seguro": 52379328.97,
+    "abono": 86957760.63,
+    "bolsa": 41964370.67,
+    "soma": 181301460.27,
+    "reais": "R$ 181,301,460.27",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2010-12",
+    "data": "dez.10",
+    "seguro": 430313346.61,
+    "abono": 136833929.41,
+    "bolsa": -104998492.78,
+    "soma": 462148783.24,
+    "reais": "R$ 462,148,783.24",
+    "presidente": "Lula"
+  },
+  {
+    "periodo": "2011-01",
+    "data": "jan.11",
+    "seguro": 385603825.26,
+    "abono": 148872886.92,
+    "bolsa": 149779791.22,
+    "soma": 684256503.4,
+    "reais": "R$ 684,256,503.40",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-02",
+    "data": "fev.11",
+    "seguro": 8881780.39,
+    "abono": 103065311.05,
+    "bolsa": 175833611.61,
+    "soma": 287780703.05,
+    "reais": "R$ 287,780,703.05",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-03",
+    "data": "mar.11",
+    "seguro": 176340590.75,
+    "abono": 72695788.65,
+    "bolsa": 40303127.35,
+    "soma": 289339506.75,
+    "reais": "R$ 289,339,506.75",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-04",
+    "data": "abr.11",
+    "seguro": 59594824.81,
+    "abono": 49334696.45,
+    "bolsa": 45640947.68,
+    "soma": 154570468.94,
+    "reais": "R$ 154,570,468.94",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-05",
+    "data": "mai.11",
+    "seguro": 108891890.42,
+    "abono": 21533529.73,
+    "bolsa": 141728903.86,
+    "soma": 272154324.01,
+    "reais": "R$ 272,154,324.01",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-06",
+    "data": "jun.11",
+    "seguro": 102555408.7,
+    "abono": 18399603.41,
+    "bolsa": 212832352.86,
+    "soma": 333787364.97,
+    "reais": "R$ 333,787,364.97",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-07",
+    "data": "jul.11",
+    "seguro": 521639222.22,
+    "abono": 738062297.59,
+    "bolsa": 30569725.82,
+    "soma": 1290271245.63,
+    "reais": "R$ 1,290,271,245.63",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-08",
+    "data": "ago.11",
+    "seguro": 119776925.85,
+    "abono": 25681894.28,
+    "bolsa": 16163846.87,
+    "soma": 161622667,
+    "reais": "R$ 161,622,667.00",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-09",
+    "data": "set.11",
+    "seguro": 188657902.19,
+    "abono": 46207678.58,
+    "bolsa": 46330296.43,
+    "soma": 281195877.2,
+    "reais": "R$ 281,195,877.20",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-10",
+    "data": "out.11",
+    "seguro": 466256219.45,
+    "abono": 87942502.6,
+    "bolsa": 13267279.77,
+    "soma": 567466001.82,
+    "reais": "R$ 567,466,001.82",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-11",
+    "data": "nov.11",
+    "seguro": -520101062.81,
+    "abono": 404966153.83,
+    "bolsa": 14713266.42,
+    "soma": -100421642.56,
+    "reais": "-R$ 100,421,642.56",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2011-12",
+    "data": "dez.11",
+    "seguro": 398857873.88,
+    "abono": 211572449.95,
+    "bolsa": 116103587.18,
+    "soma": 726533911.01,
+    "reais": "R$ 726,533,911.01",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-01",
+    "data": "jan.12",
+    "seguro": 521970892.6,
+    "abono": 128823869.57,
+    "bolsa": 215334464.68,
+    "soma": 866129226.85,
+    "reais": "R$ 866,129,226.85",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-02",
+    "data": "fev.12",
+    "seguro": -88394713.19,
+    "abono": 88099988.05,
+    "bolsa": 158849935.48,
+    "soma": 158555210.34,
+    "reais": "R$ 158,555,210.34",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-03",
+    "data": "mar.12",
+    "seguro": 292661389.59,
+    "abono": 52225323.89,
+    "bolsa": 146725821.98,
+    "soma": 491612535.46,
+    "reais": "R$ 491,612,535.46",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-04",
+    "data": "abr.12",
+    "seguro": 173574097.73,
+    "abono": 24198568.56,
+    "bolsa": 361727954.73,
+    "soma": 559500621.02,
+    "reais": "R$ 559,500,621.02",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-05",
+    "data": "mai.12",
+    "seguro": -65681643.34,
+    "abono": 28311558.52,
+    "bolsa": 299731094.71,
+    "soma": 262361009.89,
+    "reais": "R$ 262,361,009.89",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-06",
+    "data": "jun.12",
+    "seguro": 27671165.37,
+    "abono": 35929835.74,
+    "bolsa": 233268297.71,
+    "soma": 296869298.82,
+    "reais": "R$ 296,869,298.82",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-07",
+    "data": "jul.12",
+    "seguro": -16769077.28,
+    "abono": 345493567.45,
+    "bolsa": -135050743.05,
+    "soma": 193673747.12,
+    "reais": "R$ 193,673,747.12",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-08",
+    "data": "ago.12",
+    "seguro": 143499315.14,
+    "abono": 22419132.85,
+    "bolsa": -12819178.45,
+    "soma": 153099269.54,
+    "reais": "R$ 153,099,269.54",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-09",
+    "data": "set.12",
+    "seguro": -8849434.95,
+    "abono": 72004106.21,
+    "bolsa": -182967467.57,
+    "soma": -119812796.31,
+    "reais": "-R$ 119,812,796.31",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-10",
+    "data": "out.12",
+    "seguro": 344721553.46,
+    "abono": 163626879.15,
+    "bolsa": -18318870.25,
+    "soma": 490029562.36,
+    "reais": "R$ 490,029,562.36",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-11",
+    "data": "nov.12",
+    "seguro": 199268774.08,
+    "abono": -338752038.35,
+    "bolsa": 22581974.93,
+    "soma": -116901289.34,
+    "reais": "-R$ 116,901,289.34",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2012-12",
+    "data": "dez.12",
+    "seguro": -496993393.51,
+    "abono": 276201318.97,
+    "bolsa": 7337218.13,
+    "soma": -213454856.41,
+    "reais": "-R$ 213,454,856.41",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-01",
+    "data": "jan.13",
+    "seguro": 301766001.58,
+    "abono": 142096458.72,
+    "bolsa": 102064792.48,
+    "soma": 545927252.78,
+    "reais": "R$ 545,927,252.78",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-02",
+    "data": "fev.13",
+    "seguro": 237216780.86,
+    "abono": 93234979.87,
+    "bolsa": 76627828.48,
+    "soma": 407079589.21,
+    "reais": "R$ 407,079,589.21",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-03",
+    "data": "mar.13",
+    "seguro": 44782171.23,
+    "abono": 96727762.25,
+    "bolsa": 72594517.7,
+    "soma": 214104451.18,
+    "reais": "R$ 214,104,451.18",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-04",
+    "data": "abr.13",
+    "seguro": 347362633.05,
+    "abono": 75282118.87,
+    "bolsa": 270638934.87,
+    "soma": 693283686.79,
+    "reais": "R$ 693,283,686.79",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-05",
+    "data": "mai.13",
+    "seguro": -4668568.96,
+    "abono": 26097470.81,
+    "bolsa": -17806510.13,
+    "soma": 3622391.72,
+    "reais": "R$ 3,622,391.72",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-06",
+    "data": "jun.13",
+    "seguro": 113832267.34,
+    "abono": 13748346.07,
+    "bolsa": 80952861.45,
+    "soma": 208533474.86,
+    "reais": "R$ 208,533,474.86",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-07",
+    "data": "jul.13",
+    "seguro": 190600487.9,
+    "abono": -207138416.61,
+    "bolsa": 7938566.16,
+    "soma": -8599362.55,
+    "reais": "-R$ 8,599,362.55",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-08",
+    "data": "ago.13",
+    "seguro": -576255786.36,
+    "abono": -1497068136.31,
+    "bolsa": 26302131.66,
+    "soma": -2047021791.01,
+    "reais": "-R$ 2,047,021,791.01",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-09",
+    "data": "set.13",
+    "seguro": -1519616679.71,
+    "abono": -89503233.87,
+    "bolsa": 27889113.73,
+    "soma": -1581230799.85,
+    "reais": "-R$ 1,581,230,799.85",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-10",
+    "data": "out.13",
+    "seguro": -1289782970.92,
+    "abono": -1583630833.66,
+    "bolsa": -1199183.78,
+    "soma": -2874612988.36,
+    "reais": "-R$ 2,874,612,988.36",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-11",
+    "data": "nov.13",
+    "seguro": -653887506.38,
+    "abono": -351716840.76,
+    "bolsa": -226459371.2,
+    "soma": -1232063718.34,
+    "reais": "-R$ 1,232,063,718.34",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2013-12",
+    "data": "dez.13",
+    "seguro": -1872227712.14,
+    "abono": -620019346.78,
+    "bolsa": -480681312.2,
+    "soma": -2972928371.12,
+    "reais": "-R$ 2,972,928,371.12",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-01",
+    "data": "jan.14",
+    "seguro": -36250580.34,
+    "abono": 34026420.64,
+    "bolsa": 109543541.4,
+    "soma": 107319381.7,
+    "reais": "R$ 107,319,381.70",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-02",
+    "data": "fev.14",
+    "seguro": -1373523982.99,
+    "abono": -19559203.35,
+    "bolsa": -773711666.2,
+    "soma": -2166794852.54,
+    "reais": "-R$ 2,166,794,852.54",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-03",
+    "data": "mar.14",
+    "seguro": -1427389597.75,
+    "abono": -13315673.04,
+    "bolsa": -203909568.16,
+    "soma": -1644614838.95,
+    "reais": "-R$ 1,644,614,838.95",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-04",
+    "data": "abr.14",
+    "seguro": -1644065955.52,
+    "abono": 298203135.48,
+    "bolsa": -227528796.39,
+    "soma": -1573391616.43,
+    "reais": "-R$ 1,573,391,616.43",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-05",
+    "data": "mai.14",
+    "seguro": -2591185834.75,
+    "abono": 220553638.49,
+    "bolsa": -1000977160.39,
+    "soma": -3371609356.65,
+    "reais": "-R$ 3,371,609,356.65",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-06",
+    "data": "jun.14",
+    "seguro": -1823180468.16,
+    "abono": -82329648.59,
+    "bolsa": -1782220351.39,
+    "soma": -3687730468.14,
+    "reais": "-R$ 3,687,730,468.14",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-07",
+    "data": "jul.14",
+    "seguro": -2667230891.65,
+    "abono": -900226753.56,
+    "bolsa": -2018357317.39,
+    "soma": -5585814962.6,
+    "reais": "-R$ 5,585,814,962.60",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-08",
+    "data": "ago.14",
+    "seguro": 46573761.35,
+    "abono": -938575623.8,
+    "bolsa": -711025490.45,
+    "soma": -1603027352.9,
+    "reais": "-R$ 1,603,027,352.90",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-09",
+    "data": "set.14",
+    "seguro": -311054424.74,
+    "abono": -443321234.1,
+    "bolsa": -286935708.95,
+    "soma": -1041311367.79,
+    "reais": "-R$ 1,041,311,367.79",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-10",
+    "data": "out.14",
+    "seguro": 107206775.94,
+    "abono": 31747381.44,
+    "bolsa": 6411319.34,
+    "soma": 145365476.72,
+    "reais": "R$ 145,365,476.72",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-11",
+    "data": "nov.14",
+    "seguro": 170493268.05,
+    "abono": 12347402.71,
+    "bolsa": 42188456.66,
+    "soma": 225029127.42,
+    "reais": "R$ 225,029,127.42",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2014-12",
+    "data": "dez.14",
+    "seguro": 50235401.93,
+    "abono": 10113983.83,
+    "bolsa": 22374579.05,
+    "soma": 82723964.81,
+    "reais": "R$ 82,723,964.81",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2015-01",
+    "data": "jan.15",
+    "seguro": 918688464.81,
+    "abono": 49865437.71,
+    "bolsa": 273228175.45,
+    "soma": 1241782077.97,
+    "reais": "R$ 1,241,782,077.97",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2015-02",
+    "data": "fev.15",
+    "seguro": 294427909.29,
+    "abono": 16074647.39,
+    "bolsa": 95515415.74,
+    "soma": 406017972.42,
+    "reais": "R$ 406,017,972.42",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2015-03",
+    "data": "mar.15",
+    "seguro": -44541050.31,
+    "abono": 505098.89,
+    "bolsa": 31872147.05,
+    "soma": -12163804.37,
+    "reais": "-R$ 12,163,804.37",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2015-04",
+    "data": "abr.15",
+    "seguro": 412656860.89,
+    "abono": 29318853.24,
+    "bolsa": 37383628.65,
+    "soma": 479359342.78,
+    "reais": "R$ 479,359,342.78",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2015-05",
+    "data": "mai.15",
+    "seguro": 353830462.22,
+    "abono": 231316772.01,
+    "bolsa": 67998544.64,
+    "soma": 653145778.87,
+    "reais": "R$ 653,145,778.87",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2015-06",
+    "data": "jun.15",
+    "seguro": 181816481.67,
+    "abono": 2976745.09,
+    "bolsa": 52520223.24,
+    "soma": 237313450,
+    "reais": "R$ 237,313,450.00",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2015-07",
+    "data": "jul.15",
+    "seguro": 517025460.6,
+    "abono": 235675926.53,
+    "bolsa": 81011133.54,
+    "soma": 833712520.67,
+    "reais": "R$ 833,712,520.67",
+    "presidente": "Dilma"
+  },
+  {
+    "periodo": "2015-08",
+    "data": "ago.15",
+    "seguro": 309347636.41,
+    "abono": 334099818.26,
+    "bolsa": 173628793.72,
+    "soma": 817076248.39,
+    "reais": "R$ 817,076,248.39",
+    "presidente": "Dilma"
+  }
+]
+});
+
+</script>
+
+</body>

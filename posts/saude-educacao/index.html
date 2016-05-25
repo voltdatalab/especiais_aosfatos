@@ -92,11 +92,14 @@
     <div class="texto">
         <p>
           O governo interino de Michel Temer deverá enviar, nas próximas semanas, uma PEC
-          (proposta de emenda constitucional) que vai mudar a vinculação de despesas como
-          saúde e educação à receita líquida do governo. Em vez disso, elas deverão ter um
-          percentual definido em relação a um teto fixado e não poderão crescer mais que a inflação.
-          Isso deverá alterar completamente como o governo financia os setores
-
+          (proposta de emenda constitucional) que vai mudar a vinculação de despesas como saúde
+          e educação à receita líquida do governo. Em vez disso, elas deverão ter um percentual
+          definido em relação a um teto fixo. Dessa forma, não poderão crescer mais que a inflação.
+          Isso deverá alterar completamente como o governo financia os setores.
+        </p>
+        <p>
+          Veja, em nossa sequência de gráficos, como funcionam os repasses orçamentários
+          para os ministérios da Saúde e da Educação desde 2011.
         </p>
 
         <!-- Gráfico 1 -->
@@ -143,60 +146,22 @@
         <div id="referencias">
           <h6>Notas</h6>
           <p>
-            Os dados visualizados podem mostrar algumas discrepâncias em relação aos resultados divulgados
-            pela imprensa ou por agências dos governos, por conta de revisões nos valores finais ou por
-            metodologias diferentes adotadas pelo FMI ou pela Trending Economics. Uma revisão dos dados
-            brasileiros feita por <strong>Aos Fatos</strong> com Volt Data Lab, no entanto, averigou que
-            a diferença tende a ser pequena.
+            Os dados referentes a previsão de despesas do governo foram retirados das
+            Leis Orçamentárias Anuais publicadas no site do Orçamento.
+            Já os dados do que foi pago anualmente em cada área são do Siga Brasil,
+            ferramenta de monitoramento dos gastos federais.
           </p>
           <p>
-            Foram utilizados dados dessas fontes - em vez, digamos, do IBGE - para se ter um
-            comparativo internacional.
-          </p>
-          <p>
-            O ponto de referência dos dados analisados é a <em>"mediana"</em> (valor que separa a metade superior de
-            um conjunto de dados da metade inferior), considerando que alguns casos não comportam
-            a utilização da <em>"média"</em> (soma dos valores dividida pela quantidade de valores). Isso acontece
-            porque alguns valores são tão díspares do conjunto que acabam afetando o ponto médio.
-          </p>
-          <p>
-            Veja o desemprego no mundo, por exemplo. A mediana do conjunto analisado é 7,7%, mas a média
-            desse conjunto é 10,5%. O dado brasileiro, então, estaria dentro da média. Mas não é na
-            média onde está a referência, o meio do conjunto - basta ver <em>(gráfico 2)</em> que é a mediana
-            (metade na base do "funil", e a outra metade na ponta). Isso acontece porque alguns países
-            têm desemprego dramaticamente alto, como Djibouti (54%) e Congo (46,1%), enquanto outros têm
-            taxa de desocupação declarada muito baixa, como Catar (0,2%) e Camboja (0.3%).
-          </p>
-          <p>
-            As visualizações foram feitas com a biblioteca <a href="http://d3js.org" target="_blank">D3.js</a>,
-            e utilizam, exceto no gráfico de inflação,  <em>escala linear</em> - o que significa que o eixo X (inferior)
-            avança progressivamente em progressão aritimética (10, 20, 30 etc). As visualizações das projeções do PIB
-            brasileiro e de inflação utilizam a biblioteca
-            <a href="http://morrisjs.github.io/morris.js/index.html" target="_blank">Morris.js</a>,
-            construída em D3.
-          </p>
-          <p>
-            No gráfico da inflação, por conta da grande distância entre alguns dados -
-            por exemplo, as inflações na Venezuela e no Sudão do Sul são totalmente
-            díspares com o resto do mundo - utilizamos uma <em>escala logarítica</em>,
-            onde o eixo X salta em progressão geométrica, a fim de acomodar os pontos no
-            gráfico. Por esse motivo, não utilizamos países ou regiões em deflação ou com taxa de inflação zero,
-            já que progressão geométrica não comporta base 0.
-          </p>
-          <p>
-            Os continentes foram divididos de forma abrangente, sem divisões de subregião ou subcontinente. Assim, por exemplo,
-            países do Caribe foram considerados "Americas", e Kosovo e Letônia são "Europa", e não
-            Europa Oriental.
+            Os gastos vinculados a receita líquida anual estão
+            disponíveis nos relatórios de gestão fiscal do governo, no site do Tesouro.
           </p>
 
         <h6>Fontes</h6>
 
         <ul class="listpan">
-          <li><a href="http://bit.ly/1rPtaUL" target="_blank">Acesse os dados tabelados</a>    </li>
-          <li><a href="http://bit.ly/1rPucQy" target="_blank">Desemprego: Trending Economics</a></li>
-          <li><a href="http://bit.ly/22e6mdS" target="_blank">Crescimento do PIB: FMI Data Mapper</a></li>
-          <li><a href="http://bit.ly/22e6mdS" target="_blank">Inflação: FMI Data Mapper</a></li>
-          <li><a href="http://bit.ly/1rPuo2q" target="_blank">Dívida/PIB: Trending Economics</a></li>
+          <li><a href="http://bit.ly/1TXgHVx" target="_blank">Acesse os dados tabelados</a>    </li>
+          <li><a href="http://www.orcamentofederal.gov.br/informacoes-orcamentarias/execucao-orcamentaria-1/publico_cgcon_execucao_funcao170516.pdf" target="_blank">Orçamento Federal</a></li>
+          <li><a href="http://www.tesouro.fazenda.gov.br/" target="_blank">Secretaria do Tesouro Nacional</a></li>
         </ul>
 
         </div>

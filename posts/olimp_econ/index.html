@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aos Fatos | Crescimento econômico nas Olimpíadas</title>
+<link rel="stylesheet" type="text/css" href="general.css">
+</head>
+<body>
+ 
+<!-- TAB CONTROLLERS -->
+<input id="panel-1-ctrl"
+       class="panel-radios" type="radio" name="tab-radios" checked>
+<input id="panel-2-ctrl"
+       class="panel-radios" type="radio" name="tab-radios">
+<input id="panel-3-ctrl"
+       class="panel-radios" type="radio" name="tab-radios">
+
+<header id="introduction">
+  <h1>Crescimento econômico antes e depois das Olimpíadas</h1>
+</header>
+
+<!-- TABS -->
+<ul id="tabs-list">
+    <!-- MENU TOGGLE -->
+    <label id="open-nav-label" for="nav-ctrl"></label>
+    <li id="li-for-panel-1">
+      <label class="panel-label"
+             for="panel-1-ctrl">Pré-Olimpíadas</label>
+    </li><!--INLINE-BLOCK FIX
+ --><li id="li-for-panel-2">
+      <label class="panel-label"
+             for="panel-2-ctrl">Olimpíadas</label>
+    </li><!--INLINE-BLOCK FIX
+ --><li id="li-for-panel-3">
+      <label class="panel-label"
+             for="panel-3-ctrl">Pós-Olimpíadas</label>
+    </li>
+    <label id="close-nav-label" for="nav-ctrl">Fecha</label>
+</ul>
+
+<!-- THE PANELS -->
+<article id="panels">
+  <div class="container">
+    <section id="panel-1">
+      <main>
+        
+          <p>Média de taxa de crescimento anteriormente aos Jogos, variando de três a seis anos antes, dependendo do país.</p>
+        <div id="graficodois"></div>
+        <h4>FONTE: Universidade Nacional de Chengchi</h4>
+    <script src="http://d3js.org/d3.v2.min.js"></script>
+    <script>
+function renderChart() {
+
+var data = d3.csv.parse(d3.select('#datadois').text());
+var valueLabelWidth = 60; // space reserved for value labels (right)
+var barHeight = 40; // height of one bar
+var barLabelWidth = 120; // space reserved for bar labels
+var barLabelPadding = 5; // padding between bar and bar labels (left)
+var gridLabelHeight = 50; // space reserved for gridline labels
+var gridChartOffset = 15; // space between start of grid and first bar
+var maxBarWidth = 220; // width of the bar with the max value
+ 
+// accessor functions 
+var barLabel = function(d) { return d['cidade']; };
+var barValue = function(d) { return parseFloat(d['crescimento']); };
+ 
+// scales
+var yScale = d3.scale.ordinal().domain(d3.range(0, data.length)).rangeBands([0, data.length * barHeight]);
+var y = function(d, i) { return yScale(i); };
+var yText = function(d, i) { return y(d, i) + yScale.rangeBand() / 2; };
+var x = d3.scale.linear().domain([0, d3.max(data, barValue)]).range([0, maxBarWidth]);
+// svg container element
+var chart = d3.select('#graficodois').append("svg")
+  .attr("viewBox", "0 0 420 300" )
+  .attr("preserveAspectRatio", "xMinYMax meet");
+    
+// grid line labels
+var gridContainer = chart.append('g')
+  .attr('transform', 'translate(' + barLabelWidth + ',' + gridLabelHeight + ')'); 
+gridContainer.selectAll("text").data(x.ticks(10)).enter().append("text")
+  .attr("x", x)
+  .attr("dy", -3)
+  .attr("text-anchor", "middle")
+  .style("font", "1em Inconsolata")
+  .text(String);
+// vertical grid lines
+gridContainer.selectAll("line").data(x.ticks(10)).enter().append("line")
+  .attr("x1", x)
+  .attr("x2", x)
+  .attr("y1", 0)
+  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+  .style("stroke", "#ccc");
+// bar labels
+var labelsContainer = chart.append('g')
+  .attr('transform', 'translate(' + (barLabelWidth - barLabelPadding) + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+labelsContainer.selectAll('text').data(data).enter().append('text')
+  .attr('y', yText)
+  .attr('stroke', 'none')
+  .attr('fill', 'black')
+  .attr("dy", ".35em") // vertical-align: middle
+  .attr('text-anchor', 'end')
+.style("font", "1em Inconsolata")
+  .text(barLabel);
+// bars
+var barsContainer = chart.append('g')
+  .attr('transform', 'translate(' + barLabelWidth + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+barsContainer.selectAll("rect").data(data).enter().append("rect")
+  .attr('y', y)
+  .attr('height', yScale.rangeBand())
+  .attr('width', function(d) { return x(barValue(d)); })
+  .attr('stroke', 'white')
+  .attr('fill', '#faa61a');
+// bar value labels
+barsContainer.selectAll("text").data(data).enter().append("text")
+  .attr("x", function(d) { return x(barValue(d)); })
+  .attr("y", yText)
+  .attr("dx", 3) // padding-left
+  .attr("dy", ".35em") // vertical-align: middle
+  .attr("text-anchor", "start") // text-align: right
+  .attr("fill", "black")
+  .style("font", "16px Inconsolata")
+  .attr("stroke", "none")
+  .text(function(d) { return d3.round(barValue(d), 2);  });
+// start line
+barsContainer.append("line")
+  .attr("y1", -gridChartOffset)
+  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+  .style("stroke", "#000");
+  barsContainer.append("text")
+  .attr("x", 255)
+  .attr("y", yText)
+  .attr("dy", ".35em")
+  .attr("dx", 3)
+  .text("%");
+  
+
+}
+    </script>
+    <script id="datadois" type="text/csv">cidade,crescimento
+Seul 1988,15.1
+Barcelona 1992,11.1
+Atlanta 1996,5.3
+Sidney 2000,5.6
+Atenas 1994,8.3</script>
+    <script>renderChart();</script>
+          
+      </main>
+    </section>
+    <section id="panel-2">
+      <main>
+          <p>Taxa de crescimento econômico dos países no mesmo ano em que suas cidades sediaram os Jogos.</p>
+        <div id="graficoum"></div>
+         <h4>FONTE: Universidade Nacional de Chengchi</h4>
+    <script>
+function renderChart() {
+
+var data = d3.csv.parse(d3.select('#dataum').text());
+var valueLabelWidth = 60; // space reserved for value labels (right)
+var barHeight = 50; // height of one bar
+var barLabelWidth = 120; // space reserved for bar labels
+var barLabelPadding = 5; // padding between bar and bar labels (left)
+var gridLabelHeight = 50; // space reserved for gridline labels
+var gridChartOffset = 15; // space between start of grid and first bar
+var maxBarWidth = 220; // width of the bar with the max value
+ 
+// accessor functions 
+var barLabel = function(d) { return d['cidade']; };
+var barValue = function(d) { return parseFloat(d['crescimento']); };
+ 
+// scales
+var yScale = d3.scale.ordinal().domain(d3.range(0, data.length)).rangeBands([0, data.length * barHeight]);
+var y = function(d, i) { return yScale(i); };
+var yText = function(d, i) { return y(d, i) + yScale.rangeBand() / 2; };
+var x = d3.scale.linear().domain([0, d3.max(data, barValue)]).range([0, maxBarWidth]);
+// svg container element
+var chart = d3.select('#graficoum').append("svg")
+  .attr("viewBox", "0 0 420 330" )
+  .attr("preserveAspectRatio", "xMaxYMax meet");
+    
+// grid line labels
+var gridContainer = chart.append('g')
+  .attr('transform', 'translate(' + barLabelWidth + ',' + gridLabelHeight + ')'); 
+gridContainer.selectAll("text").data(x.ticks(10)).enter().append("text")
+  .attr("x", x)
+  .attr("dy", -3)
+  .attr("text-anchor", "middle")
+  .style("font", "1em Inconsolata")
+  .text(String);
+// vertical grid lines
+gridContainer.selectAll("line").data(x.ticks(10)).enter().append("line")
+  .attr("x1", x)
+  .attr("x2", x)
+  .attr("y1", 0)
+  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+  .style("stroke", "#ccc");
+// bar labels
+var labelsContainer = chart.append('g')
+  .attr('transform', 'translate(' + (barLabelWidth - barLabelPadding) + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+labelsContainer.selectAll('text').data(data).enter().append('text')
+  .attr('y', yText)
+  .attr('stroke', 'none')
+  .attr('fill', 'black')
+  .attr("dy", ".35em") // vertical-align: middle
+  .attr('text-anchor', 'end')
+.style("font", "1em Inconsolata")
+  .text(barLabel);
+// bars
+var barsContainer = chart.append('g')
+  .attr('transform', 'translate(' + barLabelWidth + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+barsContainer.selectAll("rect").data(data).enter().append("rect")
+  .attr('y', y)
+  .attr('height', yScale.rangeBand())
+  .attr('width', function(d) { return x(barValue(d)); })
+  .attr('stroke', 'white')
+  .attr('fill', '#faa61a');
+// bar value labels
+barsContainer.selectAll("text").data(data).enter().append("text")
+  .attr("x", function(d) { return x(barValue(d)); })
+  .attr("y", yText)
+  .attr("dx", 3) // padding-left
+  .attr("dy", ".35em") // vertical-align: middle
+  .attr("text-anchor", "start") // text-align: right
+  .attr("fill", "black")
+  .style("font", "16px Inconsolata")
+  .attr("stroke", "none")
+  .text(function(d) { return d3.round(barValue(d), 2);  });
+// start line
+barsContainer.append("line")
+  .attr("y1", -gridChartOffset)
+  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+  .style("stroke", "#000");
+  barsContainer.append("text")
+  .attr("x", 255)
+  .attr("y", yText)
+  .attr("dy", ".35em")
+  .attr("dx", 3)
+  .text("%");
+  
+
+}
+    </script>
+    <script id="dataum" type="text/csv">cidade,crescimento
+Seul 1988,18.8
+Barcelona 1992,7.7
+Atlanta 1996,5.7
+Sidney 2000,7.5
+Atenas 1994,7.7</script>
+    <script>renderChart();</script>
+      </main>
+    </section>
+    <section id="panel-3">
+      <main>
+          <p>Média de taxa de crescimento posteriormente aos Jogos, variando de três a seis anos antes, dependendo do país.</p>
+        <div id="graficotres"></div>
+          <h4>FONTE: Universidade Nacional de Chengchi</h4>
+    <script>
+function renderChart() {
+
+var data = d3.csv.parse(d3.select('#datatres').text());
+var valueLabelWidth = 60; // space reserved for value labels (right)
+var barHeight = 30; // height of one bar
+var barLabelWidth = 120; // space reserved for bar labels
+var barLabelPadding = 5; // padding between bar and bar labels (left)
+var gridLabelHeight = 50; // space reserved for gridline labels
+var gridChartOffset = 15; // space between start of grid and first bar
+var maxBarWidth = 220; // width of the bar with the max value
+ 
+// accessor functions 
+var barLabel = function(d) { return d['cidade']; };
+var barValue = function(d) { return parseFloat(d['crescimento']); };
+ 
+// scales
+var yScale = d3.scale.ordinal().domain(d3.range(0, data.length)).rangeBands([0, data.length * barHeight]);
+var y = function(d, i) { return yScale(i); };
+var yText = function(d, i) { return y(d, i) + yScale.rangeBand() / 2; };
+var x = d3.scale.linear().domain([0, d3.max(data, barValue)]).range([0, maxBarWidth]);
+// svg container element
+var chart = d3.select('#graficotres').append("svg")
+  .attr("viewBox", "0 0 420 330" )
+  .attr("preserveAspectRatio", "xMaxYMax meet");
+    
+// grid line labels
+var gridContainer = chart.append('g')
+  .attr('transform', 'translate(' + barLabelWidth + ',' + gridLabelHeight + ')'); 
+gridContainer.selectAll("text").data(x.ticks(10)).enter().append("text")
+  .attr("x", x)
+  .attr("dy", -3)
+  .attr("text-anchor", "middle")
+  .style("font", "1em Inconsolata")
+  .text(String);
+// vertical grid lines
+gridContainer.selectAll("line").data(x.ticks(10)).enter().append("line")
+  .attr("x1", x)
+  .attr("x2", x)
+  .attr("y1", 0)
+  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+  .style("stroke", "#ccc");
+// bar labels
+var labelsContainer = chart.append('g')
+  .attr('transform', 'translate(' + (barLabelWidth - barLabelPadding) + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+labelsContainer.selectAll('text').data(data).enter().append('text')
+  .attr('y', yText)
+  .attr('stroke', 'none')
+  .attr('fill', 'black')
+  .attr("dy", ".35em") // vertical-align: middle
+  .attr('text-anchor', 'end')
+.style("font", "1em Inconsolata")
+  .text(barLabel);
+// bars
+var barsContainer = chart.append('g')
+  .attr('transform', 'translate(' + barLabelWidth + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+barsContainer.selectAll("rect").data(data).enter().append("rect")
+  .attr('y', y)
+  .attr('height', yScale.rangeBand())
+  .attr('width', function(d) { return x(barValue(d)); })
+  .attr('stroke', 'white')
+  .attr('fill', '#faa61a');
+// bar value labels
+barsContainer.selectAll("text").data(data).enter().append("text")
+  .attr("x", function(d) { return x(barValue(d)); })
+  .attr("y", yText)
+  .attr("dx", 3) // padding-left
+  .attr("dy", ".35em") // vertical-align: middle
+  .attr("text-anchor", "start") // text-align: right
+  .attr("fill", "black")
+  .style("font", "16px Inconsolata")
+  .attr("stroke", "none")
+  .text(function(d) { return d3.round(barValue(d), 2);  });
+// start line
+barsContainer.append("line")
+  .attr("y1", -gridChartOffset)
+  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+  .style("stroke", "#000");
+  barsContainer.append("text")
+  .attr("x", 255)
+  .attr("y", yText)
+  .attr("dy", ".35em")
+  .attr("dx", 3)
+  .text("%");
+  
+
+}
+    </script>
+    <script id="datatres" type="text/csv">cidade,crescimento
+Seul 1988,16.4
+Barcelona 1992,5
+Atlanta 1996,5.8
+Sidney 2000,6.6
+Atenas 1994,7.7</script>
+    <script>renderChart();</script>
+      </main>
+    </section>
+    
+    
+  </div>
+</article>
+ 
+ 
+</body>
+</html>

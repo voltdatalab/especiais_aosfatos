@@ -55,7 +55,7 @@ function renderChart() {
 
 var data = d3.csv.parse(d3.select('#datadois').text());
 var valueLabelWidth = 60; // space reserved for value labels (right)
-var barHeight = 40; // height of one bar
+var barHeight = 50; // height of one bar
 var barLabelWidth = 120; // space reserved for bar labels
 var barLabelPadding = 5; // padding between bar and bar labels (left)
 var gridLabelHeight = 50; // space reserved for gridline labels
@@ -73,7 +73,7 @@ var yText = function(d, i) { return y(d, i) + yScale.rangeBand() / 2; };
 var x = d3.scale.linear().domain([0, d3.max(data, barValue)]).range([0, maxBarWidth]);
 // svg container element
 var chart = d3.select('#graficodois').append("svg")
-  .attr("viewBox", "0 0 420 300" )
+  .attr("viewBox", "0 0 420 330" )
   .attr("preserveAspectRatio", "xMinYMax meet");
     
 // grid line labels
@@ -252,7 +252,7 @@ Atenas 2004,7.7</script>
     </section>
     <section id="panel-3">
       <main>
-          <p>Média de taxa de crescimento posteriormente aos Jogos, variando de três a seis anos antes, dependendo do país.</p>
+          <p>Média de taxa de crescimento após os Jogos, variando de três a seis anos antes, dependendo do país.</p>
         <div id="graficotres"></div>
           <h4>FONTE: Universidade Nacional de Chengchi</h4>
     <script>
@@ -260,7 +260,7 @@ function renderChart() {
 
 var data = d3.csv.parse(d3.select('#datatres').text());
 var valueLabelWidth = 60; // space reserved for value labels (right)
-var barHeight = 30; // height of one bar
+var barHeight = 50; // height of one bar
 var barLabelWidth = 120; // space reserved for bar labels
 var barLabelPadding = 5; // padding between bar and bar labels (left)
 var gridLabelHeight = 50; // space reserved for gridline labels

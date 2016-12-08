@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<style>
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
+body {
+  background-color: #fff;
+  height: 100%;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+div {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+p {
+  margin-bottom: 16px;
+  font-family: Inconsolata, sans-serif;
+  line-height: 1.2em
+}
+
+th {
+  text-align: left;
+  font-family: 'Inconsolata', sans-serif;
+  cursor: pointer;
+  width: 100%;
+}
+
+td {
+  text-align: center;
+  font-size: 10;
+  height: 20px;
+  padding: 3px;
+  padding-left: 10px;
+  background-color: #ededed;
+}
+
+td:nth-last-child(1) {
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 30px;
+  font-family: 'Inconsolata', sans-serif;
+  text-transform: capitalize;
+}
+
+td:nth-last-child(4) {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+thead:first-child th {
+  text-align: center;
+  padding: 10px;
+  background-color: #ababab;
+}
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stupidtable/0.0.1/stupidtable.js" type="text/javascript"></script> 
+<div>
+  <h1>Detalhes de contribuição</h1>
+  <p>Proporção (%) detalhada de aposentadorias concedidas por anos de serviço do segurado, considerados cerca de 4,5 milhões de benefícios concedidos de 1996 a 2014.</p>
+  <div id="table"></div>
+<h5>FONTE: Dataprev</h5>
+</div>
+<script>
+d3.csv("https://raw.githubusercontent.com/voltdatalab/dados/master/economia/previdencia_contrib.csv", function(error, data) {
+
+    if (error) {
+      console.log("Erro...");
+
+    }
+
+    console.log(data);
+
+    var simpleArray = [];
+    var averageInColor = [];
+    
+    var valueline = d3.svg.line()
+    .x(function(d) { return x(d.UF); })
+    .y(function(d) { return y(d["(b)-(a)"]); });
+
+    
+
+    data.forEach(function(d, i) {
+      d.faixa = d.faixa;
+      d.prop_pct = +d.prop_pct;
+
+      d.AverageGP = (d.prop_pct);
+      
+      var observacao = d.obs;
+      console.log(d.AverageGP.toFixed(0));
+
+      simpleArray.push([d.faixa, d.prop_pct]);
+      averageInColor.push(d.AverageGP.toFixed(0));
+     
+    });
+    
+    var justInCase = d3.extent(averageInColor);
+    var minData = d3.min(averageInColor);
+    var maxData = d3.max(averageInColor);
+    console.log(minData);
+    
+    var myColorScale = d3.scale.linear()
+      //.domain([minData, maxData])
+      .domain([0,2,3,5,18,21])
+      .range(['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']);
+    
+    
+
+    var table = d3.select("#table").append("table");
+    
+    var div = d3.select("#notas").append("text")	
+    .attr("class", "tooltip")
+    .style("opacity", 1)
+    .text(function(d) {
+        return d;
+      });
+
+    var header = table.append("thead").append("tr");
+
+    header.selectAll("th")
+      .data(["Anos de contribuição", "Proporção"])
+      .enter()
+      .append("th")
+      .text(function(d) {
+        return d;
+      });
+
+    var tablebody = table.append("tbody");
+
+    rows = tablebody
+      .selectAll("tr")
+      .data(simpleArray)
+      .enter()
+      .append("tr")
+
+    cells = rows.selectAll("td")
+      .data(function(d) {
+        return d;
+      })
+      .enter()
+      .append("td")
+      .style("background-color", function(d, i) {
+        if (i === 1,2) {
+          return myColorScale(d);
+        }
+
+      })
+     .text(function(d) {
+        return d;
+     });
+
+    d3.select("tbody").selectAll("tr").selectAll("td")
+      .style("color", function(d, i) {
+         if (i > 5) {
+          return "white";
+        }
+      });
+
+    d3.selectAll("th")
+      .data(["string", "int", "string", "string"])
+     .attr("data-sort", function(d) {
+        return d;
+      });
+
+
+    $("table").stupidtable();
+  });   
+</script>
+</body>

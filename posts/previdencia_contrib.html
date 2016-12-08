@@ -120,7 +120,7 @@ data = [{
  var div = d3.select("#chart").append("div").attr("class", "toolTip");
 
  var axisMargin = 20,
-   margin = 80,
+   margin = 100,
    valueMargin = -65,
    width = parseInt(d3.select('#chart').style('width'), 10),
    height = parseInt(d3.select('#chart').style('height'), 10),
@@ -152,7 +152,7 @@ data = [{
    .attr("class", "label")
    .attr("y", barHeight / 2)
    .attr("dy", ".35em") //vertical align middle
-   .attr("x", "-.5em")
+   .attr("x", "-.7em")
    .text(function(d) {
      return d.label;
    }).each(function() {

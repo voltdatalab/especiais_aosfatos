@@ -18,10 +18,6 @@ p{
   font-size: 1.2em
 }
 
-h5{
-  margin-top: -50px
-}
-
 svg {
   width: 100%;
   height: 100%;
@@ -119,7 +115,7 @@ data = [{
 
  var div = d3.select("#chart").append("div").attr("class", "toolTip");
 
- var axisMargin = 20,
+ var axisMargin = -70,
    margin = 100,
    valueMargin = -65,
    width = parseInt(d3.select('#chart').style('width'), 10),

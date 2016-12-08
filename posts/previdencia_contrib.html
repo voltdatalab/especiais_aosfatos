@@ -95,23 +95,25 @@ text.value {
 <script>
 //baseado em http://bl.ocks.org/juan-cb/faf62e91e3c70a99a306 
 
+//baseado em http://bl.ocks.org/juan-cb/faf62e91e3c70a99a306 
+
 data = [{
-   label: "30 a 39 anos",
+   label: "30 a 39 anos ",
    value: 80.16
  }, {
-   label: "20 a 29 anos",
+   label: "20 a 29 anos ",
    value: 16.77
  }, {
-   label: "40 anos e mais",
+   label: "40+ anos ",
    value: 2.24
  }, {
-   label: "Ignorado",
+   label: "Ignorado ",
    value: 0.75
  }, {
-   label: "até 15 anos",
+   label: "até 15 anos ",
    value: 0.04
  }, {
-   label: "16 a 19 anos",
+   label: "16 a 19 anos ",
    value: 0.03
  }];
 
@@ -150,6 +152,7 @@ data = [{
    .attr("class", "label")
    .attr("y", barHeight / 2)
    .attr("dy", ".35em") //vertical align middle
+   .attr("x", "-1em")
    .text(function(d) {
      return d.label;
    }).each(function() {

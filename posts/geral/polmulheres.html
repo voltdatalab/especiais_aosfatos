@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gráfico - Aos Fatos, política para mulheres</title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.5em
+}
+
+.conteudo {
+  margin: 20px auto;
+  max-width: 700px
+}
+
+p {
+  color: #777;
+  font-size:1.3em
+}
+
+
+h1 {
+  text-transform: uppercase;
+  color: #222
+}
+
+h4 {
+  font-weight: 300;
+  font-size: .9em;
+  border-top: 1px solid #000;
+  display: inline;
+}
+
+span{
+  padding: 5px 10px;
+  color: #fff;
+  font-size:1em
+}
+
+</style>
+</head>
+<body>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+<div class="conteudo">
+<h1>Queda na crise</h1>
+
+<p>Desembolsos para investimentos com ações de políticas para mulheres </p>
+<p><span style="background-color:#222">autonomia financeira</span> <span style="background-color:#faa61a">combate à violência</span>
+<span style="background-color:#a7000c">saúde</span> <span style="background-color:#777">outros</span></p>
+
+<div id="pol" class="morris-chart" style="height: 450px;max-width:700px">
+</div><br>
+<h4>FONTE: Portal da Transparência</h4>
+</div>
+
+<script>
+var json = [
+	{
+		"ano": "2008",
+		"autonomia financeira": 3761567,
+		"combate à violência": 18576702,
+		"outros": 7654662,
+		"saúde": 5258402
+	},
+	{
+		"ano": "2009",
+		"autonomia financeira": 7151373,
+		"combate à violência": 10700144,
+		"outros": 4221013,
+		"saúde": 5594528
+	},
+	{
+		"ano": "2010",
+		"autonomia financeira": 6112185,
+		"combate à violência": 41973056,
+		"outros": 20104497,
+		"saúde": 112000
+	},
+	{
+		"ano": "2011",
+		"autonomia financeira": 1900076,
+		"combate à violência": 18985285,
+		"outros": 5920433,
+		"saúde": 1320872
+	},
+	{
+		"ano": "2012",
+		"autonomia financeira": 4843363,
+		"combate à violência": 21907526,
+		"outros": 15072858,
+		"saúde": 2066313
+	},
+	{
+		"ano": "2013",
+		"autonomia financeira": 10325747,
+		"combate à violência": 14997233,
+		"outros": 10587609,
+		"saúde": 433480
+	},
+	{
+		"ano": "2014",
+		"autonomia financeira": 20342475,
+		"combate à violência": 19791082,
+		"outros": 11428809,
+		"saúde": 3874976
+	},
+	{
+		"ano": "2015",
+		"autonomia financeira": 8080707,
+		"combate à violência": 20664551,
+		"outros": 10586341,
+		"saúde": 2406983
+	},
+	{
+		"ano": "2016",
+		"autonomia financeira": 3026092,
+		"combate à violência": 5562724,
+		"outros": 2179253,
+		"saúde": 349327
+	}
+];
+
+new Morris.Line({
+  element: 'pol',
+  xkey: 'ano',
+  ykeys: ['autonomia financeira',	'combate à violência',	'outros', 'saúde'],
+  labels: ['ações de autonomia financeira',	'ações de combate à violência', 'ações de saúde','outros'],
+  xLabels: ['year'],
+  lineColors: ['#222', '#faa61a', '#a7000c','#777'],
+  preUnits: ['R$ '],
+  smooth: true,
+  gridTextFamily: ['Source Sans Pro'],
+  gridTextSize: ['16px'],
+  gridTextColor: ['#777'],
+  hideHover: ['auto'],
+  resize: ['true'],
+  data: json
+		});
+</script>
+
+</body>
+
+</html>

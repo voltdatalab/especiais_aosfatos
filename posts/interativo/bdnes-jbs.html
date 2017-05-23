@@ -52,8 +52,6 @@ body{
   <div id="grafico"></div>
   
     <script>
-    //baseado em http://d3plus.org/examples/advanced/a9a9ada6101818be4fdc/
-
 var json = (function () {
         var json = null;
         $.ajax({
@@ -110,6 +108,10 @@ var json = (function () {
     .size("valor", "n. de contratos")
     .format("pt_BR")
     .margin( "10px 10px" )
+    .footer({
+      "link": "http://www.bndes.gov.br/SiteBNDES/bndes/bndes_pt/Galerias/Convivencia/Consuta_operacoes/consulta_unificada.html?cpfcnpj=02916265000160&nome=&operacao=operacao_direta&contrato=09209431",
+      "value": "Fonte: BNDES"
+    })
     .tooltip({"value": "model","background":"#f4f4f4"})
     .font({"family": "Source Sans Pro", "size": 14})
   .depth(1)

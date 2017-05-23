@@ -127,7 +127,7 @@ var json = (function () {
         var formatted = d3plus.number.format(number, params);
         
         if (params.key === "valor") {
-          return "R$" + formatted + "i";
+          return "R$" + formatted + "";
         }
         else {
           return formatted;

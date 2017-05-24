@@ -16,7 +16,7 @@ body{
 }
 
 #grafico {
-  max-width: 100%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -73,7 +73,7 @@ var json = (function () {
   var visualization = d3plus.viz()
     .container("#grafico")
     .data(json)
-    .height({"max": 400, "value":400})
+    .height({"max": 500, "value":500})
     .type("bar")
     .x({"value" : "ano", "label": ""})
     .y({"stacked": true, "value" : "valor", "label": ""})
@@ -111,7 +111,7 @@ var json = (function () {
     .color({"scale": ['#444','#999','#cbcbcb','#fcc365','#faa61a'], "value": "finalidade"})
     .size("valor")
     .format("pt_BR")
-    .margin( "20px 30px" )
+    .margin( "10px 30px" )
     .tooltip({"value": "valor","background":"#f4f4f4"})
     .font({"family": "Source Sans Pro", "size": 13})
   .depth(1)

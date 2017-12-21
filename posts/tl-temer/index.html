@@ -6,13 +6,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/javascript" src="js/ICanHaz.js"></script>
-	<script type="text/javascript" src='js/jquery.js'></script>
-	<script type="text/javascript" src='js/site.js'></script>
-	<script type="text/javascript" src='js/tabletop1.3.4.js'></script>
-	<link rel="shortcut icon" href="logo.png"/>
+  <script type="text/javascript" src='js/jquery.js'></script>
+  <script type="text/javascript" src='js/site.js'></script>
+  <script type="text/javascript" src='js/tabletop1.3.4.js'></script>
+  <link rel="shortcut icon" href="logo.png" />
   <link type="text/css" rel="stylesheet" href="timeline_lj.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
   <meta name='keywords' content='política, Brasil, política brasileira, jornalismo de dados, aos fatos, volt data lab, impeachment'>
   <meta name='description' content='Linha do Tempo: As idas e vindas de Temer em 2017'>
   <meta name='subject' content='jornalismo de dados'>
@@ -50,71 +49,71 @@
     </ul>
 
   </div>
-
   <div id="banner">
     <div id="overlay">
       <div style="z-index: 1; position: relative;max-width:600px;">
         <h1>As idas e vindas de Temer em 2017 <br /></h1>
         <hr />
-            <h2 class="sub">Analisamos o discurso do presidente ao longo do ano a respeito dos principais itens de sua agenda: ajuste fiscal, reforma da Previdência, crescimento da economia, meio ambiente e inflação.
-              <br /><br /><br /><br />
-              <i class="fa fa-arrow-down fa-2x" aria-hidden="true" style="color: white; text-align:center;"></i>
-
-            </h2>
-
+        <h2 class="sub">Analisamos o discurso do presidente ao longo do ano a respeito dos principais itens de sua agenda: ajuste fiscal, reforma da Previdência, crescimento da economia, meio ambiente e inflação.
+<br /><br /><br /><br />
+<i class="fa fa-arrow-down fa-2x" aria-hidden="true" style="color: white; text-align:center;"></i>
+</h2>
       </div>
     </div>
   </div>
   <h7><a href="http://agenciabrasil.ebc.com.br/geral/foto/2016-02/sessao-de-abertura-do-ano-judiciario?id=997398" target="_blank">Foto: Alan Santos/PR</a></h7>
 
-<div class="creditos">
-  <h3>Por <span class="cred"><a href="https://twitter.com/@anaritaldc" target="_blank">Ana Rita Cunha</a></span>, <span class="cred"><a href="https://twitter.com/baliborio" target="_blank">Bárbara Libório</a></span> e <span class="cred"><a href="https://twitter.com/tainalon" target="_blank">Tai Nalon</a></span><br />
-    <br />
-    <span>22 de dezembro de 2017</span>
-  </h3>
-</div>
+  <div class="creditos">
+    <h3>Por <span class="cred"><a href="https://twitter.com/@anaritaldc" target="_blank">Ana Rita Cunha</a></span>, <span class="cred"><a href="https://twitter.com/baliborio" target="_blank">Bárbara Libório</a></span> e <span class="cred"><a href="https://twitter.com/tainalon" target="_blank">Tai Nalon</a></span><br />
+<br />
+<span>22 de dezembro de 2017</span>
+</h3>
+  </div>
   <hr />
   <div class="panorama">
     <div id="panorama">
       <p>Intro</p>
     </div>
-    </div>
-<hr />
-<div id="tools" class="container"><span class="flash animated">carregando...</span></div>
-
-		<script id="tools" type="text/html">
-          <div class="noticias">
-            <div class="primeiro"></div>
-		{{#rows}}
-
-    <div class="fatos">
-      <div class="segundo {{coluna}}">
-        <div class="ano">
-          <h4>{{data}}</h4>
-        </div>
-        <ul>
-          <li>
-            <h5><span class="aspa">" </span>{{aspa}}<span class="aspa"> "</span></h5></li>
-          <li>{{descricao}}</li><br />
-          <li><a href="{{link_esquerda}}" target="_blank"><span>Saiba mais</span></a> - Via {{fonte}} </li>
-        </ul>
-      </div>
-      <br /><br />
-
-		{{/rows}}
-    </div>
+  </div>
+  <hr />
+  <div id="tools" class="container"><span class="flash animated">carregando...</span></div>
+  <script id="tools" type="text/html">
+    <div class="noticias">
+      <div class="primeiro"></div>
+      {{#rows}}
+      <div id="{{rowNumber}}" class="tool-box fatos">
+        <div class="tool-box-tool segundo {{coluna}}" style="border: 3px solid {{cor}}">
+          <div class="ano">
+            <h4>{{data}}</h4>
           </div>
-		</script>
-
-		<script type="text/javascript">
-		  document.addEventListener('DOMContentLoaded', function() {
-        //https://docs.google.com/spreadsheets/d/1qbfRr1dERsVkp8341I2JqdouZbYCtv_iN6825x4TpWw/edit?usp=sharing
-	      var URL = "1qbfRr1dERsVkp8341I2JqdouZbYCtv_iN6825x4TpWw"
-	      Tabletop.init( { key: URL, callback: initialize, simpleSheet: true } )
-	    })
-		</script>
-
+          <div class="tool-box-bottom {{rowNumber}}">
+            <ul>
+              <li style="background-color: {{cor}};padding:5px;color:{{fontecor}};display:inline;text-align:right"><strong>{{tema}}</strong></li>
+              <li>
+                <h5><span class="aspa tool-box-tool">" </span>{{aspa}}<span class="aspa"> "</span></h5></li>
+              <li>{{descricao}}</li><br />
+              <li><a href="{{link_esquerda}}" target="_blank"><span>Saiba mais</span></a> - Via {{fonte}} </li>
+            </ul>
+          </div>
+        </div>
+        <br /><br /> {{/rows}}
+      </div>
     </div>
+  </script>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      //https://docs.google.com/spreadsheets/d/1qbfRr1dERsVkp8341I2JqdouZbYCtv_iN6825x4TpWw/edit?usp=sharing
+      var URL = "1qbfRr1dERsVkp8341I2JqdouZbYCtv_iN6825x4TpWw"
+      Tabletop.init({
+        key: URL,
+        callback: initialize,
+        simpleSheet: true
+      })
+    })
+  </script>
+
+  </div>
   </div>
 
   <footer>

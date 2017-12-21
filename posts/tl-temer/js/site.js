@@ -15,14 +15,12 @@ function drawToolBox(data) {
   $('#tools').html(tools)
 }
 
-$(document).on( 'click', '#showAvailable', toggleAvailable)
-
 $(document).on( 'click', '.clear', function(e) {
   clearSearch(e)
   toggleAvailable(false)
 })
 
-$(document).on('keyup search', '#toolSearch', function(e) {
+$(document).on('keyup search', '#toolSearch', function(e) {
   var text = $(e.target).val().trim().toLowerCase()
   if (text === '') return clearSearch(e)
   filterTools(text)
@@ -42,7 +40,6 @@ $(document).on( 'click', '.tool-box-tool', function(e) {
 
 /*
     Toggle whether unavailable items are displayed or not
-
     [state] - optionally specify the desired state, either true or false. If
     not defined, it will just toggle.
 */

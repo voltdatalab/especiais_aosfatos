@@ -115,10 +115,11 @@ h4 {
 }
 
 h5 {
-  font-size: 1.3em;
-  text-transform: uppercase;
+  font-size: 1.2em;
   padding: 0rem;
-  font-weight: 700;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
 }
 
 h6 {
@@ -161,6 +162,7 @@ li {
   line-height: 1.5em;
   list-style-type: none;
   text-align: distribute;
+  font-weight: 300;
 }
 
 span{
@@ -168,6 +170,10 @@ span{
   font-family: 'Nunito';
   text-transform: uppercase;
   font-size: 1em;
+}
+
+.aspa{
+  font-size: 1.4em;
 }
 
 .cred a {
@@ -221,6 +227,15 @@ strong{
 .redes{
    position:fixed;
    float: right;
+}
+
+.footershare{
+  display: inline-block !important;
+  list-style-type: none;
+}
+
+.footershare a{
+  border-bottom: 0px;
 }
 
 /* logos */
@@ -318,20 +333,20 @@ strong{
   left: -0.938em;
 }
 
-.segundo.right {
+.segundo.direita {
   float: right;
   margin-bottom: 70px;
 }
 
-.segundo.left {
+.segundo.esquerda {
   float: left;
   margin-bottom: 70px;
 }
-.segundo.left:before {
+.segundo.esquerda:before {
   left: auto;
   right: -2.875em;
 }
-.segundo.left:after {
+.segundo.esquerda:after {
   left: auto;
   right: -0.938em;
   border-width: 0.469em 0 0.469em 0.938em;
@@ -344,12 +359,12 @@ strong{
   width: 100%;
 }
 
-.segundo.right .ano {
+.segundo.direita .ano {
   text-align: left;
   right: 0;
 }
 
-.segundo.left .ano {
+.segundo.esquerda .ano {
   text-align: right;
   left: 0;
 }
@@ -389,30 +404,30 @@ strong{
     transition: 0.75s cubic-bezier(0.43, -0.57, 0.17, 1.11);
   }
 
-  .segundo.left,
-  .segundo.right {
+  .segundo.esquerda,
+  .segundo.direita {
     float: left;
     background-color: ;
   }
 
-  .segundo.left .ano {
+  .segundo.esquerda .ano {
     text-align: left;
     left: 0;
   }
 
-  .segundo.left:before {
+  .segundo.esquerda:before {
     right: auto;
     left: -2.938em;
   }
 
-  .segundo.left:after {
+  .segundo.esquerda:after {
     right: auto;
     left: -0.938em;
     border-width: 0.469em 0.938em 0.469em 0;
     border-color: transparent #000 transparent transparent;
   }
 
-  .segundo.right:before {
+  .segundo.direita:before {
     left: -2.938em;
   }
 }
@@ -454,8 +469,13 @@ strong{
 
 .footer{
   margin: 0;
-  padding: 50px 0;
+  padding: 10px 0;
   text-align: center;
   width: 100%;
   background-color: #ededed;
+}
+
+.footer li{
+  display: inline-block;
+  width: 75px
 }

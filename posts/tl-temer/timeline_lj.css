@@ -28,6 +28,7 @@ body, html {
   margin-top: -110px;
 }
 
+
 #overlay {
   background-color: rgba(0, 0, 0, 0.3);
   height: 99.5vh;
@@ -36,6 +37,16 @@ body, html {
   top:0;
   padding-top: 15%;
   width: 100%;
+}
+
+@media screen and (max-width: 860px) {
+    #banner, #overlay {
+        background-attachment: none;
+        height: 800px;
+    }
+    .titulagem{
+      margin: 0 auto !important;
+    }
 }
 
 hr {
@@ -222,6 +233,10 @@ strong{
 
 .header a{
     border-bottom: 0px;
+}
+
+.titulagem{
+  max-width:600px;
 }
 
 .redes{

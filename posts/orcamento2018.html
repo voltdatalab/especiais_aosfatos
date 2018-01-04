@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<div class="container">
+  <h1>Orçamento 2018</h1>
+  <p>Compare o orçamento federal de 2017 frente ao de 2018, reajustado pela inflação (IPCA) até novembro.</p>
+  <span>Selecione um ente federal </span>
+<div id="chart" class="svg-container"></div>
+  <h5>Fonte: Ministério do Planejamento</h5>
+</div>
+<script src="https://cdn.rawgit.com/voltdatalab/graficos/gh-pages/posts/random/prelim/js/d3.custom.js"></script>
+<script>
+var div = d3.select('#chart').append('div')
+var margin = {
+    top: 20,
+    right: 20,
+    bottom: 30,
+    left: 88
+  },
+  width = 600 - margin.left - margin.right,
+  height = 400 - margin.top - margin.bottom;
+
+var parseDate = d3.time.format("%Y-%m-%d").parse;
+
+var x = d3.time.scale().range([50, width - 200]);
+
+var y = d3.scale.linear()
+.range([height, 0]);
+
+var xAxis = d3.svg.axis()
+.scale(x)
+.orient("bottom")
+.ticks(2)
+.innerTickSize(-height);
+
+var yAxis = d3.svg.axis().scale(y)
+.tickFormat(function(d) { return "R$ " + d + ""; })
+.tickPadding(10)
+.orient("left")
+.ticks(6)
+.innerTickSize(-width + 180);
+
+var line = d3.svg.line().x(function(d) {
+  return x(d.ano);
+}).y(function(d) {
+  return y(d.ajustado);
+});
+var svg = d3.select("#chart")
+.append("svg")
+.attr("viewBox", "0 0 450 400")
+//.attr("width", width + margin.left + margin.right)
+//.attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var dataFiltered = {}
+var dataNested = {}
+d3.tsv("https://raw.githubusercontent.com/voltdatalab/dados/master/economia/orcamento2017vs2018.tsv", function(error, data) {
+  data.forEach(function(d) {
+    d.ano = parseDate(d.ano);
+    //d.ano = d.ano;
+    d.ajustado = +d.ajustado;
+    d.entidade = d.entidade;
+  });
+  var dataNested = d3.nest().key(function(d) {
+    return d.entidade
+  }).entries(data)
+  div.append('select')
+    .attr('id', 'variableSelect')
+    .attr('class', 'caixa')
+    .on('change', variableChange)
+    .selectAll('option')
+    .data(dataNested)
+    .enter()
+    .append('option')
+    .attr('value', function(d) {
+    return d.key
+  }).text(function(d) {
+    return d.key
+  })
+  var dataFiltered = dataNested.filter(function(d) {
+    return d.key === d3.select('#variableSelect')
+      .property('value')
+  })
+  x.domain(d3.extent(dataFiltered[0].values, function(d) {
+    return d.ano;
+  }));
+  y.domain(d3.extent(dataFiltered[0].values, function(d) {
+    return d.ajustado;
+  }));
+  
+  svg.append("g")
+    .attr("class", "xAxis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+  
+  svg.append("g")
+    .attr("class", "yAxis")
+    .call(yAxis)
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 6)
+    .attr("dy", ".71em")
+    .style("font-weight", "300")
+    .style("text-anchor", "end")
+    .text("Milhões de R$");
+  
+  svg.append("path")
+    .datum(dataFiltered[0].values)
+    .attr("class", "line")
+    .attr("d", line);
+
+
+  function variableChange() {
+    var value = this.value
+    var dataFiltered = dataNested.filter(function(d) {
+      return d.key === value
+    })
+    x.domain(d3.extent(dataFiltered[0].values, function(d) {
+      return d.ano;
+    }));
+    y.domain(d3.extent(dataFiltered[0].values, function(d) {
+      return d.ajustado;
+    }));
+    d3.select('.xAxis').transition().duration(1000).call(xAxis)
+    d3.select('.yAxis').transition().duration(1000).call(yAxis)
+    d3.select('.line').datum(dataFiltered[0].values).attr('d', line)
+  }
+});
+</script>
+
+</body>
+
+</html>

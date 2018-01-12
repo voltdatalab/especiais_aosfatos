@@ -43,7 +43,6 @@ body, html {
 @media screen and (max-width: 860px) {
     #banner, #overlay {
         background-attachment: none;
-        height: 800px;
     }
     .titulagem{
       margin: 0 auto !important;

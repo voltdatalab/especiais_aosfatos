@@ -25,7 +25,7 @@ body, html {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  height: 80vh;
+  height: 600px;
   width: 100%;
   margin-top: -110px;
 }
@@ -33,7 +33,7 @@ body, html {
 
 #overlay {
   background-color: rgba(0, 0, 0, 0.3);
-  height: 80vh;
+  height: 600px;
   z-index: 100;
   position: absolute;
   top:0;

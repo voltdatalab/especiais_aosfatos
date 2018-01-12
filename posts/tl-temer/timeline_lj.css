@@ -24,8 +24,8 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: left center;
-  height: 100vh;
+  background-position: center;
+  height: 80vh;
   width: 100%;
   margin-top: -110px;
 }
@@ -33,7 +33,7 @@ body, html {
 
 #overlay {
   background-color: rgba(0, 0, 0, 0.3);
-  height: 99.5vh;
+  height: 80vh;
   z-index: 100;
   position: absolute;
   top:0;

@@ -42,7 +42,16 @@ body, html {
 
 @media screen and (max-width: 860px) {
     #banner, #overlay {
-        background-attachment: none;
+      background-attachment: none;
+    }
+    #banner{
+      height: 800px
+    }
+    #overlay{
+      height: 725px
+    }
+    .sub{
+      font-size: 1em
     }
     .titulagem{
       margin: 0 auto !important;

@@ -49,8 +49,10 @@ body, html {
     .sub{
       font-size: 1em
     }
+    #overlay{
+      padding-top: 2%;
+    }
     .titulagem{
-      margin: 330px auto !important;
       background-position: center;
     }
     .titulagem h1{

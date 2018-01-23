@@ -45,6 +45,7 @@ body, html {
 @media screen and (max-width: 860px) {
     #banner, #overlay {
       background-attachment: none;
+      height: 600px;
     }
     .sub{
       font-size: 1em
